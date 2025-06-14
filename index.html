@@ -516,6 +516,146 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent-color);
     }
+
+    /* Projects Section Styles */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .project-image {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .project-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-header h3 {
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .project-company {
+      color: var(--heading-color);
+      font-weight: 500;
+    }
+
+    .project-date {
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
+
+    .project-description {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-details {
+      background: rgba(10, 25, 47, 0.5);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .project-tech h4,
+    .project-achievements h4 {
+      color: var(--heading-color);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--secondary-color);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .tech-tag:hover {
+      background: rgba(100, 255, 218, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .project-achievements ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-achievements li {
+      color: var(--text-color);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-achievements li i {
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 1.5rem;
+      }
+
+      .tech-tags {
+        gap: 0.3rem;
+      }
+
+      .tech-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
   </style>
 
 </head>
@@ -697,6 +837,178 @@
             <li><i class="fa-li fa fa-check"></i>Built AllGoVision Analytics with 50+ ML/DL/AI features, serving 2K+ companies</li>
             <li><i class="fa-li fa fa-check"></i>Technologies: Java, NodeJS, Angular, MongoDB</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+      <div class="my-auto">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Columbus Foundation App</h3>
+                <div class="project-meta">
+                  <span class="project-company">Walmart Labs</span>
+                  <span class="project-date">2022-2024</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">JUnit5</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">CosmosDB</span>
+                    <span class="tech-tag">Kubernetes</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 100ms latency for 25K+ TPM</li>
+                    <li><i class="fa fa-check-circle"></i> Robust error handling system</li>
+                    <li><i class="fa fa-check-circle"></i> Scalable microservices architecture</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-marketplace integration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-video-camera"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>AllGoVision Analytics</h3>
+                <div class="project-meta">
+                  <span class="project-company">AllGoVision Technologies</span>
+                  <span class="project-date">2018-2019</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A comprehensive analytics platform with 50+ ML/DL/AI features, serving over 2,000 companies. The system processes and analyzes video data to provide intelligent insights and automated monitoring solutions.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">ML/AI</span>
+                    <span class="tech-tag">Computer Vision</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 50+ ML/DL/AI features</li>
+                    <li><i class="fa fa-check-circle"></i> 2,000+ companies served</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time video analytics</li>
+                    <li><i class="fa fa-check-circle"></i> Automated monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-video-camera"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>DolphinVC</h3>
+                <div class="project-meta">
+                  <span class="project-company">Nouveau Labs</span>
+                  <span class="project-date">2020</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A multi-platform video conferencing application with features for scheduling and instant meetings. The system supports high-quality video calls, screen sharing, and meeting management.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">OAuth2</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">OracleDB</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> Real-time video streaming</li>
+                    <li><i class="fa fa-check-circle"></i> Secure authentication</li>
+                    <li><i class="fa fa-check-circle"></i> Scalable meeting management</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-platform support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-mobile"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Recharge Service</h3>
+                <div class="project-meta">
+                  <span class="project-company">Zeta Suite</span>
+                  <span class="project-date">2021-2022</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A high-volume transaction processing system for mobile and DTH plan recharges, handling over 2 million transactions daily. The system ensures reliable and secure payment processing.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">AngularJS</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Microservices</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 2M+ daily transactions</li>
+                    <li><i class="fa fa-check-circle"></i> Secure payment gateway</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time tracking</li>
+                    <li><i class="fa fa-check-circle"></i> Automated reconciliation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1072,178 +1384,6 @@
                 <i class="fa fa-comments mr-2"></i>
                 Chat with AI Assistant
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
-      <div class="my-auto">
-        <h2 class="section-title">Featured Projects</h2>
-        
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-shopping-cart"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Columbus Foundation App</h3>
-                <div class="project-meta">
-                  <span class="project-company">Walmart Labs</span>
-                  <span class="project-date">2022-2024</span>
-                </div>
-              </div>
-              <p class="project-description">
-                A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Microservices</span>
-                    <span class="tech-tag">JUnit5</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">GraphQL</span>
-                    <span class="tech-tag">CosmosDB</span>
-                    <span class="tech-tag">Kubernetes</span>
-                  </div>
-                </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> 100ms latency for 25K+ TPM</li>
-                    <li><i class="fa fa-check-circle"></i> Robust error handling system</li>
-                    <li><i class="fa fa-check-circle"></i> Scalable microservices architecture</li>
-                    <li><i class="fa fa-check-circle"></i> Multi-marketplace integration</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-video-camera"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>AllGoVision Analytics</h3>
-                <div class="project-meta">
-                  <span class="project-company">AllGoVision Technologies</span>
-                  <span class="project-date">2018-2019</span>
-                </div>
-              </div>
-              <p class="project-description">
-                A comprehensive analytics platform with 50+ ML/DL/AI features, serving over 2,000 companies. The system processes and analyzes video data to provide intelligent insights and automated monitoring solutions.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Angular</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">ML/AI</span>
-                    <span class="tech-tag">Computer Vision</span>
-                  </div>
-                </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> 50+ ML/DL/AI features</li>
-                    <li><i class="fa fa-check-circle"></i> 2,000+ companies served</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time video analytics</li>
-                    <li><i class="fa fa-check-circle"></i> Automated monitoring</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-video-camera"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>DolphinVC</h3>
-                <div class="project-meta">
-                  <span class="project-company">Nouveau Labs</span>
-                  <span class="project-date">2020</span>
-                </div>
-              </div>
-              <p class="project-description">
-                A multi-platform video conferencing application with features for scheduling and instant meetings. The system supports high-quality video calls, screen sharing, and meeting management.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">OAuth2</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">OracleDB</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">AWS</span>
-                  </div>
-                </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> Real-time video streaming</li>
-                    <li><i class="fa fa-check-circle"></i> Secure authentication</li>
-                    <li><i class="fa fa-check-circle"></i> Scalable meeting management</li>
-                    <li><i class="fa fa-check-circle"></i> Multi-platform support</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-mobile"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Recharge Service</h3>
-                <div class="project-meta">
-                  <span class="project-company">Zeta Suite</span>
-                  <span class="project-date">2021-2022</span>
-                </div>
-              </div>
-              <p class="project-description">
-                A high-volume transaction processing system for mobile and DTH plan recharges, handling over 2 million transactions daily. The system ensures reliable and secure payment processing.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">AngularJS</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Express.js</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Microservices</span>
-                  </div>
-                </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> 2M+ daily transactions</li>
-                    <li><i class="fa fa-check-circle"></i> Secure payment gateway</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time tracking</li>
-                    <li><i class="fa fa-check-circle"></i> Automated reconciliation</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
