@@ -5,19 +5,16 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Manjunath Asundi - Senior Software Engineer with 8+ years of experience">
+  <meta name="author" content="Manjunath Asundi">
 
-  <title>Manjunath - Asundi</title>
+  <title>Manjunath Asundi - Senior Software Engineer</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/profile.jpg" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -25,15 +22,514 @@
   <!-- Custom styles for this template -->
   <link href="css/resume.min.css" rel="stylesheet">
 
+  <style>
+    :root {
+      --primary-color: #0a192f;
+      --secondary-color: #64ffda;
+      --accent-color: #ff6b6b;
+      --text-color: #8892b0;
+      --heading-color: #ccd6f6;
+      --light-bg: #f8f9fa;
+      --section-spacing: 6rem;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --hover-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --gradient-primary: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+      --gradient-accent: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      line-height: 1.7;
+      background-color: var(--primary-color);
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    #about {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-primary);
+      color: var(--heading-color);
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 0;
+    }
+
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+    }
+
+    .intro-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .intro-header {
+      margin-bottom: 4rem;
+    }
+
+    .intro-header h1 {
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro-header .text-primary {
+      color: var(--secondary-color) !important;
+    }
+
+    .subheading {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+    }
+
+    .intro-content {
+      background: rgba(17, 34, 64, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .intro-paragraph {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+    }
+
+    /* Navigation */
+    .navbar {
+      background: transparent !important;
+      padding: 2rem;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 25, 47, 0.9) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .navbar-nav {
+      background: rgba(17, 34, 64, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 0.8rem;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--heading-color) !important;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      margin: 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-accent);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link:hover::before,
+    .navbar-nav .nav-link.active::before {
+      opacity: 0.1;
+    }
+
+    /* Sections */
+    .resume-section {
+      padding: var(--section-spacing) 0;
+      position: relative;
+      background: var(--gradient-primary);
+      color: var(--heading-color);
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 4rem;
+      position: relative;
+      display: inline-block;
+      color: var(--heading-color);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+    }
+
+    /* Experience Cards */
+    .experience-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-accent);
+      transition: var(--transition);
+    }
+
+    .experience-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .experience-card:hover::before {
+      width: 8px;
+    }
+
+    .experience-card h3 {
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-card .subheading {
+      color: var(--heading-color);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .skill-category {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .skill-category:hover::before {
+      transform: scaleX(1);
+    }
+
+    .skill-category h4 {
+      color: var(--secondary-color);
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-list li {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--text-color);
+      font-size: 1.1rem;
+    }
+
+    .skill-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+
+    /* Certificates Section */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .certificate-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-accent);
+      transition: var(--transition);
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .certificate-card:hover::before {
+      width: 8px;
+    }
+
+    .certificate-content h5 {
+      color: var(--heading-color);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .certificate-content h5 a {
+      color: var(--heading-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .certificate-content h5 a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* AI Chat Section */
+    .ai-chat-container {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .ai-chat-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+    }
+
+    .ai-chat-container:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .ai-chat-icon {
+      font-size: 4rem;
+      color: var(--secondary-color);
+      margin-bottom: 2rem;
+    }
+
+    .ai-chat-text .lead {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .ai-chat-text .btn {
+      background: transparent;
+      border: 2px solid var(--secondary-color);
+      color: var(--secondary-color);
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .ai-chat-text .btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 4rem;
+    }
+
+    .social-links .fa-stack {
+      transition: var(--transition);
+    }
+
+    .social-links .fa-stack:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .fa-circle {
+      background: var(--gradient-accent) !important;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .resume-section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .intro-header h1 {
+        font-size: 3.5rem;
+      }
+
+      .resume-section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .experience-card,
+      .skill-category,
+      .certificate-card {
+        padding: 2rem;
+      }
+
+      .certificates-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        padding: 1rem;
+      }
+
+      .navbar-nav {
+        padding: 0.5rem;
+      }
+
+      .navbar-nav .nav-link {
+        padding: 0.8rem 1rem;
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--primary-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--secondary-color);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
+    }
+  </style>
+
 </head>
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
 
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/profile.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" 
+             src="images/manjunath-linkedin.jpeg" 
+             alt="Manjunath Asundi"
+             style="width: 160px; height: 160px; object-fit: cover; border: 3px solid var(--secondary-color); box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -46,13 +542,7 @@
           <a class="nav-link js-scroll-trigger" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#employment">Employment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
@@ -61,13 +551,16 @@
           <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#courses">Courses</a>
+          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#chatbot">Chat with AI</a>
+          <a class="nav-link js-scroll-trigger" href="#certificates">Certificates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#ai-chat">AI Career Assistant</a>
         </li>
       </ul>
     </div>
@@ -77,1095 +570,1029 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
       <div class="my-auto">
-        <h1 class="mb-0">Manjunath
-          <span class="text-primary">Asundi</span>
-        </h1>
-        <div class="subheading mb-5">Vijanagar Nagar, Bangalore 560040 &nbsp;&nbsp;&nbsp; (+91) 988-698-8915
-          <a href="mailto:manjunathasundi07@gmail.com">&nbsp;&nbsp;&nbsp;manjunathasundi07@gmail.com</a>
+        <div class="intro-container">
+          <div class="intro-header">
+            <h1 class="mb-0">Manjunath
+              <span class="text-primary">Asundi</span>
+            </h1>
+            <div class="subheading mb-5">
+              Bangalore, Karnataka 560040 · (+91) 988-698-8915 ·
+              <a href="mailto:manjunathasundi07@gmail.com">manjunathasundi07@gmail.com</a>
+            </div>
+          </div>
+          <div class="intro-content">
+            <div class="lead mb-5">
+              <p class="mb-4 intro-paragraph">
+                Senior Software Engineer at Intuit, with a distinguished career spanning 8+ years across leading organizations including Walmart Labs, Zeta Suite, and AllGoVision Technologies. 
+                Graduated with a B.Tech in Computer Science from Manipal Institute of Technology, complemented by a Diploma in Computer Science from NTTF Dharwad. 
+                Proven track record in developing high-performance, scalable enterprise applications that handle mission-critical operations with low-latency requirements. 
+                Expert in full-stack development with deep expertise in Java, Spring Boot, Microservices, and Cloud Technologies.
+              </p>
+              <p class="mb-4 intro-paragraph">
+                Demonstrated excellence in building reliable, scalable systems with expertise in cloud infrastructure, performance optimization, and implementing secure architectures. 
+                Proficient in modern tech stack including Spring Boot, ReactJS, GraphQL, Kafka, and various cloud platforms (AWS, Azure, GCP). 
+                Strong background in database technologies (PostgreSQL, MongoDB, CosmosDB) and DevOps tools (Docker, Kubernetes, Jenkins). 
+                Experienced in conducting architectural reviews and implementing security best practices in enterprise applications.
+              </p>
+              <p class="mb-4 intro-paragraph">
+                Dedicated to continuous learning, actively pursuing knowledge in AI/ML through platforms like LinkedIn Learning, Coursera, and Udemy, with recent certifications in AI and Machine Learning. 
+                Exploring the frontiers of AI technology, including Hugging Face for transformer models, ChatGPT for intelligent automation, and Google Gemini for advanced AI applications. 
+                Maintaining a strong presence on HackerRank, consistently improving problem-solving skills and staying current with emerging technologies. 
+                Passionate about learning new programming paradigms, exploring deep learning concepts, and applying AI/ML innovations to solve complex technical challenges.
+              </p>
+            </div>
+          </div>
+          <div class="social-links">
+            <ul class="list-inline list-social-icons mb-0">
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/manju07/" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/manju07/" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.hackerrank.com/manju07" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="about-content">
-          <p class="mb-3 welcome-text">
-            <b>Welcome to my professional portfolio!</b>
-          </p>
-          <p class="mb-3">I am a proud alumnus of the prestigious Manipal Institute of Technology, where I earned my Bachelor's degree in Computer Science and Engineering. With over 3.4 years of experience in the IT industry, I have developed a strong foundation in software development and engineering practices.</p>
-          <p class="mb-3">As a passionate and innovative software engineer, I thrive on learning cutting-edge technologies and creating impactful solutions. Currently, I serve as a Senior Software Engineer at Nouveau-Labs, where I leverage my expertise to deliver high-quality software solutions. My professional journey includes valuable experiences at MagicBricks and AllGoVision Technologies as a Software Engineer, complemented by enriching internships at Enquero Global and Doodleblue Innovations.</p>
-          <p class="mb-5">My technical expertise encompasses algorithm design, data structures, full-stack web development, and mobile application development. I am proficient in multiple programming languages including Java, JavaScript, C, and C++, allowing me to adapt and contribute effectively to diverse technical challenges.</p>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+      <div class="my-auto">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="experience-card">
+          <h3 class="mb-0">Senior Software Engineer</h3>
+          <div class="subheading mb-3">Intuit</div>
+          <p>September 2024 - Present</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Developed the Quote-Async app to enhance customer buying experiences</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, Microservices, Kafka, PostgresDB, HiveDB, ReactJS, Kubernetes, AWS</li>
+          </ul>
         </div>
 
-        <div class="social-links">
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/manju07/" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/manju07/" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://stackoverflow.com/users/4726362/manjunath-asundi" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/manju.asundi.07" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://twitter.com/itzmemanju16" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/itzmemanju.07" target="_blank" class="social-link">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
+        <div class="experience-card">
+          <h3 class="mb-0">Senior Software Engineer</h3>
+          <div class="subheading mb-3">Walmart Labs</div>
+          <p>July 2022 - September 2024</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Created Columbus-Foundation-App for seller management, achieving 100ms latency for 25K+ TPM</li>
+            <li><i class="fa-li fa fa-check"></i>Developed Columbus-Read-App serving seller data to 100+ consumer teams</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Spring Boot, Microservices, JUnit5, Mockito, Kafka, CosmosDB, GraphQL</li>
           </ul>
+        </div>
+
+        <div class="experience-card">
+          <h3 class="mb-0">Software Development Engineer - II</h3>
+          <div class="subheading mb-3">Zeta Suite</div>
+          <p>May 2021 - June 2022</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Implemented Recharge Service processing 2M+ transactions daily</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: AngularJS, NodeJS, ExpressJS, Java, Spring Boot, Kafka, MySQL</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <h3 class="mb-0">Software Engineer - III</h3>
+          <div class="subheading mb-3">Walmart Labs</div>
+          <p>November 2020 - May 2021</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Developed Alerting-Application for internal system alerts and customer notifications</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: ReactJS, Java, Spring Boot, OracleDB, Azure</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <h3 class="mb-0">Senior Software Engineer</h3>
+          <div class="subheading mb-3">Nouveau Labs</div>
+          <p>February 2020 - November 2020</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Developed DolphinVC, a multi-platform video conferencing app</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, OAuth2, Kafka, OracleDB, Docker, Kubernetes, AWS</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <h3 class="mb-0">Software Engineer</h3>
+          <div class="subheading mb-3">AllGoVision Technologies</div>
+          <p>March 2018 - December 2019</p>
+          <ul class="fa-ul mb-0">
+            <li><i class="fa-li fa fa-check"></i>Built AllGoVision Analytics with 50+ ML/DL/AI features, serving 2K+ companies</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, NodeJS, Angular, MongoDB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+      <div class="my-auto">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Languages & Platforms</h4>
+            <ul class="skill-list">
+              <li>Java</li>
+              <li>Python</li>
+              <li>Node.js</li>
+              <li>JavaScript</li>
+              <li>C/C++</li>
+              <li>Windows, Mac, Linux</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Frameworks & Tools</h4>
+            <ul class="skill-list">
+              <li>Spring Boot/Cloud</li>
+              <li>React.js/Angular</li>
+              <li>GraphQL</li>
+              <li>Docker/Kubernetes</li>
+              <li>Jenkins/JMeter</li>
+              <li>JUnit/Mockito</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Databases & Cloud</h4>
+            <ul class="skill-list">
+              <li>MySQL/PostgreSQL</li>
+              <li>MongoDB/Cassandra</li>
+              <li>Cosmos DB/DynamoDB</li>
+              <li>AWS/Azure/GCP</li>
+              <li>ElasticSearch/Solr</li>
+              <li>Redis/Memcache</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>AI & DevOps</h4>
+            <ul class="skill-list">
+              <li>ChatGPT/Gemini</li>
+              <li>Kafka/RabbitMQ</li>
+              <li>Grafana/Prometheus</li>
+              <li>SonarQube/Splunk</li>
+              <li>DynaTrace/Lenses</li>
+              <li>BPMN/Camunda</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+      <div class="my-auto">
+        <h2 class="section-title">Education</h2>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Manipal Institute of Technology</h3>
+            <div class="subheading mb-3">Bachelor of Technology</div>
+            <div>Computer Science and Engineering</div>
+            <p>CGPA: 6.64/10</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2014 - May 2017</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">NTTF Dharwad</h3>
+            <div class="subheading mb-3">Diploma in Computer Science</div>
+            <p>Percentage: 80.54%</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2011 - June 2014</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">R.L.S High School, Dharwad</h3>
+            <div class="subheading mb-3">Secondary School Certificate (10th)</div>
+            <p>Percentage: 81.12%</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">June 2010 - May 2011</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
       <div class="my-auto">
-        <h2 class="mb-5">Area of Interests</h2>
+        <h2 class="section-title">Areas of Interest</h2>
         <ul class="fa-ul mb-0">
           <li>
-            <i class="fa-li fa fa-star"></i>
-            Implementation of time – efficient Data Structures
+            <i class="fa-li fa fa-check"></i>
+            Artificial Intelligence, Machine Learning, and Deep Learning
           </li>
           <li>
-            <i class="fa-li fa fa-star"></i>
-            Implementation of new algorithms and their respective time/space complexities.
+            <i class="fa-li fa fa-check"></i>
+            Implementation of time-efficient data structures
           </li>
           <li>
-            <i class="fa-li fa fa-star"></i>
-            Desktop, web, and mobile application development.
+            <i class="fa-li fa fa-check"></i>
+            Implementation of new algorithms and their time/space complexities
           </li>
           <li>
-            <i class="fa-li fa fa-star"></i>
-            Game Developing and Game Programming.
+            <i class="fa-li fa fa-check"></i>
+            Desktop, web, and mobile application development
           </li>
           <li>
-            <i class="fa-li fa fa-star"></i>
-            Artificial Intelligence, machine and deep learning development.
+            <i class="fa-li fa fa-check"></i>
+            Game development and programming
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="employment">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="certificates">
       <div class="my-auto">
-        <h2 class="mb-5">Employment</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Senior Software Engineer</h3>
-            <div class="subheading mb-3"><a href="https://www.nouveau-labs.com/" target="_blank">Nouveau Labs PVT. LTD</a></div>
-            <p class="mb-1">Roles and Responsibilities</p>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Leading development of microservices architecture and RESTful APIs using Spring Boot
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Implementing CI/CD pipelines using Jenkins and Docker for automated deployment
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Designing and developing scalable database solutions using PostgreSQL and MongoDB
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Mentoring junior developers and conducting code reviews
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Implementing AWS services for cloud infrastructure and deployment
-              </li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-center">
-            <span class="text-primary">February 2020 - Present</span>
-          </div>
+        <h2 class="section-title">Certificates</h2>
+        
+        <div class="filter-buttons mb-4">
+          <button class="btn btn-primary active" data-filter="all">All</button>
+          <button class="btn btn-outline-primary" data-filter="professional">Professional</button>
+          <button class="btn btn-outline-primary" data-filter="hackerrank">HackerRank</button>
+          <button class="btn btn-outline-primary" data-filter="linkedin">LinkedIn</button>
+          <button class="btn btn-outline-primary" data-filter="coursera">Coursera</button>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Software Engineer</h3>
-            <div class="subheading mb-3"><a href="https://www.magicbricks.com/" target="_blank">MagicBricks.com</a></div>
-            <p class="mb-1">Roles and Responsibilities</p>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Developed and maintained real estate property listing features using Java and Spring Framework
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Implemented responsive UI components using Angular and Bootstrap
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Optimized database queries and improved application performance
-              </li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2019 - February 2020</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Software Engineer</h3>
-            <div class="subheading mb-3"><a href="https://allgovision.com/" target="_blank">AllGoVision Technologies</a></div>
-            <p class="mb-1">Roles and Responsibilities</p>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Developed computer vision and analytics solutions using Java and Python
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Implemented RESTful APIs and microservices architecture
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Integrated machine learning models for object detection and tracking
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Designed and developed responsive web applications using Angular
-              </li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">March 2018 - December 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Software Developer Intern</h3>
-            <div class="subheading mb-3"><a href="https://enquero.com/" target="_blank"> Enquero Global</a></div>
-            <p>I worked as a software developer intern with Enquero Global. In this period of time, I worked on a
-              project called send Grid Email Manager</p>
-            <p class="mb-1">Roles and Responsibilities</p>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Taking on small software development projects then presenting my work to the
-                leadership team.
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Assisting with process improvements, making suggestions on workflow changes where
-                needed.
-              </li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2017 - October 2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Software Engineer Intern</h3>
-            <div class="subheading mb-3"><a href="https://www.doodleblue.com/" target="_blank">Doodlble Innovations</a>
+        <div class="certificates-grid">
+          <div class="certificate-card professional udemy">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
             </div>
-            <p>I worked as a Software Engineer intern in Doodleblue Innovations. during this time, I worked on a project
-              called Hasty-Parking. it's a reservation app for car parking.</p>
-            <p class="mb-1">Roles and Responsibilities</p>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Work with senior developers to design algorithms and flowcharts.
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Produce clean, efficient code based on specifications.
-              </li>
-              <li>
-                <i class="fa-li fa fa-arrow-right"></i>
-                Participating in weekly meetings with the entire internship team.
-              </li>
-            </ul>
+            <div class="certificate-content">
+              <h5><a href="https://www.udemy.com/certificate/UC-5b3312c7-f523-4511-bd71-3493a1c08d4f/" target="_blank">Generative AI</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-primary">Udemy</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">February 2017 - June 2017</span>
+
+          <div class="certificate-card professional coursera">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.coursera.org/account/accomplishments/verify/OIDRUBBHNLGH" target="_blank">Advanced React</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-info">Coursera</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional coursera">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.coursera.org/account/accomplishments/certificate/J282QAZ6CQ3F" target="_blank">Exam Prep CKA: Certified Kubernetes Administrator</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-info">Coursera</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional skilljar">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://verify.skilljar.com/c/hi9qm34coj63" target="_blank">BPMN Overview</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-warning">Skilljar</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional linkedin">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.linkedin.com/learning/certificates/c628829b224a06f5a26c5b1e32e56ffd1d040262fdfaa0482295f9b7678a2dcb" target="_blank">Learning GraphQL</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-secondary">LinkedIn Learning</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional linkedin">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.linkedin.com/learning/certificates/d3ba3202025ec8b55f726953747905020e66e88d9eeb8df3f328c509af3824f0" target="_blank">Learning Kubernetes (2018)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-secondary">LinkedIn Learning</span>
+                <span class="certificate-date">2018</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/53a5b0a9f9be" target="_blank">JavaScript (Intermediate)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional udemy">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.udemy.com/certificate/UC-b844646b-946c-412c-8856-b2c3498f42a1/" target="_blank">Learn Java Unit Testing with Junit & Mockito in 30 Steps</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-primary">Udemy</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/6600849c936d" target="_blank">Java (Basic)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/1444616f4785" target="_blank">JavaScript (Intermediate)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/b81d11ec346d" target="_blank">Problem Solving (Advanced)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/db458d8c9338" target="_blank">Problem Solving (Basic)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/2001b5081bdb" target="_blank">React (Basic)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/19ef91dbd737" target="_blank">SQL (Basic)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card hackerrank">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.hackerrank.com/certificates/afd6f5e4359c" target="_blank">SQL (Intermediate)</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-success">HackerRank</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional udemy">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.udemy.com/certificate/UC-6658e3f3-ac7c-4bd6-8a9b-6c4ebb47621f/" target="_blank">Master Microservices with Spring Boot and Spring Cloud</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-primary">Udemy</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional udemy">
+            <div class="certificate-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.udemy.com/certificate/UC-437dfca9-c5bc-498a-8e96-1e567708d564/" target="_blank">Jenkins, From Zero To Hero: Become a DevOps Jenkins Master</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-primary">Udemy</span>
+                <span class="certificate-date">2024</span>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-
     </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="ai-chat">
       <div class="my-auto">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Manipal Institute Of Technology,Manipal</h3>
-            <div class="subheading mb-3">Bachelor of Technology</div>
-            <div> Computer Science and Engineering</div>
-            <p>GPA: 6.64</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2014 - May 2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">NTTF Dharwad</h3>
-            <div class="subheading mb-3">Diploma</div>
-            <div>Computer Science</div>
-            <p>Percentage: 80.54</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2011 - June 2014</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">R.L.S High School Dharwad</h3>
-            <div class="subheading mb-3">10th</div>
-            <div>PCMB</div>
-            <p>Percentage: 81.12</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2010 - June 2011</span>
+        <h2 class="section-title">AI Career Assistant</h2>
+        
+        <div class="ai-chat-container">
+          <div class="ai-chat-content">
+            <div class="ai-chat-icon">
+              <i class="fa fa-robot"></i>
+            </div>
+            <div class="ai-chat-text">
+              <p class="lead mb-4">
+                An interactive AI chatbot that simulates conversations with Manjunath Asundi about his professional background, skills, and experience. The chatbot is trained on Manjunath's resume, LinkedIn profile, and course certifications to provide accurate responses about his career journey.
+              </p>
+              <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="btn btn-primary btn-lg">
+                <i class="fa fa-comments mr-2"></i>
+                Chat with AI Assistant
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
       <div class="my-auto">
-        <h2 class="mb-5">Projects</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-3">
-          <div class="resume-content mr-auto">
-            <h4 class="mb-0">AllGoVision Alarm Center 4.0 (Web Version) at AllGoVision Technologies</h4>
-            <!-- <div class="subheading mb-3">AllGoVision Technologies</div> -->
-            <p> This is the view app of alarms. it contains multiple features like attendance
-              management, RLVD, FR, ANPR, Smart search and live object tracking.
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">February 2019 - December 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-3">
-          <div class="resume-content mr-auto">
-            <h4 class="mb-0">AllGoVision Analytics 4.0 (Web Version) at AllGoVision Technologies</h4>
-            <!-- <div class="subheading mb-3">AllGoVision Technologies</div> -->
-            <p> It's the main product of Allgovision. this will communicate with machine learning and deep learning
-              modules.
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">April 2018 - January 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-3">
-          <div class="resume-content mr-auto">
-            <h4 class="mb-0">SendGrid Email Manager at VMware software India PVT LTD.</h4>
-            <!-- <div class="subheading mb-3">AllGoVision Technologies</div> -->
-            <p> It sends automatic e-mails from send grid Manager with an attachment of HTML template to the recipients
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2017 - September 2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h4 class="mb-0">Hasty Parking at Doodleblue Innovations Pvt. Ltd.</h4>
-            <!-- <div class="subheading mb-3">AllGoVision Technologies</div> -->
-            <p>Hasty Parking is a car parking reservation system. It helps to book parking area for present and future
-              usage by making an online payment. Also, rent the car parking areas.
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">February 2017 - May 2017</span>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-      <div class="my-auto">
-        <h2 class="mb-5">Skills</h2>
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-java" title="Java"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-spring" title="Spring Framework"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-python" title="Python"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-javascript" title="JavaScript"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-angular" title="Angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-react" title="React"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-docker" title="Docker"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-aws" title="AWS"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-jenkins" title="Jenkins"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-mongodb" title="MongoDB"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-postgresql" title="PostgreSQL"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-git" title="Git"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Microservices Architecture
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            RESTful API Design
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Test Driven Development
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            CI/CD Implementation
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cloud Architecture (AWS)
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-    <div class="my-auto">
-      <h2 class="mb-5">Awards &amp; Certifications</h2>
-      <ul class="fa-ul mb-0">
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          MUCET(MIT Manipal) All India 54th rank. </li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          Been in top 30 in all India ranking during Diploma.</li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          CCNA Exploration v4 certified in 2014. </li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          Maintaining good ranking in Hackerrank, Hackerearth. </li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          Hackerrank Profile - 
-          <a href="https://www.hackerrank.com/manju07" target="_blank">https://www.hackerrank.com/manju07</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-trophy text-warning"></i>
-          HackerEarth Profile -
-          <a href="https://www.hackerearth.com/@itzmemanju16" target="_blank">​https://www.hackerearth.com/@itzmemanju16</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.udemy.com/certificate/UC-5b3312c7-f523-4511-bd71-3493a1c08d4f/" target="_blank">Generative AI</a> - Udemy
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.coursera.org/account/accomplishments/verify/OIDRUBBHNLGH" target="_blank">Advanced React</a> - Coursera
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.coursera.org/account/accomplishments/certificate/J282QAZ6CQ3F" target="_blank">Exam Prep CKA: Certified Kubernetes Administrator</a> - Coursera
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://verify.skilljar.com/c/hi9qm34coj63" target="_blank">BPMN Overview</a> - Skilljar
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.linkedin.com/learning/certificates/c628829b224a06f5a26c5b1e32e56ffd1d040262fdfaa0482295f9b7678a2dcb" target="_blank">Learning GraphQL</a> - LinkedIn Learning
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.linkedin.com/learning/certificates/d3ba3202025ec8b55f726953747905020e66e88d9eeb8df3f328c509af3824f0" target="_blank">Learning Kubernetes (2018)</a> - LinkedIn Learning
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/53a5b0a9f9be" target="_blank">JavaScript (Intermediate)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.udemy.com/certificate/UC-b844646b-946c-412c-8856-b2c3498f42a1/" target="_blank">Learn Java Unit Testing with Junit & Mockito in 30 Steps</a> - Udemy
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/6600849c936d" target="_blank">Java (Basic)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/1444616f4785" target="_blank">JavaScript (Intermediate)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/b81d11ec346d" target="_blank">Problem Solving (Advanced)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/db458d8c9338" target="_blank">Problem Solving (Basic)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/2001b5081bdb" target="_blank">React (Basic)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/19ef91dbd737" target="_blank">SQL (Basic)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.hackerrank.com/certificates/afd6f5e4359c" target="_blank">SQL (Intermediate)</a> - HackerRank
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.udemy.com/certificate/UC-6658e3f3-ac7c-4bd6-8a9b-6c4ebb47621f/" target="_blank">Master Microservices with Spring Boot and Spring Cloud</a> - Udemy
-        </li>
-        <li>
-          <i class="fa-li fa fa-certificate text-warning"></i>
-          <a href="https://www.udemy.com/certificate/UC-437dfca9-c5bc-498a-8e96-1e567708d564/" target="_blank">Jenkins, From Zero To Hero: Become a DevOps Jenkins Master</a> - Udemy
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="courses">
-    <div class="my-auto">
-      <h2 class="mb-5">Courses &amp; Certifications</h2>
-      
-      <div class="filter-buttons mb-4">
-        <button class="btn btn-primary active" data-filter="all">All</button>
-        <button class="btn btn-outline-primary" data-filter="professional">Professional</button>
-        <button class="btn btn-outline-primary" data-filter="hackerrank">HackerRank</button>
-      </div>
-
-      <div class="courses-container">
-        <div class="subheading mb-3">Professional Development</div>
-        <div class="row">
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.udemy.com/certificate/UC-5b3312c7-f523-4511-bd71-3493a1c08d4f/" target="_blank">Generative AI</a></h5>
-                <span class="badge badge-primary">Udemy</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.coursera.org/account/accomplishments/verify/OIDRUBBHNLGH" target="_blank">Advanced React</a></h5>
-                <span class="badge badge-primary">Coursera</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.coursera.org/account/accomplishments/certificate/J282QAZ6CQ3F" target="_blank">Exam Prep CKA: Certified Kubernetes Administrator</a></h5>
-                <span class="badge badge-primary">Coursera</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://verify.skilljar.com/c/hi9qm34coj63" target="_blank">BPMN Overview</a></h5>
-                <span class="badge badge-primary">Skilljar</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.linkedin.com/learning/certificates/c628829b224a06f5a26c5b1e32e56ffd1d040262fdfaa0482295f9b7678a2dcb" target="_blank">Learning GraphQL</a></h5>
-                <span class="badge badge-primary">LinkedIn Learning</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.linkedin.com/learning/certificates/d3ba3202025ec8b55f726953747905020e66e88d9eeb8df3f328c509af3824f0" target="_blank">Learning Kubernetes (2018)</a></h5>
-                <span class="badge badge-primary">LinkedIn Learning</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.udemy.com/certificate/UC-b844646b-946c-412c-8856-b2c3498f42a1/" target="_blank">Learn Java Unit Testing with Junit & Mockito in 30 Steps</a></h5>
-                <span class="badge badge-primary">Udemy</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.udemy.com/certificate/UC-6658e3f3-ac7c-4bd6-8a9b-6c4ebb47621f/" target="_blank">Master Microservices with Spring Boot and Spring Cloud</a></h5>
-                <span class="badge badge-primary">Udemy</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item professional">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.udemy.com/certificate/UC-437dfca9-c5bc-498a-8e96-1e567708d564/" target="_blank">Jenkins, From Zero To Hero: Become a DevOps Jenkins Master</a></h5>
-                <span class="badge badge-primary">Udemy</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="subheading mb-3 mt-4">HackerRank Certifications</div>
-        <div class="row">
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/53a5b0a9f9be" target="_blank">JavaScript (Intermediate)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/6600849c936d" target="_blank">Java (Basic)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/1444616f4785" target="_blank">JavaScript (Intermediate)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/b81d11ec346d" target="_blank">Problem Solving (Advanced)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/db458d8c9338" target="_blank">Problem Solving (Basic)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/2001b5081bdb" target="_blank">React (Basic)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/19ef91dbd737" target="_blank">SQL (Basic)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 course-item hackerrank">
-            <div class="course-card">
-              <div class="course-icon">
-                <i class="fa fa-certificate text-warning"></i>
-              </div>
-              <div class="course-content">
-                <h5><a href="https://www.hackerrank.com/certificates/afd6f5e4359c" target="_blank">SQL (Intermediate)</a></h5>
-                <span class="badge badge-success">HackerRank</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="chatbot">
-    <div class="my-auto">
-      <h2 class="mb-5">Chat with AI Assistant</h2>
-      <div class="chatbot-description">
-        <p>An interactive AI chatbot that simulates conversations with Manjunath Asundi about his professional background, skills, and experience. The chatbot is trained on Manjunath's resume, LinkedIn profile, and course certifications to provide accurate responses about his career journey.</p>
-      </div>
-      <div class="chatbot-link-container">
-        <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="chatbot-link">
-          <i class="fa fa-robot"></i>
-          <span>Start Career Conversation</span>
-          <i class="fa fa-external-link"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .filter-buttons {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .filter-buttons .btn {
-      margin: 0 0.5rem;
-      transition: all 0.3s ease;
-      border-radius: 20px;
-      padding: 0.5rem 1.5rem;
-      font-weight: 500;
-    }
-    
-    .filter-buttons .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    
-    .filter-buttons .btn.active {
-      transform: translateY(-2px);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    
-    .course-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .course-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #bd5d38;
-      transform: scaleY(0);
-      transition: transform 0.3s ease;
-    }
-    
-    .course-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .course-card:hover::before {
-      transform: scaleY(1);
-    }
-    
-    .course-icon {
-      font-size: 2rem;
-      margin-right: 1rem;
-      color: #bd5d38;
-      transition: transform 0.3s ease;
-    }
-    
-    .course-card:hover .course-icon {
-      transform: scale(1.1);
-    }
-    
-    .course-content {
-      flex: 1;
-    }
-    
-    .course-content h5 {
-      margin: 0;
-      font-size: 1.1rem;
-      line-height: 1.4;
-    }
-    
-    .course-content h5 a {
-      color: #343a40;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-    
-    .course-content h5 a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #bd5d38;
-      transition: width 0.3s ease;
-    }
-    
-    .course-content h5 a:hover {
-      color: #bd5d38;
-    }
-    
-    .course-content h5 a:hover::after {
-      width: 100%;
-    }
-    
-    .badge {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-    }
-    
-    .badge:hover {
-      transform: scale(1.05);
-    }
-    
-    .course-item {
-      display: none;
-      animation: fadeIn 0.5s ease;
-    }
-    
-    .course-item.show {
-      display: block;
-    }
-    
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .courses-container {
-      position: relative;
-    }
-
-    .courses-container::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .courses-container:hover::after {
-      opacity: 1;
-    }
-
-    .subheading {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2rem !important;
-    }
-
-    .subheading::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: #bd5d38;
-      transition: width 0.3s ease;
-    }
-
-    .subheading:hover::after {
-      width: 100%;
-    }
-
-    .chatbot-description {
-      background: #f8f9fa;
-      border-left: 4px solid #bd5d38;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 0 8px 8px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .chatbot-description p {
-      margin: 0;
-      color: #495057;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .chatbot-link-container {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .chatbot-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      color: #343a40;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .chatbot-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      color: #bd5d38;
-      text-decoration: none;
-    }
-
-    .chatbot-link i {
-      color: #bd5d38;
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .welcome-text {
-      font-size: 1.2rem;
-      color: #bd5d38;
-      margin-bottom: 1.5rem !important;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #495057;
-    }
-
-    .social-links {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .social-link {
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-    }
-
-    .social-link .fa-stack-2x {
-      color: #bd5d38;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover .fa-stack-2x {
-      color: #343a40;
-    }
-
-    .subheading {
-      font-size: 1.2rem;
-      color: #6c757d;
-    }
-
-    .subheading a {
-      color: #bd5d38;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .subheading a:hover {
-      color: #343a40;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .text-primary {
-      color: #bd5d38 !important;
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterButtons = document.querySelectorAll('.filter-buttons .btn');
-      const courseItems = document.querySelectorAll('.course-item');
-      
-      // Show all items initially
-      courseItems.forEach(item => item.classList.add('show'));
-      
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Remove active class from all buttons
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          // Add active class to clicked button
-          this.classList.add('active');
-          
-          const filter = this.getAttribute('data-filter');
-          
-          // Add fade out animation
-          courseItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(10px)';
-          });
-          
-          // Wait for fade out animation
-          setTimeout(() => {
-            courseItems.forEach(item => {
-              if (filter === 'all' || item.classList.contains(filter)) {
-                item.classList.add('show');
-                // Trigger reflow
-                void item.offsetWidth;
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-              } else {
-                item.classList.remove('show');
-              }
-            });
-          }, 300);
-        });
-      });
-
-      // Add hover effect for course cards
-      const courseCards = document.querySelectorAll('.course-card');
-      courseCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-5px)';
-        });
+        <h2 class="section-title">Featured Projects</h2>
         
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Columbus Foundation App</h3>
+                <div class="project-meta">
+                  <span class="project-company">Walmart Labs</span>
+                  <span class="project-date">2022-2024</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">JUnit5</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">CosmosDB</span>
+                    <span class="tech-tag">Kubernetes</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 100ms latency for 25K+ TPM</li>
+                    <li><i class="fa fa-check-circle"></i> Robust error handling system</li>
+                    <li><i class="fa fa-check-circle"></i> Scalable microservices architecture</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-marketplace integration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-video-camera"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>AllGoVision Analytics</h3>
+                <div class="project-meta">
+                  <span class="project-company">AllGoVision Technologies</span>
+                  <span class="project-date">2018-2019</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A comprehensive analytics platform with 50+ ML/DL/AI features, serving over 2,000 companies. The system processes and analyzes video data to provide intelligent insights and automated monitoring solutions.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">ML/AI</span>
+                    <span class="tech-tag">Computer Vision</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 50+ ML/DL/AI features</li>
+                    <li><i class="fa fa-check-circle"></i> 2,000+ companies served</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time video analytics</li>
+                    <li><i class="fa fa-check-circle"></i> Automated monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-video-camera"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>DolphinVC</h3>
+                <div class="project-meta">
+                  <span class="project-company">Nouveau Labs</span>
+                  <span class="project-date">2020</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A multi-platform video conferencing application with features for scheduling and instant meetings. The system supports high-quality video calls, screen sharing, and meeting management.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">OAuth2</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">OracleDB</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> Real-time video streaming</li>
+                    <li><i class="fa fa-check-circle"></i> Secure authentication</li>
+                    <li><i class="fa fa-check-circle"></i> Scalable meeting management</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-platform support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fa fa-mobile"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Recharge Service</h3>
+                <div class="project-meta">
+                  <span class="project-company">Zeta Suite</span>
+                  <span class="project-date">2021-2022</span>
+                </div>
+              </div>
+              <p class="project-description">
+                A high-volume transaction processing system for mobile and DTH plan recharges, handling over 2 million transactions daily. The system ensures reliable and secure payment processing.
+              </p>
+              <div class="project-details">
+                <div class="project-tech">
+                  <h4><i class="fa fa-code"></i> Technologies</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">AngularJS</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Microservices</span>
+                  </div>
+                </div>
+                <div class="project-achievements">
+                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                  <ul>
+                    <li><i class="fa fa-check-circle"></i> 2M+ daily transactions</li>
+                    <li><i class="fa fa-check-circle"></i> Secure payment gateway</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time tracking</li>
+                    <li><i class="fa fa-check-circle"></i> Automated reconciliation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .filter-buttons {
+        text-align: center;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .filter-buttons .btn {
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+      
+      .filter-buttons .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .filter-buttons .btn.active {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .certificate-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+      
+      .certificate-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--secondary-color);
+        transform: scaleY(0);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .certificate-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      }
+      
+      .certificate-card:hover::before {
+        transform: scaleY(1);
+      }
+      
+      .certificate-icon {
+        font-size: 2.5rem;
+        margin-right: 1.5rem;
+        color: var(--secondary-color);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.8;
+      }
+      
+      .certificate-card:hover .certificate-icon {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+      }
+      
+      .certificate-content {
+        flex: 1;
+      }
+      
+      .certificate-content h5 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      
+      .certificate-content h5 a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+      
+      .certificate-content h5 a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+      
+      .certificate-content h5 a:hover {
+        color: var(--secondary-color);
+      }
+      
+      .certificate-content h5 a:hover::after {
+        width: 100%;
+      }
+      
+      .certificate-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.75rem;
+      }
+      
+      .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      
+      .certificate-date {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 500;
+      }
+      
+      .certificate-card {
+        display: none;
+        animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .certificate-card.show {
+        display: flex;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Platform-specific colors */
+      .badge-primary { background-color: #a435f0; }
+      .badge-info { background-color: #0056d2; }
+      .badge-success { background-color: #1ba94c; }
+      .badge-warning { background-color: #f7b731; }
+      .badge-secondary { background-color: #0077b5; }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .certificates-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .filter-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        
+        .filter-buttons .btn {
+          margin: 0.25rem 0;
+        }
+      }
+
+      .ai-chat-container {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .ai-chat-content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .ai-chat-icon {
+        font-size: 4rem;
+        color: var(--secondary-color);
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+
+      .ai-chat-content:hover .ai-chat-icon {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+      }
+
+      .ai-chat-text {
+        flex: 1;
+      }
+
+      .ai-chat-text .lead {
+        color: var(--text-color);
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .ai-chat-text .btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .ai-chat-text .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      .ai-chat-text .btn i {
+        margin-right: 0.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .ai-chat-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+
+        .ai-chat-icon {
+          font-size: 3rem;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-buttons .btn');
+        const certificateCards = document.querySelectorAll('.certificate-card');
+        
+        // Show all items initially
+        certificateCards.forEach(card => card.classList.add('show'));
+        
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Add fade out animation
+            certificateCards.forEach(card => {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+            });
+            
+            // Wait for fade out animation
+            setTimeout(() => {
+              certificateCards.forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                  card.classList.add('show');
+                  // Trigger reflow
+                  void card.offsetWidth;
+                  card.style.opacity = '1';
+                  card.style.transform = 'translateY(0)';
+                } else {
+                  card.classList.remove('show');
+                }
+              });
+            }, 300);
+          });
         });
       });
-    });
-  </script>
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all sections and nav links
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        // Function to handle scroll spy
+        function handleScrollSpy() {
+          const scrollPosition = window.scrollY;
+
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              // Remove active class from all links
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+              });
+              
+              // Add active class to corresponding link
+              const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+              if (activeLink) {
+                activeLink.classList.add('active');
+              }
+            }
+          });
+        }
+
+        // Add click event listeners to nav links
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            this.classList.add('active');
+          });
+        });
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScrollSpy);
+        // Initial call to set active state on page load
+        handleScrollSpy();
+      });
+    </script>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -1175,7 +1602,7 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="javascripts/resume.min.js"></script>
+  <script src="js/resume.min.js"></script>
 
 </body>
 
