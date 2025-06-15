@@ -87,19 +87,31 @@
       font-weight: 700;
       margin-bottom: 1.5rem;
       line-height: 1.1;
-      background: var(--gradient-accent);
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .intro-header .text-primary {
-      color: var(--secondary-color) !important;
+      color: #64ffda !important;
     }
 
     .subheading {
       font-size: 1.3rem;
-      color: var(--text-color);
+      color: #64ffda;
       margin-bottom: 2rem;
+    }
+
+    .subheading a {
+      color: #64ffda;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+    }
+
+    .subheading a:hover {
+      color: #64ffda;
+      border-bottom-color: #64ffda;
     }
 
     .intro-content {
@@ -115,7 +127,25 @@
       font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 2rem;
-      color: var(--text-color);
+      color: #ccd6f6;
+    }
+
+    .intro-paragraph:first-of-type {
+      color: #64ffda;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .intro-paragraph:nth-of-type(2) {
+      color: #e6f1ff;
+    }
+
+    .intro-paragraph:nth-of-type(3) {
+      color: #ccd6f6;
+    }
+
+    .intro-paragraph:last-of-type {
+      color: #8892b0;
     }
 
     /* Navigation */
@@ -375,14 +405,14 @@
 
     /* AI Chat Section */
     .ai-chat-container {
-      background: rgba(17, 34, 64, 0.7);
+      background: linear-gradient(135deg, rgba(17, 34, 64, 0.95) 0%, rgba(10, 25, 47, 0.95) 100%);
       border-radius: 24px;
-      padding: 4rem;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
+      padding: 3rem;
+      margin-top: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: 1px solid rgba(100, 255, 218, 0.2);
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(100, 255, 218, 0.1);
     }
 
     .ai-chat-container::before {
@@ -390,21 +420,44 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--gradient-accent);
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .ai-chat-container:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--hover-shadow);
-      border-color: rgba(100, 255, 218, 0.2);
+    .ai-chat-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
     }
 
     .ai-chat-icon {
-      font-size: 4rem;
+      font-size: 5rem;
       color: var(--secondary-color);
-      margin-bottom: 2rem;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .ai-chat-content:hover .ai-chat-icon {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 1;
+    }
+
+    .ai-chat-text {
+      flex: 1;
+    }
+
+    .ai-chat-text h3 {
+      color: var(--secondary-color);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
 
     .ai-chat-text .lead {
@@ -414,19 +467,75 @@
       margin-bottom: 2rem;
     }
 
+    .ai-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--heading-color);
+      font-size: 1.1rem;
+    }
+
+    .feature-item i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
     .ai-chat-text .btn {
       background: transparent;
       border: 2px solid var(--secondary-color);
       color: var(--secondary-color);
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       border-radius: 30px;
       font-weight: 500;
-      transition: var(--transition);
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
     }
 
     .ai-chat-text .btn:hover {
       background: rgba(100, 255, 218, 0.1);
       transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+    }
+
+    .ai-chat-text .btn i {
+      margin-right: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .ai-chat-container {
+        padding: 2rem;
+      }
+
+      .ai-chat-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .ai-chat-icon {
+        font-size: 4rem;
+      }
+
+      .ai-features {
+        justify-content: center;
+      }
+
+      .ai-chat-text h3 {
+        font-size: 1.8rem;
+      }
+
+      .ai-chat-text .lead {
+        font-size: 1.1rem;
+      }
     }
 
     /* Social Links */
@@ -656,6 +765,474 @@
         padding: 0.3rem 0.8rem;
       }
     }
+
+    /* Education Section Styles */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .education-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-accent);
+      transition: var(--transition);
+    }
+
+    .education-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .education-card:hover::before {
+      width: 8px;
+    }
+
+    .education-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      opacity: 0.9;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .education-card:hover .education-icon {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 1;
+    }
+
+    .education-content {
+      flex: 1;
+    }
+
+    .education-content h3 {
+      color: var(--heading-color);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .education-content .subheading {
+      color: var(--secondary-color);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .education-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--text-color);
+      font-size: 1.1rem;
+    }
+
+    .detail-item i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .education-icon {
+        margin: 0 auto;
+      }
+
+      .education-details {
+        align-items: center;
+      }
+
+      .education-content h3 {
+        font-size: 1.6rem;
+      }
+
+      .education-content .subheading {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Education Timeline Styles */
+    .education-timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(to bottom, 
+        var(--secondary-color) 0%,
+        rgba(100, 255, 218, 0.3) 100%);
+    }
+
+    .education-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 3rem;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-dot {
+      position: absolute;
+      left: 12px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--secondary-color);
+      box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover .education-dot {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 6px rgba(100, 255, 218, 0.3);
+    }
+
+    .education-content {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover .education-content {
+      transform: translateX(10px);
+      border-color: rgba(100, 255, 218, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .education-header h3 {
+      color: var(--heading-color);
+      font-size: 1.6rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .education-date {
+      color: var(--secondary-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      background: rgba(100, 255, 218, 0.1);
+      border-radius: 20px;
+    }
+
+    .education-body {
+      color: var(--text-color);
+    }
+
+    .education-degree {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    .education-major {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .education-score {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .score-label {
+      color: var(--text-color);
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .score-value {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .education-timeline::before {
+        left: 15px;
+      }
+
+      .education-item {
+        padding-left: 45px;
+      }
+
+      .education-dot {
+        left: 7px;
+        width: 16px;
+        height: 16px;
+      }
+
+      .education-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .education-header h3 {
+        font-size: 1.4rem;
+      }
+
+      .education-date {
+        align-self: flex-start;
+      }
+
+      .education-content {
+        padding: 1.5rem;
+      }
+    }
+
+    /* About Section Styles */
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .about-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+      gap: 3rem;
+    }
+
+    .name-container {
+      flex: 1;
+    }
+
+    .name-container h1 {
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title-badge {
+      display: inline-block;
+      background: rgba(100, 255, 218, 0.1);
+      color: #64ffda;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      border: 1px solid rgba(100, 255, 218, 0.2);
+    }
+
+    .contact-info {
+      flex: 1;
+      background: rgba(17, 34, 64, 0.7);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .contact-info .subheading {
+      color: #ccd6f6;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-info .subheading i {
+      color: #64ffda;
+      font-size: 1.2rem;
+    }
+
+    .contact-info .subheading a {
+      color: #64ffda;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+    }
+
+    .contact-info .subheading a:hover {
+      border-bottom-color: #64ffda;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .about-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(100, 255, 218, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      background: rgba(100, 255, 218, 0.1);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .card-header i {
+      color: #64ffda;
+      font-size: 1.5rem;
+    }
+
+    .card-header h3 {
+      color: #ccd6f6;
+      font-size: 1.4rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .intro-paragraph {
+      color: #8892b0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .social-links .fa-stack {
+      transition: all 0.3s ease;
+    }
+
+    .social-links .fa-stack:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .fa-circle {
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%) !important;
+    }
+
+    @media (max-width: 992px) {
+      .about-header {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .name-container h1 {
+        font-size: 4rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        padding: 1rem;
+      }
+
+      .name-container h1 {
+        font-size: 3rem;
+      }
+
+      .contact-info {
+        padding: 1.5rem;
+      }
+
+      .card-header {
+        padding: 1rem;
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Enhanced About Section Styles */
+    #about .intro-content .intro-paragraph {
+      color: #e6f1ff !important;
+      font-size: 1.18rem;
+      line-height: 1.8;
+      text-shadow: 0 1px 2px rgba(10,25,47,0.2);
+    }
+    #about .intro-header h1, #about .intro-header .text-primary {
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 
 </head>
@@ -712,38 +1289,38 @@
       <div class="my-auto">
         <div class="intro-container">
           <div class="intro-header">
-            <h1 class="mb-0">Manjunath
-              <span class="text-primary">Asundi</span>
-            </h1>
+              <h1 class="mb-0">Manjunath
+                <span class="text-primary">Asundi</span>
+              </h1>
             <div class="subheading mb-5">
               Bangalore, Karnataka 560040 · (+91) 988-698-8915 ·
-              <a href="mailto:manjunathasundi07@gmail.com">manjunathasundi07@gmail.com</a>
+                <a href="mailto:manjunathasundi07@gmail.com">manjunathasundi07@gmail.com</a>
+              </div>
             </div>
-          </div>
           <div class="intro-content">
             <div class="lead mb-5">
               <p class="mb-4 intro-paragraph">
-                Senior Software Engineer at Intuit, with a distinguished career spanning 8+ years across leading organizations including Walmart Labs, Zeta Suite, and AllGoVision Technologies. 
-                Graduated with a B.Tech in Computer Science from Manipal Institute of Technology, Manipal.
-              </p>
+                  Senior Software Engineer at Intuit, with a distinguished career spanning 8+ years across leading organizations including Walmart Labs, Zeta Suite, and AllGoVision Technologies. 
+                  Graduated with a B.Tech in Computer Science from Manipal Institute of Technology, Manipal.
+                </p>
               <p class="mb-4 intro-paragraph">
-                Proven track record in developing high-performance, scalable enterprise applications that handle mission-critical operations with low-latency requirements. 
-                Expert in full-stack development with deep expertise in Java, Spring Boot, Microservices, and Cloud Technologies.
-              </p>
+                  Proven track record in developing high-performance, scalable enterprise applications that handle mission-critical operations with low-latency requirements. 
+                  Expert in full-stack development with deep expertise in Java, Spring Boot, Microservices, and Cloud Technologies.
+                </p>
               <p class="mb-4 intro-paragraph">
-                Demonstrated excellence in building reliable, scalable systems with expertise in cloud infrastructure, performance optimization, and implementing secure architectures. 
-                Proficient in modern tech stack including Spring Boot, ReactJS, GraphQL, Kafka, and various cloud platforms (AWS, Azure, GCP). 
-                Strong background in database technologies (PostgreSQL, MongoDB, CosmosDB) and DevOps tools (Docker, Kubernetes, Jenkins). 
-                Experienced in conducting architectural reviews and implementing security best practices in enterprise applications.
-              </p>
+                  Demonstrated excellence in building reliable, scalable systems with expertise in cloud infrastructure, performance optimization, and implementing secure architectures. 
+                  Proficient in modern tech stack including Spring Boot, ReactJS, GraphQL, Kafka, and various cloud platforms (AWS, Azure, GCP). 
+                  Strong background in database technologies (PostgreSQL, MongoDB, CosmosDB) and DevOps tools (Docker, Kubernetes, Jenkins). 
+                  Experienced in conducting architectural reviews and implementing security best practices in enterprise applications.
+                </p>
               <p class="mb-4 intro-paragraph">
-                Dedicated to continuous learning, actively pursuing knowledge in AI/ML through platforms like LinkedIn Learning, Coursera, and Udemy, with recent certifications in AI and Machine Learning. 
-                Exploring the frontiers of AI technology, including Hugging Face for transformer models, ChatGPT for intelligent automation, and Google Gemini for advanced AI applications. 
-                Maintaining a strong presence on HackerRank, consistently improving problem-solving skills and staying current with emerging technologies. 
-                Passionate about learning new programming paradigms, exploring deep learning concepts, and applying AI/ML innovations to solve complex technical challenges.
-              </p>
+                  Dedicated to continuous learning, actively pursuing knowledge in AI/ML through platforms like LinkedIn Learning, Coursera, and Udemy, with recent certifications in AI and Machine Learning. 
+                  Exploring the frontiers of AI technology, including Hugging Face for transformer models, ChatGPT for intelligent automation, and Google Gemini for advanced AI applications. 
+                  Maintaining a strong presence on HackerRank, consistently improving problem-solving skills and staying current with emerging technologies. 
+                  Passionate about learning new programming paradigms, exploring deep learning concepts, and applying AI/ML innovations to solve complex technical challenges.
+                </p>
+              </div>
             </div>
-          </div>
           <div class="social-links">
             <ul class="list-inline list-social-icons mb-0">
               <li class="list-inline-item">
@@ -1070,39 +1647,218 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
       <div class="my-auto">
         <h2 class="section-title">Education</h2>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Manipal Institute of Technology, Manipal</h3>
-            <div class="subheading mb-3">Bachelor of Technology</div>
-            <div>Computer Science and Engineering</div>
-            <p>CGPA: 6.64/10</p>
+        
+        <div class="education-timeline">
+          <div class="education-item">
+            <div class="education-dot"></div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3>Manipal Institute of Technology, Manipal</h3>
+                <span class="education-date">2014 - 2017</span>
+              </div>
+              <div class="education-body">
+                <div class="education-degree">Bachelor of Technology</div>
+                <div class="education-major">Computer Science and Engineering</div>
+                <div class="education-score">
+                  <span class="score-label">CGPA</span>
+                  <span class="score-value">6.64/10</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2014 - May 2017</span>
+
+          <div class="education-item">
+            <div class="education-dot"></div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3>NTTF Dharwad</h3>
+                <span class="education-date">2011 - 2014</span>
+              </div>
+              <div class="education-body">
+                <div class="education-degree">Diploma in Computer Science</div>
+                <div class="education-score">
+                  <span class="score-label">Percentage</span>
+                  <span class="score-value">80.54%</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">NTTF Dharwad</h3>
-            <div class="subheading mb-3">Diploma in Computer Science</div>
-            <p>Percentage: 80.54%</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2011 - June 2014</span>
-          </div>
-        </div>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">R.L.S High School, Dharwad</h3>
-            <div class="subheading mb-3">Secondary School Certificate (10th)</div>
-            <p>Percentage: 81.12%</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">June 2010 - May 2011</span>
+
+          <div class="education-item">
+            <div class="education-dot"></div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3>R.L.S High School, Dharwad</h3>
+                <span class="education-date">2010 - 2011</span>
+              </div>
+              <div class="education-body">
+                <div class="education-degree">Secondary School Certificate (10th)</div>
+                <div class="education-score">
+                  <span class="score-label">Percentage</span>
+                  <span class="score-value">81.12%</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      /* Education Timeline Styles */
+      .education-timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .education-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        height: 100%;
+        width: 2px;
+        background: linear-gradient(to bottom, 
+          var(--secondary-color) 0%,
+          rgba(100, 255, 218, 0.3) 100%);
+      }
+
+      .education-item {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 3rem;
+      }
+
+      .education-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .education-dot {
+        position: absolute;
+        left: 12px;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--secondary-color);
+        box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .education-item:hover .education-dot {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 6px rgba(100, 255, 218, 0.3);
+      }
+
+      .education-content {
+        background: rgba(17, 34, 64, 0.7);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .education-item:hover .education-content {
+        transform: translateX(10px);
+        border-color: rgba(100, 255, 218, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .education-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .education-header h3 {
+        color: var(--heading-color);
+        font-size: 1.6rem;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .education-date {
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+        background: rgba(100, 255, 218, 0.1);
+        border-radius: 20px;
+      }
+
+      .education-body {
+        color: var(--text-color);
+      }
+
+      .education-degree {
+        font-size: 1.3rem;
+        color: var(--secondary-color);
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+
+      .education-major {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+      }
+
+      .education-score {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(100, 255, 218, 0.1);
+      }
+
+      .score-label {
+        color: var(--text-color);
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      .score-value {
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .education-timeline::before {
+          left: 15px;
+        }
+
+        .education-item {
+          padding-left: 45px;
+        }
+
+        .education-dot {
+          left: 7px;
+          width: 16px;
+          height: 16px;
+        }
+
+        .education-header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .education-header h3 {
+          font-size: 1.4rem;
+        }
+
+        .education-date {
+          align-self: flex-start;
+        }
+
+        .education-content {
+          padding: 1.5rem;
+        }
+      }
+    </style>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
       <div class="my-auto">
@@ -1379,12 +2135,28 @@
               <i class="fa fa-robot"></i>
             </div>
             <div class="ai-chat-text">
+              <h3 class="mb-4">Chat with AI Assistant</h3>
               <p class="lead mb-4">
-                An interactive AI chatbot that simulates conversations with Manjunath Asundi about his professional background, skills, and experience. The chatbot is trained on Manjunath's resume, LinkedIn profile, and course certifications to provide accurate responses about his career journey.
+                Experience an interactive conversation with an AI assistant trained on my professional background. 
+                Ask questions about my experience, skills, projects, or career journey, and get instant, accurate responses.
               </p>
+              <div class="ai-features mb-4">
+                <div class="feature-item">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Real-time responses</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa fa-check-circle"></i>
+                  <span>Comprehensive knowledge</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fa fa-check-circle"></i>
+                  <span>24/7 availability</span>
+                </div>
+              </div>
               <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="btn btn-primary btn-lg">
                 <i class="fa fa-comments mr-2"></i>
-                Chat with AI Assistant
+                Start Chat Now
               </a>
             </div>
           </div>
@@ -1579,25 +2351,30 @@
       }
 
       .ai-chat-container {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 20px;
-        padding: 2rem;
+        background: linear-gradient(135deg, rgba(17, 34, 64, 0.95) 0%, rgba(10, 25, 47, 0.95) 100%);
+        border-radius: 24px;
+        padding: 3rem;
         margin-top: 2rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        border: 1px solid rgba(100, 255, 218, 0.2);
+        position: relative;
+        overflow: hidden;
       }
 
       .ai-chat-content {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 3rem;
+        position: relative;
+        z-index: 1;
       }
 
       .ai-chat-icon {
-        font-size: 4rem;
+        font-size: 5rem;
         color: var(--secondary-color);
         opacity: 0.9;
         transition: all 0.3s ease;
+        flex-shrink: 0;
       }
 
       .ai-chat-content:hover .ai-chat-icon {
@@ -1609,39 +2386,88 @@
         flex: 1;
       }
 
+      .ai-chat-text h3 {
+        color: var(--secondary-color);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
       .ai-chat-text .lead {
         color: var(--text-color);
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .ai-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--heading-color);
         font-size: 1.1rem;
-        line-height: 1.6;
+      }
+
+      .feature-item i {
+        color: var(--secondary-color);
+        font-size: 1.2rem;
       }
 
       .ai-chat-text .btn {
-        padding: 0.8rem 2rem;
+        background: transparent;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+        padding: 1rem 2.5rem;
         border-radius: 30px;
         font-weight: 500;
+        font-size: 1.1rem;
         letter-spacing: 0.5px;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
       }
 
       .ai-chat-text .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        background: rgba(100, 255, 218, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
       }
 
       .ai-chat-text .btn i {
-        margin-right: 0.5rem;
+        margin-right: 0.8rem;
       }
 
       @media (max-width: 768px) {
+        .ai-chat-container {
+          padding: 2rem;
+        }
+
         .ai-chat-content {
           flex-direction: column;
           text-align: center;
-          gap: 1rem;
+          gap: 2rem;
         }
 
         .ai-chat-icon {
-          font-size: 3rem;
+          font-size: 4rem;
+        }
+
+        .ai-features {
+          justify-content: center;
+        }
+
+        .ai-chat-text h3 {
+          font-size: 1.8rem;
+        }
+
+        .ai-chat-text .lead {
+          font-size: 1.1rem;
         }
       }
     </style>
