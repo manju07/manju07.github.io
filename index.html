@@ -8,7 +8,7 @@
   <meta name="description" content="Manjunath Asundi - Senior Software Engineer with 8+ years of experience">
   <meta name="author" content="Manjunath Asundi">
 
-  <title>Manjunath Asundi - Senior Software Engineer</title>
+  <title>Manjunath Asundi | Full Stack Architect & Tech Innovator</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/manjunath-linkedin.jpeg" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -1233,11 +1233,168 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(17, 34, 64, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      background: rgba(17, 34, 64, 0.9);
+    }
+
+    .theme-toggle i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(17, 34, 64, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: rgba(17, 34, 64, 0.9);
+    }
+
+    .back-to-top i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Light Theme Variables */
+    [data-theme="light"] {
+      --primary-color: #f8f9fa;
+      --text-color: #343a40;
+      --heading-color: #212529;
+      --light-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    /* Focus States */
+    a:focus,
+    button:focus,
+    .nav-link:focus,
+    .theme-toggle:focus,
+    .back-to-top:focus {
+      outline: 2px solid var(--secondary-color);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.2);
+    }
+
+    /* Loading Animation */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(100, 255, 218, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--secondary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Image Loading Animation */
+    .lazy-image {
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+
+    .lazy-image.loaded {
+      opacity: 1;
+    }
+
+    /* Section Loading Animation */
+    .section-loading {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .section-loading.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 
 </head>
 
 <body id="page-top">
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <i class="fa fa-moon-o"></i>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="loading-spinner"></div>
+  </div>
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -1632,12 +1789,12 @@
           <div class="skill-category">
             <h4>AI & DevOps</h4>
             <ul class="skill-list">
+              <li>Agentic AI/LangGraph</li>
+              <li>Hugging Face/LangChain</li>
               <li>ChatGPT/Gemini</li>
               <li>Kafka/RabbitMQ</li>
               <li>Grafana/Prometheus</li>
               <li>SonarQube/Splunk</li>
-              <li>DynaTrace/Lenses</li>
-              <li>BPMN/Camunda</li>
             </ul>
           </div>
         </div>
@@ -2571,6 +2728,86 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+
+  <!-- Custom scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    themeToggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+      themeIcon.className = document.body.dataset.theme === 'light' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      localStorage.setItem('theme', document.body.dataset.theme);
+    });
+
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.dataset.theme = savedTheme;
+    themeIcon.className = savedTheme === 'light' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Loading Screen
+    window.addEventListener('load', () => {
+      const loading = document.querySelector('.loading');
+      loading.classList.add('hidden');
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 500);
+    });
+
+    // Lazy Loading Images
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(img => {
+      img.classList.add('lazy-image');
+      imageObserver.observe(img);
+    });
+
+    // Section Loading Animation
+    const sections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      section.classList.add('section-loading');
+      sectionObserver.observe(section);
+    });
+  </script>
 
 </body>
 
