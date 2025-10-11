@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Manjunath Asundi - Technical Blog Posts on Software Engineering, AI/ML, and Technology">
+  <meta name="author" content="Manjunath Asundi">
+
+  <title>Blogs | Manjunath Asundi</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/manjunath-linkedin.jpeg" />
+  
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #0a192f;
+      --secondary-color: #64ffda;
+      --accent-color: #ff6b6b;
+      --text-color: #8892b0;
+      --heading-color: #ccd6f6;
+      --light-bg: #f8f9fa;
+      --section-spacing: 6rem;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --hover-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --gradient-primary: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+      --gradient-accent: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
+    }
+
+    /* Light Theme Variables */
+    [data-theme="light"] {
+      --primary-color: #f8f9fa;
+      --text-color: #343a40;
+      --heading-color: #212529;
+      --light-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      --gradient-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      line-height: 1.7;
+      background-color: var(--primary-color);
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: transparent !important;
+      padding: 2rem;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 25, 47, 0.9) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      color: var(--secondary-color) !important;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .navbar-brand:hover {
+      color: var(--secondary-color) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav {
+      background: rgba(17, 34, 64, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 0.8rem;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--heading-color) !important;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      margin: 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-accent);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link:hover::before,
+    .navbar-nav .nav-link.active::before {
+      opacity: 0.1;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+      background: rgba(17, 34, 64, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      background: rgba(17, 34, 64, 0.9);
+    }
+
+    .theme-toggle i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1001;
+      background: rgba(17, 34, 64, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: rgba(17, 34, 64, 0.9);
+    }
+
+    .back-to-top i {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Loading Screen */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(100, 255, 218, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--secondary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Main Content */
+    .main-content {
+      min-height: 100vh;
+      background: var(--gradient-primary);
+      padding: 8rem 0 4rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .page-title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Search and Filter Section */
+    .search-filter-section {
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .search-box {
+      width: 100%;
+      background: rgba(17, 34, 64, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 20px;
+      padding: 1rem 3rem 1rem 1.5rem;
+      color: var(--heading-color);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .search-box:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+    }
+
+    .search-box::placeholder {
+      color: var(--text-color);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      color: var(--text-color);
+      padding: 0.6rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    .results-count {
+      text-align: center;
+      color: var(--text-color);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      padding: 3rem;
+      margin: 4rem auto;
+      max-width: 800px;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .newsletter-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .newsletter-section h3 {
+      color: var(--secondary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-section p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      background: rgba(10, 25, 47, 0.7);
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      color: var(--heading-color);
+      font-size: 1rem;
+    }
+
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-color);
+    }
+
+    .newsletter-form button {
+      background: transparent;
+      border: 2px solid var(--secondary-color);
+      color: var(--secondary-color);
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Blog Grid */
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .blog-card.hidden {
+      display: none;
+    }
+
+    .blog-card {
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      position: relative;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--hover-shadow);
+      border-color: rgba(100, 255, 218, 0.2);
+    }
+
+    .blog-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .blog-image {
+      height: 200px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--secondary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+    }
+
+    .blog-image i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .blog-content {
+      padding: 2rem;
+    }
+
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    .blog-date {
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .blog-category {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--secondary-color);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    .blog-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .blog-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .blog-title a:hover {
+      color: var(--secondary-color);
+    }
+
+    .blog-excerpt {
+      color: var(--text-color);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-tag {
+      background: rgba(10, 25, 47, 0.7);
+      color: var(--text-color);
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      transition: var(--transition);
+    }
+
+    .blog-tag:hover {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--secondary-color);
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .read-more:hover {
+      color: var(--secondary-color);
+      transform: translateX(5px);
+    }
+
+    .read-more i {
+      transition: var(--transition);
+    }
+
+    .read-more:hover i {
+      transform: translateX(3px);
+    }
+
+    /* Featured Post Styles */
+    .featured-post {
+      border: 2px solid rgba(100, 255, 218, 0.2);
+    }
+
+    .featured-post::before {
+      height: 6px;
+    }
+
+    .blog-highlights {
+      background: rgba(10, 25, 47, 0.5);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .blog-highlights h4 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .blog-highlights ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .blog-highlights li {
+      color: var(--text-color);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .blog-highlights li i {
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+
+    .blog-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      border-radius: 20px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .github-link:hover {
+      color: var(--secondary-color);
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .github-link i {
+      font-size: 1.1rem;
+    }
+
+    /* Coming Soon Section */
+    .coming-soon {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: rgba(17, 34, 64, 0.7);
+      border-radius: 24px;
+      margin-top: 3rem;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .coming-soon h3 {
+      color: var(--heading-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    .coming-soon .btn {
+      background: transparent;
+      border: 2px solid var(--secondary-color);
+      color: var(--secondary-color);
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .coming-soon .btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(10, 25, 47, 0.95);
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .footer p {
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 3rem;
+      }
+
+      .blogs-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .blog-card {
+        margin: 0 1rem;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .main-content {
+        padding: 6rem 1rem 2rem;
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--primary-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--secondary-color);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <i class="fa fa-moon-o"></i>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Manjunath Asundi</a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blogs.html">Blogs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Technical Blogs</h1>
+        <p class="page-subtitle">
+          Sharing insights on software engineering, AI/ML, cloud technologies, and emerging tech trends
+        </p>
+      </div>
+
+      <!-- Search and Filter Section -->
+      <div class="search-filter-section">
+        <div class="search-container">
+          <input type="text" class="search-box" placeholder="Search articles by title, content, or tags...">
+          <i class="fa fa-search search-icon"></i>
+        </div>
+        
+        <div class="filter-container">
+          <button class="filter-btn active" data-category="all">All Posts</button>
+          <button class="filter-btn" data-category="ai-ml">AI/ML</button>
+          <button class="filter-btn" data-category="software-engineering">Software Engineering</button>
+          <button class="filter-btn" data-category="cloud">Cloud & DevOps</button>
+          <button class="filter-btn" data-category="microservices">Microservices</button>
+          <button class="filter-btn" data-category="tutorials">Tutorials</button>
+        </div>
+        
+        <div class="results-count">
+          Showing <span id="results-count">6</span> articles
+        </div>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="blogs-grid">
+        <!-- Featured Blog Post -->
+        <article class="blog-card featured-post" data-category="ai-ml" data-tags="agentic ai multi-agent systems stock trading python llm integration fastapi streamlit risk management">
+          <div class="blog-image">
+            <i class="fa fa-line-chart"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">August 2025</span>
+              <span class="blog-category">Agentic AI</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="https://medium.com/@manjunathasundi07/building-an-autonomous-ai-trading-system-a-multi-agent-approach-to-stock-market-analysis-06b62ae9e059" target="_blank">Building an Autonomous AI Trading System: A Multi-Agent Approach to Stock Market Analysis</a>
+            </h2>
+            <p class="blog-excerpt">
+              How I built a sophisticated AI trading platform using multiple specialized agents that work together to make intelligent investment decisions. 
+              Featuring technical analysis agents, sentiment analysis, risk management, and a breakthrough multi-LLM validation system that leverages the strengths of different AI models.
+            </p>
+            <div class="blog-highlights">
+              <h4><i class="fa fa-star"></i> Key Highlights</h4>
+              <ul>
+                <li><i class="fa fa-check-circle"></i> Multi-agent architecture with specialized AI agents</li>
+                <li><i class="fa fa-check-circle"></i> Real-time consensus mechanism for trading decisions</li>
+                <li><i class="fa fa-check-circle"></i> Multi-LLM validation system with Gemini integration</li>
+                <li><i class="fa fa-check-circle"></i> Complete ecosystem with Streamlit dashboard and FastAPI backend</li>
+                <li><i class="fa fa-check-circle"></i> Asynchronous agent coordination and real-time data streaming</li>
+              </ul>
+            </div>
+            <div class="blog-tags">
+              <span class="blog-tag">Agentic AI</span>
+              <span class="blog-tag">Multi-Agent Systems</span>
+              <span class="blog-tag">Stock Trading</span>
+              <span class="blog-tag">Python</span>
+              <span class="blog-tag">LLM Integration</span>
+              <span class="blog-tag">FastAPI</span>
+              <span class="blog-tag">Streamlit</span>
+              <span class="blog-tag">Risk Management</span>
+            </div>
+            <div class="blog-links">
+              <a href="https://medium.com/@manjunathasundi07/building-an-autonomous-ai-trading-system-a-multi-agent-approach-to-stock-market-analysis-06b62ae9e059" target="_blank" class="read-more">
+                Read on Medium <i class="fa fa-external-link"></i>
+              </a>
+              <a href="https://github.com/manju07/stock-trading-app" target="_blank" class="github-link">
+                <i class="fa fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Microservices Architecture Article -->
+        <article class="blog-card" data-category="microservices" data-tags="microservices spring boot kubernetes docker java architecture scalability">
+          <div class="blog-image">
+            <i class="fa fa-cubes"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">October 2024</span>
+              <span class="blog-category">Microservices</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="#" target="_blank">Building Scalable Microservices Architecture: Lessons from Production at Scale</a>
+            </h2>
+            <p class="blog-excerpt">
+              Deep dive into designing and implementing microservices architecture that can handle 25K+ transactions per minute. 
+              Learn about service discovery, API gateways, data consistency patterns, and monitoring strategies used at Walmart Labs.
+            </p>
+            <div class="blog-tags">
+              <span class="blog-tag">Microservices</span>
+              <span class="blog-tag">Spring Boot</span>
+              <span class="blog-tag">Kubernetes</span>
+              <span class="blog-tag">Docker</span>
+              <span class="blog-tag">Java</span>
+              <span class="blog-tag">Architecture</span>
+              <span class="blog-tag">Scalability</span>
+            </div>
+            <div class="blog-links">
+              <a href="#" class="read-more">
+                Coming Soon <i class="fa fa-clock-o"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- RAG System Article -->
+        <article class="blog-card" data-category="ai-ml" data-tags="rag retrieval augmented generation chromadb embeddings llm ai ml python">
+          <div class="blog-image">
+            <i class="fa fa-file-pdf-o"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">September 2024</span>
+              <span class="blog-category">AI/ML</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="#" target="_blank">Building Production-Ready RAG Systems: From Embeddings to Intelligent Answers</a>
+            </h2>
+            <p class="blog-excerpt">
+              Complete guide to building Retrieval-Augmented Generation systems using ChromaDB, advanced embedding techniques, 
+              and agentic answering patterns. Includes performance optimization and deployment strategies.
+            </p>
+            <div class="blog-tags">
+              <span class="blog-tag">RAG</span>
+              <span class="blog-tag">Embeddings</span>
+              <span class="blog-tag">ChromaDB</span>
+              <span class="blog-tag">LLM</span>
+              <span class="blog-tag">Python</span>
+              <span class="blog-tag">AI/ML</span>
+            </div>
+            <div class="blog-links">
+              <a href="#" class="read-more">
+                Coming Soon <i class="fa fa-clock-o"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cloud Architecture Article -->
+        <article class="blog-card" data-category="cloud" data-tags="aws azure kubernetes docker devops cloud architecture terraform jenkins">
+          <div class="blog-image">
+            <i class="fa fa-cloud"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">August 2024</span>
+              <span class="blog-category">Cloud & DevOps</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="#" target="_blank">Modern Cloud Architecture Patterns: AWS vs Azure for Enterprise Applications</a>
+            </h2>
+            <p class="blog-excerpt">
+              Comprehensive comparison of cloud architectures, covering serverless patterns, container orchestration, 
+              and infrastructure as code. Real-world examples from enterprise deployments handling millions of requests.
+            </p>
+            <div class="blog-tags">
+              <span class="blog-tag">AWS</span>
+              <span class="blog-tag">Azure</span>
+              <span class="blog-tag">Kubernetes</span>
+              <span class="blog-tag">Docker</span>
+              <span class="blog-tag">DevOps</span>
+              <span class="blog-tag">Terraform</span>
+              <span class="blog-tag">Jenkins</span>
+            </div>
+            <div class="blog-links">
+              <a href="#" class="read-more">
+                Coming Soon <i class="fa fa-clock-o"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Performance Optimization Article -->
+        <article class="blog-card" data-category="software-engineering" data-tags="performance optimization java spring boot jvm tuning monitoring">
+          <div class="blog-image">
+            <i class="fa fa-tachometer"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">July 2024</span>
+              <span class="blog-category">Software Engineering</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="#" target="_blank">Achieving Sub-100ms Response Times: Java Performance Optimization Techniques</a>
+            </h2>
+            <p class="blog-excerpt">
+              Advanced techniques for optimizing Java applications to achieve ultra-low latency. 
+              Covers JVM tuning, garbage collection optimization, memory management, and real-time monitoring strategies.
+            </p>
+            <div class="blog-tags">
+              <span class="blog-tag">Performance</span>
+              <span class="blog-tag">Java</span>
+              <span class="blog-tag">Spring Boot</span>
+              <span class="blog-tag">JVM Tuning</span>
+              <span class="blog-tag">Monitoring</span>
+              <span class="blog-tag">Optimization</span>
+            </div>
+            <div class="blog-links">
+              <a href="#" class="read-more">
+                Coming Soon <i class="fa fa-clock-o"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- GraphQL Tutorial Article -->
+        <article class="blog-card" data-category="tutorials" data-tags="graphql api design java spring boot tutorial backend development">
+          <div class="blog-image">
+            <i class="fa fa-code"></i>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">June 2024</span>
+              <span class="blog-category">Tutorials</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="#" target="_blank">GraphQL with Spring Boot: Complete Tutorial for Modern API Development</a>
+            </h2>
+            <p class="blog-excerpt">
+              Step-by-step guide to implementing GraphQL in Spring Boot applications. Covers schema design, 
+              resolver patterns, performance optimization, and integration with existing REST APIs.
+            </p>
+            <div class="blog-tags">
+              <span class="blog-tag">GraphQL</span>
+              <span class="blog-tag">Spring Boot</span>
+              <span class="blog-tag">API Design</span>
+              <span class="blog-tag">Java</span>
+              <span class="blog-tag">Tutorial</span>
+              <span class="blog-tag">Backend</span>
+            </div>
+            <div class="blog-links">
+              <a href="#" class="read-more">
+                Coming Soon <i class="fa fa-clock-o"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="newsletter-section">
+        <div class="newsletter-content">
+          <h3>Stay Updated with Latest Tech Insights</h3>
+          <p>
+            Subscribe to get notified when I publish new articles on AI/ML, software engineering, 
+            cloud architectures, and emerging technologies. No spam, just quality content.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Coming Soon Section -->
+      <div class="coming-soon">
+        <h3>More Content Coming Soon!</h3>
+        <p>
+          I'm constantly working on new technical articles covering the latest trends in software engineering, 
+          AI/ML, cloud technologies, and enterprise architecture. Stay tuned for more insights!
+        </p>
+        <a href="index.html#about" class="btn">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Manjunath Asundi. All rights reserved. | <a href="index.html">Back to Portfolio</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="javascripts/resume.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Theme Toggle
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeIcon = themeToggle.querySelector('i');
+      
+      themeToggle.addEventListener('click', () => {
+        document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+        themeIcon.className = document.body.dataset.theme === 'light' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+        localStorage.setItem('theme', document.body.dataset.theme);
+      });
+
+      // Set initial theme
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.body.dataset.theme = savedTheme;
+      themeIcon.className = savedTheme === 'light' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+
+      // Navigation scroll effect
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Back to Top Button
+      const backToTop = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Loading Screen
+      window.addEventListener('load', () => {
+        const loading = document.querySelector('.loading');
+        loading.classList.add('hidden');
+        setTimeout(() => {
+          loading.style.display = 'none';
+        }, 500);
+      });
+
+      // Search and Filter Functionality
+      const searchBox = document.querySelector('.search-box');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const blogCards = document.querySelectorAll('.blog-card');
+      const resultsCount = document.getElementById('results-count');
+
+      let currentFilter = 'all';
+      let currentSearch = '';
+
+      function updateResults() {
+        let visibleCount = 0;
+        
+        blogCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          const tags = card.getAttribute('data-tags') || '';
+          const title = card.querySelector('.blog-title').textContent.toLowerCase();
+          const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+          
+          const matchesFilter = currentFilter === 'all' || category === currentFilter;
+          const matchesSearch = currentSearch === '' || 
+            title.includes(currentSearch) || 
+            excerpt.includes(currentSearch) || 
+            tags.includes(currentSearch);
+          
+          if (matchesFilter && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        
+        resultsCount.textContent = visibleCount;
+      }
+
+      // Search functionality
+      searchBox.addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase();
+        updateResults();
+      });
+
+      // Filter functionality
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          currentFilter = button.getAttribute('data-category');
+          updateResults();
+        });
+      });
+
+      // Newsletter form
+      const newsletterForm = document.getElementById('newsletterForm');
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = e.target.querySelector('input[type="email"]').value;
+        
+        // Simulate form submission
+        const button = e.target.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = 'Subscribing...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+          button.textContent = 'Subscribed!';
+          button.style.background = 'var(--secondary-color)';
+          button.style.color = 'var(--primary-color)';
+          
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+            button.style.background = 'transparent';
+            button.style.color = 'var(--secondary-color)';
+            e.target.reset();
+          }, 2000);
+        }, 1000);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Blog card animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Initialize blog card animations
+      blogCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
+
+      // Initialize results count
+      updateResults();
+    });
+  </script>
+</body>
+
+</html>
