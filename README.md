@@ -105,6 +105,7 @@ To run the website locally:
 
 ## Contact
 
+- **Website**: [https://manju07.github.io/](https://manju07.github.io/)
 - **Email**: manjunathasundi07@gmail.com
 - **LinkedIn**: [manju07](https://www.linkedin.com/in/manju07/)
 - **GitHub**: [manju07](https://github.com/manju07/)
