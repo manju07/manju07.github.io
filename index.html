@@ -608,6 +608,93 @@
       }
     }
 
+    /* Clean & Professional Project Links */
+    .project-links {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(100, 255, 218, 0.08);
+    }
+
+    .blog-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .github-link, .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      position: relative;
+      border: 1.5px solid;
+      background: transparent;
+    }
+
+    /* GitHub Link - Minimal Dark Style */
+    .github-link {
+      color: var(--heading-color);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .github-link:hover {
+      color: #ffffff;
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Demo Link - Accent Style */
+    .read-more {
+      color: var(--secondary-color);
+      border-color: rgba(100, 255, 218, 0.3);
+    }
+
+    .read-more:hover {
+      color: var(--primary-color);
+      background: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+    }
+
+    /* Icon Styling */
+    .github-link i, .read-more i {
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .github-link:hover i, .read-more:hover i {
+      transform: translateX(2px);
+    }
+
+    /* Active States */
+    .github-link:active, .read-more:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .blog-links {
+        gap: 0.8rem;
+      }
+
+      .github-link, .read-more {
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+      }
+    }
+
     /* Scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
@@ -627,6 +714,50 @@
     }
 
     /* Projects Section Styles */
+    .project-category {
+      margin-bottom: 4rem;
+    }
+
+    .project-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-category-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .project-category-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      background: var(--gradient-accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .project-category-subtitle {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .project-category-line {
+      height: 2px;
+      background: var(--gradient-accent);
+      width: 80px;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1434,6 +1565,9 @@
           <a class="nav-link js-scroll-trigger" href="#certificates">Certificates</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="blogs.html">Blogs</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#ai-chat">AI Career Assistant</a>
         </li>
       </ul>
@@ -1449,10 +1583,20 @@
               <h1 class="mb-0">Manjunath
                 <span class="text-primary">Asundi</span>
               </h1>
-            <div class="subheading mb-5">
-              Bangalore, Karnataka 560040 · (+91) 988-698-8915 ·
-                <a href="mailto:manjunathasundi07@gmail.com">manjunathasundi07@gmail.com</a>
-              </div>
+            <div class="subheading mb-5" style="font-size: 1.1rem;">
+              <span style="color: var(--secondary-color); font-weight: 500;">
+                <i class="fa fa-map-marker" aria-hidden="true" style="color: var(--accent-color);"></i> Bangalore, Karnataka 560040
+              </span> 
+              <span style="color: #c5e1a5; font-weight: 500; margin: 0 0.75em;">
+                <i class="fa fa-phone" aria-hidden="true" style="color: #ffd166;"></i> 
+                <a href="tel:+919886988915" style="color: inherit; text-decoration: none;">(+91) 988-698-8915</a>
+              </span>
+              <span style="color: #a0c4ff; font-weight: 500;">
+                <i class="fa fa-envelope" aria-hidden="true" style="color: #64ffda;"></i>
+                <a href="mailto:manjunathasundi07@gmail.com" style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@gmail.com</a>
+                <span style="color: #444; margin: 0 5px;">|</span>
+                <a href="mailto:manjunathasundi07@zohomail.in" style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@zohomail.in</a>
+              </span>
             </div>
           <div class="intro-content">
             <div class="lead mb-5">
@@ -1581,170 +1725,534 @@
       <div class="my-auto">
         <h2 class="section-title">Featured Projects</h2>
         
-        <div class="projects-grid">
+        <!-- Professional Projects -->
+        <div class="project-category">
+          <div class="project-category-header">
+            <h3 class="project-category-title">
+              <i class="fa fa-building"></i>
+              Professional Projects
+            </h3>
+            <div class="project-category-line"></div>
+            <p class="project-category-subtitle">
+              Enterprise-scale applications built for leading tech companies, handling millions of transactions and serving thousands of users worldwide.
+            </p>
+          </div>
+          
+          <div class="projects-grid">
+            <!-- Quote-Async & Quote-Service Platform -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-calculator"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Quote-Async & Quote-Service Platform</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Intuit</span>
+                    <span class="project-date">2024-Present</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Advanced asynchronous quote processing platform designed to enhance customer buying experiences across Intuit's product ecosystem. Features high-throughput quote generation, real-time pricing calculations, and seamless integration with multiple business units.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Java</span>
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">Microservices</span>
+                      <span class="tech-tag">Kafka</span>
+                      <span class="tech-tag">PostgreSQL</span>
+                      <span class="tech-tag">HiveDB</span>
+                      <span class="tech-tag">ReactJS</span>
+                      <span class="tech-tag">Kubernetes</span>
+                      <span class="tech-tag">AWS</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Asynchronous quote processing for improved UX</li>
+                      <li><i class="fa fa-check-circle"></i> Real-time pricing and quote calculations</li>
+                      <li><i class="fa fa-check-circle"></i> Multi-service integration architecture</li>
+                      <li><i class="fa fa-check-circle"></i> Enhanced customer buying journey optimization</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columbus Foundation App -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Columbus Foundation App</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Walmart Labs</span>
+                    <span class="project-date">2022-2024</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">Microservices</span>
+                      <span class="tech-tag">JUnit5</span>
+                      <span class="tech-tag">Kafka</span>
+                      <span class="tech-tag">GraphQL</span>
+                      <span class="tech-tag">CosmosDB</span>
+                      <span class="tech-tag">Kubernetes</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> 100ms latency for 25K+ TPM</li>
+                      <li><i class="fa fa-check-circle"></i> Robust error handling system</li>
+                      <li><i class="fa fa-check-circle"></i> Scalable microservices architecture</li>
+                      <li><i class="fa fa-check-circle"></i> Multi-marketplace integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columbus-Read-App -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-database"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Columbus-Read-App</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Walmart Labs</span>
+                    <span class="project-date">2022-2024</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  High-performance data serving application providing seller data to 100+ consumer teams across Walmart's marketplace ecosystem. Designed for scalability and reliability with comprehensive data access patterns.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">Microservices</span>
+                      <span class="tech-tag">GraphQL</span>
+                      <span class="tech-tag">CosmosDB</span>
+                      <span class="tech-tag">Kafka</span>
+                      <span class="tech-tag">JUnit5</span>
+                      <span class="tech-tag">Mockito</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Serving data to 100+ consumer teams</li>
+                      <li><i class="fa fa-check-circle"></i> High-availability data access layer</li>
+                      <li><i class="fa fa-check-circle"></i> GraphQL-based flexible data querying</li>
+                      <li><i class="fa fa-check-circle"></i> Comprehensive API documentation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recharge Service -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-credit-card"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Recharge Service Platform</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Zeta Suite</span>
+                    <span class="project-date">2021-2022</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Mission-critical recharge service processing 2M+ transactions daily for Zeta's financial platform. Built with high reliability, real-time processing capabilities, and comprehensive transaction management.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Java</span>
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">NodeJS</span>
+                      <span class="tech-tag">AngularJS</span>
+                      <span class="tech-tag">ExpressJS</span>
+                      <span class="tech-tag">Kafka</span>
+                      <span class="tech-tag">MySQL</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Processing 2M+ daily transactions</li>
+                      <li><i class="fa fa-check-circle"></i> Real-time transaction processing</li>
+                      <li><i class="fa fa-check-circle"></i> High-reliability financial operations</li>
+                      <li><i class="fa fa-check-circle"></i> Full-stack implementation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alerting-Application -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-bell"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Alerting-Application</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Walmart Labs</span>
+                    <span class="project-date">2020-2021</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Comprehensive alerting and notification system for internal system monitoring and customer communications. Features real-time alert processing, multi-channel notifications, and intelligent alert routing.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Java</span>
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">ReactJS</span>
+                      <span class="tech-tag">OracleDB</span>
+                      <span class="tech-tag">Azure</span>
+                      <span class="tech-tag">Microservices</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Real-time system monitoring</li>
+                      <li><i class="fa fa-check-circle"></i> Multi-channel notification delivery</li>
+                      <li><i class="fa fa-check-circle"></i> Intelligent alert routing system</li>
+                      <li><i class="fa fa-check-circle"></i> Customer communication automation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DolphinVC Video Conferencing -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-video-camera"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>DolphinVC Video Conferencing Platform</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Nouveau Labs</span>
+                    <span class="project-date">2020</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Multi-platform video conferencing application with enterprise-grade features including secure authentication, real-time communication, and scalable infrastructure designed for high-quality video experiences.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Java</span>
+                      <span class="tech-tag">Spring Boot</span>
+                      <span class="tech-tag">OAuth2</span>
+                      <span class="tech-tag">Kafka</span>
+                      <span class="tech-tag">OracleDB</span>
+                      <span class="tech-tag">Docker</span>
+                      <span class="tech-tag">Kubernetes</span>
+                      <span class="tech-tag">AWS</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Multi-platform video conferencing</li>
+                      <li><i class="fa fa-check-circle"></i> OAuth2 secure authentication</li>
+                      <li><i class="fa fa-check-circle"></i> Cloud-native architecture</li>
+                      <li><i class="fa fa-check-circle"></i> Container-based deployment</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AllGoVision Analytics Platform -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-eye"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>AllGoVision Analytics Platform</h3>
+                  <div class="project-meta">
+                    <span class="project-company">AllGoVision Technologies</span>
+                    <span class="project-date">2018-2019</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Advanced analytics platform with 50+ ML/DL/AI features serving 2K+ companies worldwide. Comprehensive computer vision and AI-powered analytics solution for enterprise clients with real-time processing capabilities.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Java</span>
+                      <span class="tech-tag">NodeJS</span>
+                      <span class="tech-tag">Angular</span>
+                      <span class="tech-tag">MongoDB</span>
+                      <span class="tech-tag">Machine Learning</span>
+                      <span class="tech-tag">Deep Learning</span>
+                      <span class="tech-tag">Computer Vision</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> 50+ ML/DL/AI features implemented</li>
+                      <li><i class="fa fa-check-circle"></i> Serving 2K+ companies globally</li>
+                      <li><i class="fa fa-check-circle"></i> Computer vision analytics platform</li>
+                      <li><i class="fa fa-check-circle"></i> Full-stack AI solution development</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Projects -->
+        <div class="project-category">
+          <div class="project-category-header">
+            <h3 class="project-category-title">
+              <i class="fa fa-lightbulb-o"></i>
+              Personal Projects
+            </h3>
+            <div class="project-category-line"></div>
+            <p class="project-category-subtitle">
+              Innovative AI/ML applications and microservice architectures showcasing cutting-edge technologies and experimental implementations.
+            </p>
+          </div>
+          
+          <div class="projects-grid">
+          <!-- Deep Research Assistant -->
           <div class="project-card">
             <div class="project-image">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-search"></i>
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>Columbus Foundation App</h3>
+                <h3>Deep Research Assistant</h3>
                 <div class="project-meta">
-                  <span class="project-company">Walmart Labs</span>
-                  <span class="project-date">2022-2024</span>
+                  <span class="project-company">Personal Project</span>
+                  <span class="project-date">2025</span>
                 </div>
               </div>
               <p class="project-description">
-                A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
+                AI-powered research assistant that automatically generates comprehensive research reports. Uses OpenAI Agent SDK for autonomous task planning and execution with web search capabilities and email delivery.
               </p>
               <div class="project-details">
                 <div class="project-tech">
                   <h4><i class="fa fa-code"></i> Technologies</h4>
                   <div class="tech-tags">
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Microservices</span>
-                    <span class="tech-tag">JUnit5</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">GraphQL</span>
-                    <span class="tech-tag">CosmosDB</span>
-                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenAI GPT-4</span>
+                    <span class="tech-tag">Agent SDK</span>
+                    <span class="tech-tag">Gradio</span>
+                    <span class="tech-tag">Asyncio</span>
+                    <span class="tech-tag">Pydantic</span>
                   </div>
                 </div>
                 <div class="project-achievements">
                   <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
                   <ul>
-                    <li><i class="fa fa-check-circle"></i> 100ms latency for 25K+ TPM</li>
-                    <li><i class="fa fa-check-circle"></i> Robust error handling system</li>
-                    <li><i class="fa fa-check-circle"></i> Scalable microservices architecture</li>
-                    <li><i class="fa fa-check-circle"></i> Multi-marketplace integration</li>
+                    <li><i class="fa fa-check-circle"></i> Automated research planning</li>
+                    <li><i class="fa fa-check-circle"></i> 5-10 page comprehensive reports</li>
+                    <li><i class="fa fa-check-circle"></i> Email delivery system</li>
+                    <li><i class="fa fa-check-circle"></i> Unique trace ID for reproducibility</li>
                   </ul>
+                </div>
+                <div class="project-links">
+                  <div class="blog-links">
+                    <a href="https://github.com/manju07/deep-research-assistant" target="_blank" class="github-link">
+                      <i class="fa fa-github"></i> View Code
+                    </a>
+                    <a href="https://huggingface.co/spaces/manju0707/deep-research-assistant-by-manjunath-asundi" target="_blank" class="read-more">
+                      <i class="fa fa-external-link"></i> Try Demo
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Multimodal RAG System -->
           <div class="project-card">
             <div class="project-image">
-              <i class="fa fa-video-camera"></i>
+              <i class="fa fa-file-pdf-o"></i>
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>AllGoVision Analytics</h3>
+                <h3>Multimodal RAG System</h3>
                 <div class="project-meta">
-                  <span class="project-company">AllGoVision Technologies</span>
-                  <span class="project-date">2018-2019</span>
+                  <span class="project-company">Personal Project</span>
+                  <span class="project-date">2025</span>
                 </div>
               </div>
               <p class="project-description">
-                A comprehensive analytics platform with 50+ ML/DL/AI features, serving over 2,000 companies. The system processes and analyzes video data to provide intelligent insights and automated monitoring solutions.
+                Advanced Retrieval-Augmented Generation system for PDF documents with ChromaDB vector store. Features agentic answering, semantic search, and interactive Gradio interface with live demo on Hugging Face Spaces.
               </p>
               <div class="project-details">
                 <div class="project-tech">
                   <h4><i class="fa fa-code"></i> Technologies</h4>
                   <div class="tech-tags">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Angular</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">ML/AI</span>
-                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">ChromaDB</span>
+                    <span class="tech-tag">Embeddings</span>
+                    <span class="tech-tag">Gradio</span>
+                    <span class="tech-tag">Hugging Face</span>
                   </div>
                 </div>
                 <div class="project-achievements">
                   <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
                   <ul>
-                    <li><i class="fa fa-check-circle"></i> 50+ ML/DL/AI features</li>
-                    <li><i class="fa fa-check-circle"></i> 2,000+ companies served</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time video analytics</li>
-                    <li><i class="fa fa-check-circle"></i> Automated monitoring</li>
+                    <li><i class="fa fa-check-circle"></i> PDF document processing</li>
+                    <li><i class="fa fa-check-circle"></i> Vector embeddings & semantic search</li>
+                    <li><i class="fa fa-check-circle"></i> Live demo on Hugging Face</li>
+                    <li><i class="fa fa-check-circle"></i> Agentic answer synthesis</li>
                   </ul>
+                </div>
+                <div class="project-links">
+                  <div class="blog-links">
+                    <a href="https://github.com/manju07/multimodal-rag-system" target="_blank" class="github-link">
+                      <i class="fa fa-github"></i> View Code
+                    </a>
+                    <a href="https://huggingface.co/spaces/manju0707/multimodal-rag-system" target="_blank" class="read-more">
+                      <i class="fa fa-rocket"></i> Live Demo
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- AI Stock Trading Platform -->
           <div class="project-card">
             <div class="project-image">
-              <i class="fa fa-video-camera"></i>
+              <i class="fa fa-line-chart"></i>
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>DolphinVC</h3>
+                <h3>AI Stock Trading Platform</h3>
                 <div class="project-meta">
-                  <span class="project-company">Nouveau Labs</span>
-                  <span class="project-date">2020</span>
+                  <span class="project-company">Personal Project</span>
+                  <span class="project-date">2024</span>
                 </div>
               </div>
               <p class="project-description">
-                A multi-platform video conferencing application with features for scheduling and instant meetings. The system supports high-quality video calls, screen sharing, and meeting management.
+                Sophisticated AI trading platform using multi-agent approach with specialized agents for technical analysis, sentiment analysis, and risk management. Features real-time consensus decision-making and multi-LLM validation system.
               </p>
               <div class="project-details">
                 <div class="project-tech">
                   <h4><i class="fa fa-code"></i> Technologies</h4>
                   <div class="tech-tags">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">OAuth2</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">OracleDB</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Agentic AI</span>
+                    <span class="tech-tag">Multi-Agent Systems</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">LLM Integration</span>
+                    <span class="tech-tag">SQLite</span>
                   </div>
                 </div>
                 <div class="project-achievements">
                   <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
                   <ul>
-                    <li><i class="fa fa-check-circle"></i> Real-time video streaming</li>
-                    <li><i class="fa fa-check-circle"></i> Secure authentication</li>
-                    <li><i class="fa fa-check-circle"></i> Scalable meeting management</li>
-                    <li><i class="fa fa-check-circle"></i> Multi-platform support</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-agent consensus mechanism</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time market analysis</li>
+                    <li><i class="fa fa-check-circle"></i> Interactive dashboard with portfolio monitoring</li>
+                    <li><i class="fa fa-check-circle"></i> Automated risk management</li>
                   </ul>
+                </div>
+                <div class="project-links">
+                  <div class="blog-links">
+                    <a href="https://github.com/manju07/stock-trading-app" target="_blank" class="github-link">
+                      <i class="fa fa-github"></i> View Code
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Career Conversation AI Chatbot -->
           <div class="project-card">
             <div class="project-image">
-              <i class="fa fa-mobile"></i>
+              <i class="fa fa-comments"></i>
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>Recharge Service</h3>
+                <h3>Career Conversation AI Chatbot</h3>
                 <div class="project-meta">
-                  <span class="project-company">Zeta Suite</span>
-                  <span class="project-date">2021-2022</span>
+                  <span class="project-company">Personal Project</span>
+                  <span class="project-date">2024</span>
                 </div>
               </div>
               <p class="project-description">
-                A high-volume transaction processing system for mobile and DTH plan recharges, handling over 2 million transactions daily. The system ensures reliable and secure payment processing.
+                Conversational AI agent representing my professional profile, built with multi-model support (OpenAI & Gemini). Features contextual knowledge from resume and LinkedIn, with lead capture and notification system.
               </p>
               <div class="project-details">
                 <div class="project-tech">
                   <h4><i class="fa fa-code"></i> Technologies</h4>
                   <div class="tech-tags">
-                    <span class="tech-tag">AngularJS</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Express.js</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenAI</span>
+                    <span class="tech-tag">Google Gemini</span>
+                    <span class="tech-tag">Gradio</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Pushover API</span>
                   </div>
                 </div>
                 <div class="project-achievements">
                   <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
                   <ul>
-                    <li><i class="fa fa-check-circle"></i> 2M+ daily transactions</li>
-                    <li><i class="fa fa-check-circle"></i> Secure payment gateway</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time tracking</li>
-                    <li><i class="fa fa-check-circle"></i> Automated reconciliation</li>
+                    <li><i class="fa fa-check-circle"></i> Multi-model AI integration</li>
+                    <li><i class="fa fa-check-circle"></i> Contextual professional knowledge</li>
+                    <li><i class="fa fa-check-circle"></i> Lead capture and logging</li>
+                    <li><i class="fa fa-check-circle"></i> Real-time notifications</li>
                   </ul>
+                </div>
+                <div class="project-links">
+                  <div class="blog-links">
+                    <a href="https://github.com/manju07/manjunath-career-conversation-ai-chatbot" target="_blank" class="github-link">
+                      <i class="fa fa-github"></i> View Code
+                    </a>
+                    <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="read-more">
+                      <i class="fa fa-external-link"></i> Chat Now
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -1769,9 +2277,9 @@
             <ul class="skill-list">
               <li>Spring Boot/Cloud</li>
               <li>React.js/Angular</li>
+              <li>FastAPI/Streamlit</li>
               <li>GraphQL</li>
-              <li>Docker/Kubernetes</li>
-              <li>Jenkins/JMeter</li>
+              <li>JMeter</li>
               <li>JUnit/Mockito</li>
             </ul>
           </div>
@@ -1787,14 +2295,26 @@
             </ul>
           </div>
           <div class="skill-category">
-            <h4>AI & DevOps</h4>
+            <h4>AI & ML Tools</h4>
             <ul class="skill-list">
-              <li>Agentic AI/LangGraph</li>
+              <li>OpenAI Agent SDK</li>
+              <li>CrewAI</li>
+              <li>Agentic AI/Multi-Agent Systems</li>
+              <li>RAG/ChromaDB</li>
               <li>Hugging Face/LangChain</li>
-              <li>ChatGPT/Gemini</li>
+              <li>ChatGPT/OpenAI/Gemini</li>
+              <li>Gradio/Vector Embeddings</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>DevOps & Infrastructure</h4>
+            <ul class="skill-list">
+              <li>Docker/Kubernetes</li>
+              <li>Jenkins/CI-CD</li>
               <li>Kafka/RabbitMQ</li>
               <li>Grafana/Prometheus</li>
               <li>SonarQube/Splunk</li>
+              <li>Terraform/Infrastructure as Code</li>
             </ul>
           </div>
         </div>
