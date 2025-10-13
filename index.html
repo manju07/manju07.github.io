@@ -726,6 +726,8 @@
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
+      /* Mobile-friendly padding */
+      padding: 0 1rem;
     }
 
     .project-category-title {
@@ -760,7 +762,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -774,6 +776,9 @@
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(100, 255, 218, 0.1);
+      /* Mobile-friendly improvements */
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .project-card:hover {
@@ -843,6 +848,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      /* Mobile-friendly wrapping */
+      word-break: break-word;
+      overflow-wrap: break-word;
       margin-bottom: 1.5rem;
     }
 
@@ -878,13 +886,113 @@
       color: var(--secondary-color);
     }
 
+    /* Tablet Breakpoint */
     @media (max-width: 768px) {
       .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
       }
 
       .project-card {
         padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .project-image {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-header h3 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .tech-tags {
+        gap: 0.4rem;
+      }
+
+      .tech-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+
+      .project-achievements ul {
+        margin-left: 1rem;
+      }
+
+      .project-achievements li {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .project-category-title {
+        font-size: 1.5rem;
+      }
+
+      .project-category-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+    }
+
+    /* Mobile Breakpoint */
+    @media (max-width: 576px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .project-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-image {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .project-header {
+        margin-bottom: 0.8rem;
+      }
+
+      .project-header h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+
+      .project-meta {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: flex-start;
+      }
+
+      .project-company, .project-date {
+        font-size: 0.85rem;
+      }
+
+      .project-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .project-details {
+        gap: 1rem;
+      }
+
+      .project-tech h4, .project-achievements h4 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
       }
 
       .tech-tags {
@@ -892,8 +1000,218 @@
       }
 
       .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+
+      .project-achievements ul {
+        margin-left: 0.8rem;
+      }
+
+      .project-achievements li {
         font-size: 0.8rem;
-        padding: 0.3rem 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.3rem;
+      }
+
+      .project-category-title {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .project-category-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        text-align: center;
+        padding: 0 1rem;
+      }
+
+      /* Improve touch targets */
+      .project-card:hover {
+        transform: none; /* Disable hover transform on mobile */
+      }
+
+      .project-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+      }
+    }
+
+    /* Small Mobile Breakpoint */
+    @media (max-width: 480px) {
+      .projects-grid {
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .project-card {
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      .project-image {
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .project-header h3 {
+        font-size: 1.1rem;
+        line-height: 1.2;
+      }
+
+      .project-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+
+      .project-tech h4, .project-achievements h4 {
+        font-size: 0.9rem;
+      }
+
+      .tech-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+      }
+
+      .project-achievements li {
+        font-size: 0.75rem;
+      }
+
+      .project-category-title {
+        font-size: 1.2rem;
+      }
+
+      .project-category-subtitle {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Extra Small Mobile Breakpoint */
+    @media (max-width: 375px) {
+      .project-card {
+        padding: 0.8rem;
+        margin: 0 0.2rem 1rem 0.2rem;
+      }
+
+      .project-header h3 {
+        font-size: 1rem;
+      }
+
+      .project-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+      }
+
+      .tech-tags {
+        gap: 0.2rem;
+      }
+
+      .tech-tag {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+      }
+
+      .project-achievements li {
+        font-size: 0.7rem;
+      }
+
+      /* Stack project meta vertically on very small screens */
+      .project-meta {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+
+    /* Mobile-specific enhancements */
+    @media (hover: none) and (pointer: coarse) {
+      /* Touch device optimizations */
+      .project-card:hover {
+        transform: none;
+        box-shadow: var(--card-shadow);
+        border-color: rgba(100, 255, 218, 0.1);
+      }
+
+      .project-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+        border-color: rgba(100, 255, 218, 0.3);
+      }
+
+      /* Ensure all clickable elements have adequate touch targets */
+      .github-link, .read-more {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    /* Landscape mobile optimization */
+    @media (max-width: 896px) and (orientation: landscape) and (max-height: 414px) {
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+
+      .project-card {
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .project-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+      }
+
+      .project-category-subtitle {
+        display: none; /* Hide subtitle in landscape to save space */
+      }
+    }
+
+    /* Global mobile improvements for projects section */
+    @media (max-width: 768px) {
+      #projects {
+        padding: 3rem 1rem !important;
+      }
+
+      #projects .my-auto {
+        width: 100%;
+        max-width: none;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .project-category {
+        margin-bottom: 3rem;
+      }
+
+      .project-category-header {
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #projects {
+        padding: 2rem 0.5rem !important;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-category {
+        margin-bottom: 2rem;
+      }
+
+      .project-category-header {
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
       }
     }
 
