@@ -31,13 +31,13 @@
       --heading-color: #ccd6f6;
       --light-bg: #f8f9fa;
       --section-spacing: 6rem;
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      --hover-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       --gradient-primary: linear-gradient(135deg, #0a192f 0%, #112240 100%);
       --gradient-accent: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
     }
-    
+
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text-color);
@@ -65,7 +65,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
     }
@@ -161,7 +161,7 @@
     .navbar.scrolled {
       background: rgba(10, 25, 47, 0.9) !important;
       backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-nav {
@@ -283,8 +283,8 @@
     /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       margin-top: 4rem;
     }
 
@@ -323,8 +323,11 @@
 
     .skill-category h4 {
       color: var(--secondary-color);
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .skill-list {
@@ -409,7 +412,7 @@
       border-radius: 24px;
       padding: 3rem;
       margin-top: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(100, 255, 218, 0.2);
       position: relative;
       overflow: hidden;
@@ -422,7 +425,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(circle at 20% 20%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
       pointer-events: none;
@@ -561,6 +564,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -623,7 +627,8 @@
       justify-content: flex-start;
     }
 
-    .github-link, .read-more {
+    .github-link,
+    .read-more {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -667,17 +672,20 @@
     }
 
     /* Icon Styling */
-    .github-link i, .read-more i {
+    .github-link i,
+    .read-more i {
       font-size: 1rem;
       transition: transform 0.2s ease;
     }
 
-    .github-link:hover i, .read-more:hover i {
+    .github-link:hover i,
+    .read-more:hover i {
       transform: translateX(2px);
     }
 
     /* Active States */
-    .github-link:active, .read-more:active {
+    .github-link:active,
+    .read-more:active {
       transform: translateY(0);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -688,7 +696,8 @@
         gap: 0.8rem;
       }
 
-      .github-link, .read-more {
+      .github-link,
+      .read-more {
         flex: 1;
         justify-content: center;
         min-width: 0;
@@ -760,6 +769,7 @@
       border-radius: 2px;
     }
 
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -774,11 +784,12 @@
       box-shadow: var(--card-shadow);
       transition: var(--transition);
       position: relative;
-      overflow: hidden;
       border: 1px solid rgba(100, 255, 218, 0.1);
       /* Mobile-friendly improvements */
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -794,14 +805,44 @@
       text-align: center;
     }
 
+    .project-logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 60px;
+    }
+
+    .project-logo-container i:first-child {
+      font-size: 2.8rem;
+      color: var(--secondary-color);
+      z-index: 1;
+    }
+
+    .project-logo-container i:last-child {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      padding: 0.4rem;
+      border: 2px solid var(--accent-color);
+      z-index: 2;
+    }
+
     .project-header {
       margin-bottom: 1.5rem;
+      width: 100%;
     }
 
     .project-header h3 {
       color: var(--secondary-color);
       font-size: 1.8rem;
       margin-bottom: 0.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .project-meta {
@@ -821,17 +862,28 @@
       font-size: 0.9rem;
     }
 
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+    }
+
     .project-description {
       color: var(--text-color);
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .project-details {
       background: rgba(10, 25, 47, 0.5);
       border-radius: 16px;
       padding: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .project-tech h4,
@@ -848,10 +900,57 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      width: 100%;
       /* Mobile-friendly wrapping */
       word-break: break-word;
       overflow-wrap: break-word;
       margin-bottom: 1.5rem;
+    }
+
+    /* Fix text overflow issues */
+    .project-card * {
+      box-sizing: border-box;
+    }
+
+    .project-card h3,
+    .project-card p,
+    .project-card li {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .project-achievements ul {
+      width: 100%;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .project-achievements li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    /* Additional fixes for text overflow */
+    .blog-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--text-color);
     }
 
     .tech-tag {
@@ -976,7 +1075,8 @@
         align-items: flex-start;
       }
 
-      .project-company, .project-date {
+      .project-company,
+      .project-date {
         font-size: 0.85rem;
       }
 
@@ -990,7 +1090,8 @@
         gap: 1rem;
       }
 
-      .project-tech h4, .project-achievements h4 {
+      .project-tech h4,
+      .project-achievements h4 {
         font-size: 1rem;
         margin-bottom: 0.6rem;
       }
@@ -1028,7 +1129,8 @@
 
       /* Improve touch targets */
       .project-card:hover {
-        transform: none; /* Disable hover transform on mobile */
+        transform: none;
+        /* Disable hover transform on mobile */
       }
 
       .project-card:active {
@@ -1064,7 +1166,8 @@
         line-height: 1.5;
       }
 
-      .project-tech h4, .project-achievements h4 {
+      .project-tech h4,
+      .project-achievements h4 {
         font-size: 0.9rem;
       }
 
@@ -1124,6 +1227,7 @@
 
     /* Mobile-specific enhancements */
     @media (hover: none) and (pointer: coarse) {
+
       /* Touch device optimizations */
       .project-card:hover {
         transform: none;
@@ -1138,7 +1242,8 @@
       }
 
       /* Ensure all clickable elements have adequate touch targets */
-      .github-link, .read-more {
+      .github-link,
+      .read-more {
         min-height: 44px;
         min-width: 44px;
         display: inline-flex;
@@ -1165,7 +1270,8 @@
       }
 
       .project-category-subtitle {
-        display: none; /* Hide subtitle in landscape to save space */
+        display: none;
+        /* Hide subtitle in landscape to save space */
       }
     }
 
@@ -1349,9 +1455,9 @@
       left: 20px;
       height: 100%;
       width: 2px;
-      background: linear-gradient(to bottom, 
-        var(--secondary-color) 0%,
-        rgba(100, 255, 218, 0.3) 100%);
+      background: linear-gradient(to bottom,
+          var(--secondary-color) 0%,
+          rgba(100, 255, 218, 0.3) 100%);
     }
 
     .education-item {
@@ -1675,9 +1781,11 @@
       color: #e6f1ff !important;
       font-size: 1.18rem;
       line-height: 1.8;
-      text-shadow: 0 1px 2px rgba(10,25,47,0.2);
+      text-shadow: 0 1px 2px rgba(10, 25, 47, 0.2);
     }
-    #about .intro-header h1, #about .intro-header .text-primary {
+
+    #about .intro-header h1,
+    #about .intro-header .text-primary {
       background: linear-gradient(135deg, #64ffda 0%, #4fd1c5 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1754,7 +1862,7 @@
       --text-color: #343a40;
       --heading-color: #212529;
       --light-bg: #ffffff;
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     /* Focus States */
@@ -1849,10 +1957,9 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
 
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" 
-             src="images/manjunath-linkedin.jpeg" 
-             alt="Manjunath Asundi"
-             style="width: 160px; height: 160px; object-fit: cover; border: 3px solid var(--secondary-color); box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/manjunath-linkedin.jpeg"
+          alt="Manjunath Asundi"
+          style="width: 160px; height: 160px; object-fit: cover; border: 3px solid var(--secondary-color); box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -1898,93 +2005,111 @@
       <div class="my-auto">
         <div class="intro-container">
           <div class="intro-header">
-              <h1 class="mb-0">Manjunath
-                <span class="text-primary">Asundi</span>
-              </h1>
+            <h1 class="mb-0">Manjunath
+              <span class="text-primary">Asundi</span>
+            </h1>
             <div class="subheading mb-5" style="font-size: 1.1rem;">
               <span style="color: var(--secondary-color); font-weight: 500;">
-                <i class="fa fa-map-marker" aria-hidden="true" style="color: var(--accent-color);"></i> Bangalore, Karnataka 560040
-              </span> 
+                <i class="fa fa-map-marker" aria-hidden="true" style="color: var(--accent-color);"></i> Bangalore,
+                Karnataka 560040
+              </span>
               <span style="color: #c5e1a5; font-weight: 500; margin: 0 0.75em;">
-                <i class="fa fa-phone" aria-hidden="true" style="color: #ffd166;"></i> 
+                <i class="fa fa-phone" aria-hidden="true" style="color: #ffd166;"></i>
                 <a href="tel:+919886988915" style="color: inherit; text-decoration: none;">(+91) 988-698-8915</a>
               </span>
               <span style="color: #a0c4ff; font-weight: 500;">
                 <i class="fa fa-envelope" aria-hidden="true" style="color: #64ffda;"></i>
-                <a href="mailto:manjunathasundi07@gmail.com" style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@gmail.com</a>
+                <a href="mailto:manjunathasundi07@gmail.com"
+                  style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@gmail.com</a>
                 <span style="color: #444; margin: 0 5px;">|</span>
-                <a href="mailto:manjunathasundi07@zohomail.in" style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@zohomail.in</a>
+                <a href="mailto:manjunathasundi07@zohomail.in"
+                  style="color: #a0c4ff; text-decoration: none;">manjunathasundi07@zohomail.in</a>
               </span>
             </div>
-          <div class="intro-content">
-            <div class="lead mb-5">
-              <p class="mb-4 intro-paragraph">
-                  Senior Software Engineer at Intuit, with a distinguished career spanning 8+ years across leading organizations including Walmart Labs, Zeta Suite, and AllGoVision Technologies. 
+            <div class="intro-content">
+              <div class="lead mb-5">
+                <p class="mb-4 intro-paragraph">
+                  Senior Software Engineer at Intuit, with a distinguished career spanning 8+ years across leading
+                  organizations including Walmart Labs, Zeta Suite, and AllGoVision Technologies.
                   Graduated with a B.Tech in Computer Science from Manipal Institute of Technology, Manipal.
                 </p>
-              <p class="mb-4 intro-paragraph">
-                  Proven track record in developing high-performance, scalable enterprise applications that handle mission-critical operations with low-latency requirements. 
-                  Expert in full-stack development with deep expertise in Java, Spring Boot, Microservices, and Cloud Technologies.
+                <p class="mb-4 intro-paragraph">
+                  Proven track record in developing high-performance, scalable enterprise applications that handle
+                  mission-critical operations with low-latency requirements.
+                  Expert in full-stack development with deep expertise in Java, Spring Boot, Microservices, and Cloud
+                  Technologies.
                 </p>
-              <p class="mb-4 intro-paragraph">
-                  Demonstrated excellence in building reliable, scalable systems with expertise in cloud infrastructure, performance optimization, and implementing secure architectures. 
-                  Proficient in modern tech stack including Spring Boot, ReactJS, GraphQL, Kafka, and various cloud platforms (AWS, Azure, GCP). 
-                  Strong background in database technologies (PostgreSQL, MongoDB, CosmosDB) and DevOps tools (Docker, Kubernetes, Jenkins). 
-                  Experienced in conducting architectural reviews and implementing security best practices in enterprise applications.
+                <p class="mb-4 intro-paragraph">
+                  Demonstrated excellence in building reliable, scalable systems with expertise in cloud infrastructure,
+                  performance optimization, and implementing secure architectures.
+                  Proficient in modern tech stack including Spring Boot, ReactJS, GraphQL, Kafka, and various cloud
+                  platforms (AWS, Azure, GCP).
+                  Strong background in database technologies (PostgreSQL, MongoDB, CosmosDB) and DevOps tools (Docker,
+                  Kubernetes, Jenkins).
+                  Experienced in conducting architectural reviews and implementing security best practices in enterprise
+                  applications.
                 </p>
-              <p class="mb-4 intro-paragraph">
-                  Dedicated to continuous learning, actively pursuing knowledge in AI/ML through platforms like LinkedIn Learning, Coursera, and Udemy, with recent certifications in AI and Machine Learning. 
-                  Exploring the frontiers of AI technology, including Hugging Face for transformer models, ChatGPT for intelligent automation, and Google Gemini for advanced AI applications. 
-                  Maintaining a strong presence on HackerRank, consistently improving problem-solving skills and staying current with emerging technologies. 
-                  Passionate about learning new programming paradigms, exploring deep learning concepts, and applying AI/ML innovations to solve complex technical challenges.
+                <p class="mb-4 intro-paragraph">
+                  Dedicated to continuous learning, actively pursuing knowledge in AI/ML through platforms like LinkedIn
+                  Learning, Coursera, and Udemy, with recent certifications in AI and Machine Learning.
+                  Exploring the frontiers of AI technology, including Hugging Face for transformer models, ChatGPT for
+                  intelligent automation, and Google Gemini for advanced AI applications.
+                  Maintaining a strong presence on HackerRank, consistently improving problem-solving skills and staying
+                  current with emerging technologies.
+                  Passionate about learning new programming paradigms, exploring deep learning concepts, and applying
+                  AI/ML innovations to solve complex technical challenges.
                 </p>
               </div>
             </div>
-          <div class="social-links">
-            <ul class="list-inline list-social-icons mb-0">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/manju07/" target="_blank">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/manju07/" target="_blank">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.hackerrank.com/manju07" target="_blank">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
+            <div class="social-links">
+              <ul class="list-inline list-social-icons mb-0">
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/manju07/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://github.com/manju07/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.hackerrank.com/manju07" target="_blank">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
       <div class="my-auto">
         <h2 class="section-title">Experience</h2>
-        
+
         <div class="experience-card">
           <h3 class="mb-0">Senior Software Engineer</h3>
           <div class="subheading mb-3">Intuit</div>
           <p>September 2024 - Present</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Developed Quote-Async and Quote-Service applications to enhance customer buying experiences by analyzing data and suggesting suitable products</li>
-            <li><i class="fa-li fa fa-check"></i>Built asynchronous quote processing platform with real-time pricing calculations and multi-service integration architecture</li>
-            <li><i class="fa-li fa fa-check"></i>Implemented intelligent product recommendation system using data analysis to optimize customer buying journey</li>
-            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, GraphQL, Microservices, Kafka, PostgresDB, Redis Cache, HiveDB, ReactJS, Kubernetes, AWS</li>
+            <li><i class="fa-li fa fa-check"></i>Developed Quote-Async and Quote-Service applications to enhance
+              customer buying experiences by analyzing data and suggesting suitable products</li>
+            <li><i class="fa-li fa fa-check"></i>Built asynchronous quote processing platform with real-time pricing
+              calculations and multi-service integration architecture</li>
+            <li><i class="fa-li fa fa-check"></i>Implemented intelligent product recommendation system using data
+              analysis to optimize customer buying journey</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, GraphQL, Microservices, Kafka,
+              PostgresDB, Redis Cache, HiveDB, ReactJS, Kubernetes, AWS</li>
           </ul>
         </div>
 
@@ -1993,10 +2118,17 @@
           <div class="subheading mb-3">Walmart Labs</div>
           <p>July 2022 - September 2024</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Created Columbus-Foundation-App for seller management across Walmart marketplaces, achieving 100ms latency for 25K+ TPM using Spring Boot, Microservices, JUnit5 with Mockito, Apache Kafka, GraphQL and CosmosDB</li>
-            <li><i class="fa-li fa fa-check"></i>Developed Columbus-Read-App to serve seller data to over 100 consumer teams, handling 50K+ TPM with 100ms latency using Java, Spring Boot, Microservices, JUnit, Mockito, Kafka, Cosmos, GraphQL, Kubernetes, Spring-Security, OAuth2, JMeter, K8 and Docker</li>
-            <li><i class="fa-li fa fa-check"></i>Worked on MFA Omission downgrading from 2FA to 1FA based on tracking customer interactions to improve customer login experience using Spring-Boot, MySQL, OAuth2 and Spring-Security</li>
-            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, Microservices, JUnit5, Mockito, Kafka, CosmosDB, GraphQL, MySQL, OAuth2, Spring-Security, JMeter, Kubernetes, Docker</li>
+            <li><i class="fa-li fa fa-check"></i>Created Columbus-Foundation-App for seller management across Walmart
+              marketplaces, achieving 100ms latency for 25K+ TPM using Spring Boot, Microservices, JUnit5 with Mockito,
+              Apache Kafka, GraphQL and CosmosDB</li>
+            <li><i class="fa-li fa fa-check"></i>Developed Columbus-Read-App to serve seller data to over 100 consumer
+              teams, handling 50K+ TPM with 100ms latency using Java, Spring Boot, Microservices, JUnit, Mockito, Kafka,
+              Cosmos, GraphQL, Kubernetes, Spring-Security, OAuth2, JMeter, K8 and Docker</li>
+            <li><i class="fa-li fa fa-check"></i>Worked on MFA Omission downgrading from 2FA to 1FA based on tracking
+              customer interactions to improve customer login experience using Spring-Boot, MySQL, OAuth2 and
+              Spring-Security</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, Microservices, JUnit5, Mockito, Kafka,
+              CosmosDB, GraphQL, MySQL, OAuth2, Spring-Security, JMeter, Kubernetes, Docker</li>
           </ul>
         </div>
 
@@ -2005,10 +2137,14 @@
           <div class="subheading mb-3">Zeta Suite</div>
           <p>May 2021 - June 2022</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Implemented Recharge Service for mobile and DTH plans, processing over 2M transactions daily with high reliability and performance</li>
-            <li><i class="fa-li fa fa-check"></i>Built full-stack financial service solution with real-time transaction processing and comprehensive payment management</li>
-            <li><i class="fa-li fa fa-check"></i>Developed transaction monitoring and reconciliation systems ensuring 99.9% transaction success rate</li>
-            <li><i class="fa-li fa fa-check"></i>Technologies: AngularJS, NodeJS, ExpressJS, Java, Spring Boot, Kafka, MySQL</li>
+            <li><i class="fa-li fa fa-check"></i>Implemented Recharge Service for mobile and DTH plans, processing over
+              2M transactions daily with high reliability and performance</li>
+            <li><i class="fa-li fa fa-check"></i>Built full-stack financial service solution with real-time transaction
+              processing and comprehensive payment management</li>
+            <li><i class="fa-li fa fa-check"></i>Developed transaction monitoring and reconciliation systems ensuring
+              99.9% transaction success rate</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: AngularJS, NodeJS, ExpressJS, Java, Spring Boot, Kafka,
+              MySQL</li>
           </ul>
         </div>
 
@@ -2017,9 +2153,12 @@
           <div class="subheading mb-3">Walmart Labs</div>
           <p>November 2020 - May 2021</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Developed Alerting-Application for internal system alerts and customer issue notifications providing real-time monitoring capabilities</li>
-            <li><i class="fa-li fa fa-check"></i>Built comprehensive notification system with multi-channel delivery and intelligent alert routing for enterprise operations</li>
-            <li><i class="fa-li fa fa-check"></i>Implemented ReactJS frontend with intuitive dashboards and Java Spring Boot backend for robust system monitoring</li>
+            <li><i class="fa-li fa fa-check"></i>Developed Alerting-Application for internal system alerts and customer
+              issue notifications providing real-time monitoring capabilities</li>
+            <li><i class="fa-li fa fa-check"></i>Built comprehensive notification system with multi-channel delivery and
+              intelligent alert routing for enterprise operations</li>
+            <li><i class="fa-li fa fa-check"></i>Implemented ReactJS frontend with intuitive dashboards and Java Spring
+              Boot backend for robust system monitoring</li>
             <li><i class="fa-li fa fa-check"></i>Technologies: ReactJS, Java, Spring Boot, OracleDB, Azure</li>
           </ul>
         </div>
@@ -2029,10 +2168,14 @@
           <div class="subheading mb-3">Nouveau Labs</div>
           <p>February 2020 - November 2020</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Worked on DolphinVC product, a multi-platform video conferencing app with features like scheduling and instant meetings</li>
-            <li><i class="fa-li fa fa-check"></i>Developed secure authentication system with OAuth2 integration and session management for enterprise video collaboration</li>
-            <li><i class="fa-li fa fa-check"></i>Implemented cloud-native architecture using Docker containerization and Kubernetes orchestration on AWS infrastructure</li>
-            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, OAuth2, Kafka, OracleDB, Docker, Kubernetes, AWS</li>
+            <li><i class="fa-li fa fa-check"></i>Worked on DolphinVC product, a multi-platform video conferencing app
+              with features like scheduling and instant meetings</li>
+            <li><i class="fa-li fa fa-check"></i>Developed secure authentication system with OAuth2 integration and
+              session management for enterprise video collaboration</li>
+            <li><i class="fa-li fa fa-check"></i>Implemented cloud-native architecture using Docker containerization and
+              Kubernetes orchestration on AWS infrastructure</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, Spring Boot, OAuth2, Kafka, OracleDB, Docker,
+              Kubernetes, AWS</li>
           </ul>
         </div>
 
@@ -2041,11 +2184,16 @@
           <div class="subheading mb-3">AllGoVision Technologies</div>
           <p>March 2018 - December 2019</p>
           <ul class="fa-ul mb-0">
-            <li><i class="fa-li fa fa-check"></i>Built AllGoVision Analytics product with 50+ ML/DL/AI features, serving over 2K companies worldwide</li>
-            <li><i class="fa-li fa fa-check"></i>Developed AllGoVision Alarm Center for alarm representation and management generated by the analytics tool</li>
-            <li><i class="fa-li fa fa-check"></i>Implemented advanced computer vision algorithms for real-time video analytics and intelligent surveillance systems</li>
-            <li><i class="fa-li fa fa-check"></i>Created full-stack AI solution with Angular frontend, NodeJS backend, and MongoDB for scalable enterprise analytics</li>
-            <li><i class="fa-li fa fa-check"></i>Technologies: Java, NodeJS, Angular, MongoDB, Machine Learning, Deep Learning, Computer Vision</li>
+            <li><i class="fa-li fa fa-check"></i>Built AllGoVision Analytics product with 50+ ML/DL/AI features, serving
+              over 2K companies worldwide</li>
+            <li><i class="fa-li fa fa-check"></i>Developed AllGoVision Alarm Center for alarm representation and
+              management generated by the analytics tool</li>
+            <li><i class="fa-li fa fa-check"></i>Implemented advanced computer vision algorithms for real-time video
+              analytics and intelligent surveillance systems</li>
+            <li><i class="fa-li fa fa-check"></i>Created full-stack AI solution with Angular frontend, NodeJS backend,
+              and MongoDB for scalable enterprise analytics</li>
+            <li><i class="fa-li fa fa-check"></i>Technologies: Java, NodeJS, Angular, MongoDB, Machine Learning, Deep
+              Learning, Computer Vision</li>
           </ul>
         </div>
       </div>
@@ -2054,7 +2202,7 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
       <div class="my-auto">
         <h2 class="section-title">Featured Projects</h2>
-        
+
         <!-- Professional Projects -->
         <div class="project-category">
           <div class="project-category-header">
@@ -2064,10 +2212,11 @@
             </h3>
             <div class="project-category-line"></div>
             <p class="project-category-subtitle">
-              Enterprise-scale applications built for leading tech companies, handling millions of transactions and serving thousands of users worldwide.
+              Enterprise-scale applications built for leading tech companies, handling millions of transactions and
+              serving thousands of users worldwide.
             </p>
           </div>
-          
+
           <div class="projects-grid">
             <!-- Quote-Async & Quote-Service Platform -->
             <div class="project-card">
@@ -2083,7 +2232,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  Advanced asynchronous quote processing platform designed to enhance customer buying experiences across Intuit's product ecosystem. Features high-throughput quote generation, real-time pricing calculations, and seamless integration with multiple business units.
+                  Advanced asynchronous quote processing platform designed to enhance customer buying experiences across
+                  Intuit's product ecosystem. Features high-throughput quote generation, real-time pricing calculations,
+                  and seamless integration with multiple business units.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2127,7 +2278,8 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per minute with 100ms latency. The system provides real-time seller data management and analytics.
+                  A high-performance seller management system for Walmart marketplaces, handling 25K+ transactions per
+                  minute with 100ms latency. The system provides real-time seller data management and analytics.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2169,7 +2321,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  High-performance data serving application providing seller data to 100+ consumer teams across Walmart's marketplace ecosystem. Designed for scalability and reliability with comprehensive data access patterns.
+                  High-performance data serving application providing seller data to 100+ consumer teams across
+                  Walmart's marketplace ecosystem. Designed for scalability and reliability with comprehensive data
+                  access patterns.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2211,7 +2365,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  Mission-critical recharge service processing 2M+ transactions daily for Zeta's financial platform. Built with high reliability, real-time processing capabilities, and comprehensive transaction management.
+                  Mission-critical recharge service processing 2M+ transactions daily for Zeta's financial platform.
+                  Built with high reliability, real-time processing capabilities, and comprehensive transaction
+                  management.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2253,7 +2409,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  Comprehensive alerting and notification system for internal system monitoring and customer communications. Features real-time alert processing, multi-channel notifications, and intelligent alert routing.
+                  Comprehensive alerting and notification system for internal system monitoring and customer
+                  communications. Features real-time alert processing, multi-channel notifications, and intelligent
+                  alert routing.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2294,7 +2452,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  Multi-platform video conferencing application with enterprise-grade features including secure authentication, real-time communication, and scalable infrastructure designed for high-quality video experiences.
+                  Multi-platform video conferencing application with enterprise-grade features including secure
+                  authentication, real-time communication, and scalable infrastructure designed for high-quality video
+                  experiences.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2337,7 +2497,9 @@
                   </div>
                 </div>
                 <p class="project-description">
-                  Advanced analytics platform with 50+ ML/DL/AI features serving 2K+ companies worldwide. Comprehensive computer vision and AI-powered analytics solution for enterprise clients with real-time processing capabilities.
+                  Advanced analytics platform with 50+ ML/DL/AI features serving 2K+ companies worldwide. Comprehensive
+                  computer vision and AI-powered analytics solution for enterprise clients with real-time processing
+                  capabilities.
                 </p>
                 <div class="project-details">
                   <div class="project-tech">
@@ -2376,207 +2538,383 @@
             </h3>
             <div class="project-category-line"></div>
             <p class="project-category-subtitle">
-              Innovative AI/ML applications and microservice architectures showcasing cutting-edge technologies and experimental implementations.
+              Innovative AI/ML applications and microservice architectures showcasing cutting-edge technologies and
+              experimental implementations.
             </p>
           </div>
-          
+
           <div class="projects-grid">
-          <!-- Deep Research Assistant -->
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-search"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Deep Research Assistant</h3>
-                <div class="project-meta">
-                  <span class="project-company">Personal Project</span>
-                  <span class="project-date">2025</span>
-                </div>
+            <!-- Autonomous Traders -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-users"></i>
               </div>
-              <p class="project-description">
-                AI-powered research assistant that automatically generates comprehensive research reports. Uses OpenAI Agent SDK for autonomous task planning and execution with web search capabilities and email delivery.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">OpenAI GPT-4</span>
-                    <span class="tech-tag">Agent SDK</span>
-                    <span class="tech-tag">Gradio</span>
-                    <span class="tech-tag">Asyncio</span>
-                    <span class="tech-tag">Pydantic</span>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Autonomous Traders</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2025</span>
                   </div>
                 </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> Automated research planning</li>
-                    <li><i class="fa fa-check-circle"></i> 5-10 page comprehensive reports</li>
-                    <li><i class="fa fa-check-circle"></i> Email delivery system</li>
-                    <li><i class="fa fa-check-circle"></i> Unique trace ID for reproducibility</li>
-                  </ul>
-                </div>
-                <div class="project-links">
-                  <div class="blog-links">
-                    <a href="https://github.com/manju07/deep-research-assistant" target="_blank" class="github-link">
-                      <i class="fa fa-github"></i> View Code
-                    </a>
-                    <a href="https://huggingface.co/spaces/manju0707/deep-research-assistant-by-manjunath-asundi" target="_blank" class="read-more">
-                      <i class="fa fa-external-link"></i> Try Demo
-                    </a>
+                <p class="project-description">
+                  Sophisticated trading simulation system featuring multiple autonomous AI traders that independently
+                  manage portfolios using different investment strategies. Four traders (Warren, George, Ray, Cathie)
+                  operate as intelligent agents with unique investment philosophies, real-time market data
+                  integration, and complete portfolio management.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">AI Trading</span>
+                      <span class="tech-tag">Multi-Agent Systems</span>
+                      <span class="tech-tag">Gradio</span>
+                      <span class="tech-tag">MCP Architecture</span>
+                      <span class="tech-tag">Polygon.io API</span>
+                      <span class="tech-tag">SQLite</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Four distinct AI trading strategies</li>
+                      <li><i class="fa fa-check-circle"></i> Real-time market data integration</li>
+                      <li><i class="fa fa-check-circle"></i> Complete portfolio management system</li>
+                      <li><i class="fa fa-check-circle"></i> Web-based monitoring dashboard</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/autonomous-traders" target="_blank" class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                      <a href="https://huggingface.co/spaces/manju0707/autonomous-traders" target="_blank"
+                        class="read-more">
+                        <i class="fa fa-rocket"></i> Live Demo
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Multimodal RAG System -->
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-file-pdf-o"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Multimodal RAG System</h3>
-                <div class="project-meta">
-                  <span class="project-company">Personal Project</span>
-                  <span class="project-date">2025</span>
+            <!-- Financial Researcher with CrewAI -->
+            <div class="project-card">
+              <div class="project-image">
+                <div class="project-logo-container">
+                  <i class="fa fa-bar-chart"></i>
+                  <i class="fa fa-search"></i>
                 </div>
               </div>
-              <p class="project-description">
-                Advanced Retrieval-Augmented Generation system for PDF documents with ChromaDB vector store. Features agentic answering, semantic search, and interactive Gradio interface with live demo on Hugging Face Spaces.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">RAG</span>
-                    <span class="tech-tag">ChromaDB</span>
-                    <span class="tech-tag">Embeddings</span>
-                    <span class="tech-tag">Gradio</span>
-                    <span class="tech-tag">Hugging Face</span>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Financial Researcher with CrewAI</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2025</span>
                   </div>
                 </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> PDF document processing</li>
-                    <li><i class="fa fa-check-circle"></i> Vector embeddings & semantic search</li>
-                    <li><i class="fa fa-check-circle"></i> Live demo on Hugging Face</li>
-                    <li><i class="fa fa-check-circle"></i> Agentic answer synthesis</li>
-                  </ul>
-                </div>
-                <div class="project-links">
-                  <div class="blog-links">
-                    <a href="https://github.com/manju07/multimodal-rag-system" target="_blank" class="github-link">
-                      <i class="fa fa-github"></i> View Code
-                    </a>
-                    <a href="https://huggingface.co/spaces/manju0707/multimodal-rag-system" target="_blank" class="read-more">
-                      <i class="fa fa-rocket"></i> Live Demo
-                    </a>
+                <p class="project-description">
+                  Advanced financial research automation platform using CrewAI framework. Features coordinated AI
+                  agents that conduct comprehensive financial analysis, market research, and investment insights with
+                  collaborative multi-agent workflows and detailed logging system.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">CrewAI</span>
+                      <span class="tech-tag">Financial Analysis</span>
+                      <span class="tech-tag">Multi-Agent Collaboration</span>
+                      <span class="tech-tag">Market Research</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Automated financial research workflows</li>
+                      <li><i class="fa fa-check-circle"></i> Multi-agent collaboration system</li>
+                      <li><i class="fa fa-check-circle"></i> Comprehensive market analysis</li>
+                      <li><i class="fa fa-check-circle"></i> Investment insights generation</li>
+                      <li><i class="fa fa-check-circle"></i> Advanced logging and tracing system</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/financial_researcher_with_crewai" target="_blank"
+                        class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                      <a href="https://huggingface.co/spaces/manju0707/ai-financial-research-assistant" target="_blank"
+                        class="read-more">
+                        <i class="fa fa-external-link"></i> Try Demo
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- AI Stock Trading Platform -->
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-line-chart"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>AI Stock Trading Platform</h3>
-                <div class="project-meta">
-                  <span class="project-company">Personal Project</span>
-                  <span class="project-date">2024</span>
-                </div>
+            <!-- Deep Research Assistant -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-search"></i>
               </div>
-              <p class="project-description">
-                Sophisticated AI trading platform using multi-agent approach with specialized agents for technical analysis, sentiment analysis, and risk management. Features real-time consensus decision-making and multi-LLM validation system.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Agentic AI</span>
-                    <span class="tech-tag">Multi-Agent Systems</span>
-                    <span class="tech-tag">Streamlit</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">LLM Integration</span>
-                    <span class="tech-tag">SQLite</span>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Deep Research Assistant</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2025</span>
                   </div>
                 </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> Multi-agent consensus mechanism</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time market analysis</li>
-                    <li><i class="fa fa-check-circle"></i> Interactive dashboard with portfolio monitoring</li>
-                    <li><i class="fa fa-check-circle"></i> Automated risk management</li>
-                  </ul>
-                </div>
-                <div class="project-links">
-                  <div class="blog-links">
-                    <a href="https://github.com/manju07/stock-trading-app" target="_blank" class="github-link">
-                      <i class="fa fa-github"></i> View Code
-                    </a>
+                <p class="project-description">
+                  AI-powered research assistant that automatically generates comprehensive research reports. Uses OpenAI
+                  Agent SDK for autonomous task planning and execution with web search capabilities and email delivery.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">OpenAI GPT-4</span>
+                      <span class="tech-tag">Agent SDK</span>
+                      <span class="tech-tag">Gradio</span>
+                      <span class="tech-tag">Asyncio</span>
+                      <span class="tech-tag">Pydantic</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Automated research planning</li>
+                      <li><i class="fa fa-check-circle"></i> 5-10 page comprehensive reports</li>
+                      <li><i class="fa fa-check-circle"></i> Email delivery system</li>
+                      <li><i class="fa fa-check-circle"></i> Unique trace ID for reproducibility</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/deep-research-assistant" target="_blank" class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                      <a href="https://huggingface.co/spaces/manju0707/deep-research-assistant-by-manjunath-asundi"
+                        target="_blank" class="read-more">
+                        <i class="fa fa-external-link"></i> Try Demo
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Career Conversation AI Chatbot -->
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fa fa-comments"></i>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Career Conversation AI Chatbot</h3>
-                <div class="project-meta">
-                  <span class="project-company">Personal Project</span>
-                  <span class="project-date">2024</span>
-                </div>
+            <!-- Multimodal RAG System -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-file-pdf-o"></i>
               </div>
-              <p class="project-description">
-                Conversational AI agent representing my professional profile, built with multi-model support (OpenAI & Gemini). Features contextual knowledge from resume and LinkedIn, with lead capture and notification system.
-              </p>
-              <div class="project-details">
-                <div class="project-tech">
-                  <h4><i class="fa fa-code"></i> Technologies</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">OpenAI</span>
-                    <span class="tech-tag">Google Gemini</span>
-                    <span class="tech-tag">Gradio</span>
-                    <span class="tech-tag">RAG</span>
-                    <span class="tech-tag">Pushover API</span>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Multimodal RAG System</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2025</span>
                   </div>
                 </div>
-                <div class="project-achievements">
-                  <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
-                  <ul>
-                    <li><i class="fa fa-check-circle"></i> Multi-model AI integration</li>
-                    <li><i class="fa fa-check-circle"></i> Contextual professional knowledge</li>
-                    <li><i class="fa fa-check-circle"></i> Lead capture and logging</li>
-                    <li><i class="fa fa-check-circle"></i> Real-time notifications</li>
-                  </ul>
+                <p class="project-description">
+                  Advanced Retrieval-Augmented Generation system for PDF documents with ChromaDB vector store. Features
+                  agentic answering, semantic search, and interactive Gradio interface with live demo on Hugging Face
+                  Spaces.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">RAG</span>
+                      <span class="tech-tag">ChromaDB</span>
+                      <span class="tech-tag">Embeddings</span>
+                      <span class="tech-tag">Gradio</span>
+                      <span class="tech-tag">Hugging Face</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> PDF document processing</li>
+                      <li><i class="fa fa-check-circle"></i> Vector embeddings & semantic search</li>
+                      <li><i class="fa fa-check-circle"></i> Live demo on Hugging Face</li>
+                      <li><i class="fa fa-check-circle"></i> Agentic answer synthesis</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/multimodal-rag-system" target="_blank" class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                      <a href="https://huggingface.co/spaces/manju0707/multimodal-rag-system" target="_blank"
+                        class="read-more">
+                        <i class="fa fa-rocket"></i> Live Demo
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div class="project-links">
-                  <div class="blog-links">
-                    <a href="https://github.com/manju07/manjunath-career-conversation-ai-chatbot" target="_blank" class="github-link">
-                      <i class="fa fa-github"></i> View Code
-                    </a>
-                    <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="read-more">
-                      <i class="fa fa-external-link"></i> Chat Now
-                    </a>
+              </div>
+            </div>
+
+            <!-- Debater with CrewAI -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-balance-scale"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Debater with CrewAI</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2025</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Intelligent debate simulation system powered by CrewAI. Creates structured debates with multiple AI
+                  agents representing different perspectives, conducting research, formulating arguments, and engaging
+                  in dynamic discussions on complex topics.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">CrewAI</span>
+                      <span class="tech-tag">Debate Systems</span>
+                      <span class="tech-tag">Argument Mining</span>
+                      <span class="tech-tag">Multi-Agent Dialogue</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Structured debate automation</li>
+                      <li><i class="fa fa-check-circle"></i> Multi-perspective argument generation</li>
+                      <li><i class="fa fa-check-circle"></i> Research-backed position taking</li>
+                      <li><i class="fa fa-check-circle"></i> Dynamic discussion management</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/debater-with-crewai" target="_blank" class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Career Conversation AI Chatbot -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-comments"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>Career Conversation AI Chatbot</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2024</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Conversational AI agent representing my professional profile, built with multi-model support (OpenAI
+                  & Gemini). Features contextual knowledge from resume and LinkedIn, with lead capture and
+                  notification system.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">OpenAI</span>
+                      <span class="tech-tag">Google Gemini</span>
+                      <span class="tech-tag">Gradio</span>
+                      <span class="tech-tag">RAG</span>
+                      <span class="tech-tag">Pushover API</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Multi-model AI integration</li>
+                      <li><i class="fa fa-check-circle"></i> Contextual professional knowledge</li>
+                      <li><i class="fa fa-check-circle"></i> Lead capture and logging</li>
+                      <li><i class="fa fa-check-circle"></i> Real-time notifications</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/manjunath-career-conversation-ai-chatbot" target="_blank"
+                        class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                      <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank"
+                        class="read-more">
+                        <i class="fa fa-external-link"></i> Chat Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Stock Trading Platform -->
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fa fa-line-chart"></i>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3>AI Stock Trading Platform</h3>
+                  <div class="project-meta">
+                    <span class="project-company">Personal Project</span>
+                    <span class="project-date">2024</span>
+                  </div>
+                </div>
+                <p class="project-description">
+                  Sophisticated AI trading platform using multi-agent approach with specialized agents for technical
+                  analysis, sentiment analysis, and risk management. Features real-time consensus decision-making and
+                  multi-LLM validation system.
+                </p>
+                <div class="project-details">
+                  <div class="project-tech">
+                    <h4><i class="fa fa-code"></i> Technologies</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Agentic AI</span>
+                      <span class="tech-tag">Multi-Agent Systems</span>
+                      <span class="tech-tag">Streamlit</span>
+                      <span class="tech-tag">FastAPI</span>
+                      <span class="tech-tag">LLM Integration</span>
+                      <span class="tech-tag">SQLite</span>
+                    </div>
+                  </div>
+                  <div class="project-achievements">
+                    <h4><i class="fa fa-trophy"></i> Key Achievements</h4>
+                    <ul>
+                      <li><i class="fa fa-check-circle"></i> Multi-agent consensus mechanism</li>
+                      <li><i class="fa fa-check-circle"></i> Real-time market analysis</li>
+                      <li><i class="fa fa-check-circle"></i> Interactive dashboard with portfolio monitoring</li>
+                      <li><i class="fa fa-check-circle"></i> Automated risk management</li>
+                    </ul>
+                  </div>
+                  <div class="project-links">
+                    <div class="blog-links">
+                      <a href="https://github.com/manju07/stock-trading-app" target="_blank" class="github-link">
+                        <i class="fa fa-github"></i> View Code
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2592,59 +2930,110 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h4>Languages & Platforms</h4>
+            <h4>💻 Programming Languages</h4>
             <ul class="skill-list">
               <li>Java</li>
               <li>Python</li>
-              <li>Node.js</li>
-              <li>JavaScript</li>
+              <li>JavaScript/TypeScript</li>
               <li>C/C++</li>
-              <li>Windows, Mac, Linux</li>
+              <li>SQL</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>Frameworks & Tools</h4>
+            <h4>🤖 AI & Machine Learning</h4>
             <ul class="skill-list">
-              <li>Spring Boot/Cloud</li>
-              <li>React.js/Angular</li>
-              <li>FastAPI/Streamlit</li>
-              <li>GraphQL</li>
-              <li>JMeter</li>
-              <li>JUnit/Mockito</li>
+              <li>OpenAI/GPT-4/Claude/Gemini</li>
+              <li>LangChain/LangGraph/LangSmith</li>
+              <li>CrewAI Framework/AutoGen</li>
+              <li>Multi-Agent Systems</li>
+              <li>Agentic AI Architecture</li>
+              <li>MCP (Model Context Protocol)</li>
+              <li>RAG/Vector Embeddings</li>
+              <li>ChromaDB/Pinecone/Weaviate</li>
+              <li>Hugging Face/Transformers</li>
+              <li>TensorFlow/PyTorch/Keras</li>
+              <li>OpenAI Agent SDK</li>
+              <li>Ollama/NVIDIA NIM</li>
+              <li>scikit-learn/Pandas/NumPy</li>
+              <li>MLflow/Weights & Biases</li>
+              <li>Jupyter/Google Colab</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>Databases & Cloud</h4>
+            <h4>🔧 Frameworks & Libraries</h4>
+            <ul class="skill-list">
+              <li>Spring Boot/Spring Cloud</li>
+              <li>FastAPI/Streamlit</li>
+              <li>React.js/Angular/Vue.js</li>
+              <li>Django/Flask</li>
+              <li>Express.js/Node.js</li>
+              <li>GraphQL</li>
+              <li>JUnit5/Mockito/TestNG</li>
+              <li>Hibernate/JPA</li>
+              <li>Bootstrap/Tailwind CSS</li>
+              <li>Webpack/Vite</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4>☁️ Cloud & Infrastructure</h4>
+            <ul class="skill-list">
+              <li>AWS (Lambda/S3/EC2/RDS)</li>
+              <li>Azure/GCP</li>
+              <li>Docker/Kubernetes</li>
+              <li>Microservices Architecture</li>
+              <li>Serverless Architecture</li>
+              <li>Terraform/CloudFormation</li>
+              <li>Jenkins/GitHub Actions</li>
+              <li>Grafana/Prometheus</li>
+              <li>ELK Stack/Splunk</li>
+              <li>Service Mesh/Istio</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4>💾 Databases & Storage</h4>
             <ul class="skill-list">
               <li>MySQL/PostgreSQL</li>
               <li>MongoDB/Cassandra</li>
-              <li>Cosmos DB/DynamoDB</li>
-              <li>AWS/Azure/GCP</li>
-              <li>ElasticSearch/Solr</li>
-              <li>Redis/Memcache</li>
+              <li>CosmosDB/DynamoDB</li>
+              <li>Redis/Memcached</li>
+              <li>ElasticSearch/OpenSearch</li>
+              <li>InfluxDB/TimescaleDB</li>
+              <li>SQLite/H2</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>AI & ML Tools</h4>
+            <h4>🔄 Integration & Messaging</h4>
             <ul class="skill-list">
-              <li>OpenAI Agent SDK</li>
-              <li>CrewAI</li>
-              <li>Agentic AI/Multi-Agent Systems</li>
-              <li>RAG/ChromaDB</li>
-              <li>Hugging Face/LangChain</li>
-              <li>ChatGPT/OpenAI/Gemini</li>
-              <li>Gradio/Vector Embeddings</li>
+              <li>Apache Kafka</li>
+              <li>RabbitMQ/ActiveMQ</li>
+              <li>REST/GraphQL APIs</li>
+              <li>OAuth2/JWT</li>
+              <li>WebSockets</li>
+              <li>Apache Camel</li>
             </ul>
           </div>
+          
+          
           <div class="skill-category">
-            <h4>DevOps & Infrastructure</h4>
+            <h4>🛠️ Development Tools</h4>
             <ul class="skill-list">
-              <li>Docker/Kubernetes</li>
-              <li>Jenkins/CI-CD</li>
-              <li>Kafka/RabbitMQ</li>
-              <li>Grafana/Prometheus</li>
-              <li>SonarQube/Splunk</li>
-              <li>Terraform/Infrastructure as Code</li>
+              <li>Cursor IDE</li>
+              <li>Windsurf IDE</li>
+              <li>GitHub Copilot</li>
+              <li>IntelliJ IDEA/VS Code</li>
+              <li>Git/GitHub</li>
+              <li>Maven/Gradle</li>
+              <li>Docker Compose</li>
+              <li>SonarQube</li>
+              <li>JMeter/Postman</li>
+              <li>Swagger/OpenAPI</li>
+              <li>Linux/Unix</li>
+              <li>Bash/PowerShell</li>
             </ul>
           </div>
         </div>
@@ -2654,7 +3043,7 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
       <div class="my-auto">
         <h2 class="section-title">Education</h2>
-        
+
         <div class="education-timeline">
           <div class="education-item">
             <div class="education-dot"></div>
@@ -2725,9 +3114,9 @@
         left: 20px;
         height: 100%;
         width: 2px;
-        background: linear-gradient(to bottom, 
-          var(--secondary-color) 0%,
-          rgba(100, 255, 218, 0.3) 100%);
+        background: linear-gradient(to bottom,
+            var(--secondary-color) 0%,
+            rgba(100, 255, 218, 0.3) 100%);
       }
 
       .education-item {
@@ -2898,7 +3287,7 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="certificates">
       <div class="my-auto">
         <h2 class="section-title">Certificates</h2>
-        
+
         <div class="filter-buttons mb-4">
           <button class="btn btn-primary active" data-filter="all">All</button>
           <button class="btn btn-outline-primary" data-filter="professional">Professional</button>
@@ -2911,10 +3300,25 @@
           <!-- 2025 Certifications -->
           <div class="certificate-card professional udemy">
             <div class="certificate-icon">
+              <i class="fa fa-robot"></i>
+            </div>
+            <div class="certificate-content">
+              <h5><a href="https://www.udemy.com/certificate/UC-4506be04-7d3e-43fb-8589-ca94ef281e5a/"
+                  target="_blank">AI Engineer Agentic Track: The Complete Agent & MCP Course</a></h5>
+              <div class="certificate-meta">
+                <span class="badge badge-primary">Udemy</span>
+                <span class="certificate-date">Nov 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-card professional udemy">
+            <div class="certificate-icon">
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-5b3312c7-f523-4511-bd71-3493a1c08d4f/" target="_blank">Generative AI</a></h5>
+              <h5><a href="https://www.udemy.com/certificate/UC-5b3312c7-f523-4511-bd71-3493a1c08d4f/"
+                  target="_blank">Generative AI</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-primary">Udemy</span>
                 <span class="certificate-date">2025</span>
@@ -2928,7 +3332,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.coursera.org/account/accomplishments/certificate/J282QAZ6CQ3F" target="_blank">Exam Prep CKA: Certified Kubernetes Administrator</a></h5>
+              <h5><a href="https://www.coursera.org/account/accomplishments/certificate/J282QAZ6CQ3F"
+                  target="_blank">Exam Prep CKA: Certified Kubernetes Administrator</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-info">Coursera</span>
                 <span class="certificate-date">2024</span>
@@ -2942,7 +3347,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.coursera.org/account/accomplishments/verify/OIDRUBBHNLGH" target="_blank">Advanced React</a></h5>
+              <h5><a href="https://www.coursera.org/account/accomplishments/verify/OIDRUBBHNLGH"
+                  target="_blank">Advanced React</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-info">Coursera</span>
                 <span class="certificate-date">2023</span>
@@ -2969,7 +3375,9 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.linkedin.com/learning/certificates/c628829b224a06f5a26c5b1e32e56ffd1d040262fdfaa0482295f9b7678a2dcb" target="_blank">Learning GraphQL</a></h5>
+              <h5><a
+                  href="https://www.linkedin.com/learning/certificates/c628829b224a06f5a26c5b1e32e56ffd1d040262fdfaa0482295f9b7678a2dcb"
+                  target="_blank">Learning GraphQL</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-secondary">LinkedIn Learning</span>
                 <span class="certificate-date">2022</span>
@@ -2982,7 +3390,9 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.linkedin.com/learning/certificates/d3ba3202025ec8b55f726953747905020e66e88d9eeb8df3f328c509af3824f0" target="_blank">Learning Kubernetes</a></h5>
+              <h5><a
+                  href="https://www.linkedin.com/learning/certificates/d3ba3202025ec8b55f726953747905020e66e88d9eeb8df3f328c509af3824f0"
+                  target="_blank">Learning Kubernetes</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-secondary">LinkedIn Learning</span>
                 <span class="certificate-date">2022</span>
@@ -2996,7 +3406,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-b844646b-946c-412c-8856-b2c3498f42a1/" target="_blank">Learn Java Unit Testing with Junit & Mockito in 30 Steps</a></h5>
+              <h5><a href="https://www.udemy.com/certificate/UC-b844646b-946c-412c-8856-b2c3498f42a1/"
+                  target="_blank">Learn Java Unit Testing with Junit & Mockito in 30 Steps</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-primary">Udemy</span>
                 <span class="certificate-date">2021</span>
@@ -3009,7 +3420,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/53a5b0a9f9be" target="_blank">JavaScript (Intermediate)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/53a5b0a9f9be" target="_blank">JavaScript
+                  (Intermediate)</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2021</span>
@@ -3022,7 +3434,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/1444616f4785" target="_blank">JavaScript (Basic)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/1444616f4785" target="_blank">JavaScript (Basic)</a>
+              </h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2021</span>
@@ -3036,7 +3449,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-6658e3f3-ac7c-4bd6-8a9b-6c4ebb47621f/" target="_blank">Master Microservices with Spring Boot and Spring Cloud</a></h5>
+              <h5><a href="https://www.udemy.com/certificate/UC-6658e3f3-ac7c-4bd6-8a9b-6c4ebb47621f/"
+                  target="_blank">Master Microservices with Spring Boot and Spring Cloud</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-primary">Udemy</span>
                 <span class="certificate-date">2020</span>
@@ -3049,7 +3463,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-437dfca9-c5bc-498a-8e96-1e567708d564/" target="_blank">Jenkins, From Zero To Hero: Become a DevOps Jenkins Master</a></h5>
+              <h5><a href="https://www.udemy.com/certificate/UC-437dfca9-c5bc-498a-8e96-1e567708d564/"
+                  target="_blank">Jenkins, From Zero To Hero: Become a DevOps Jenkins Master</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-primary">Udemy</span>
                 <span class="certificate-date">2020</span>
@@ -3062,7 +3477,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-d3f6c9f3-d39e-46be-91f6-c441f6fe794b/" target="_blank">Master Docker with Java - DevOps for Spring Microservices</a></h5>
+              <h5><a href="https://www.udemy.com/certificate/UC-d3f6c9f3-d39e-46be-91f6-c441f6fe794b/"
+                  target="_blank">Master Docker with Java - DevOps for Spring Microservices</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-primary">Udemy</span>
                 <span class="certificate-date">2020</span>
@@ -3075,7 +3491,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/b81d11ec346d" target="_blank">Problem Solving (Advanced)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/b81d11ec346d" target="_blank">Problem Solving
+                  (Advanced)</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2020</span>
@@ -3088,7 +3505,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/31f85fdb26b9" target="_blank">Java (Intermediate)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/31f85fdb26b9" target="_blank">Java (Intermediate)</a>
+              </h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2020</span>
@@ -3101,7 +3519,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/afd6f5e4359c" target="_blank">SQL (Intermediate)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/afd6f5e4359c" target="_blank">SQL (Intermediate)</a>
+              </h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2020</span>
@@ -3127,7 +3546,8 @@
               <i class="fa fa-certificate"></i>
             </div>
             <div class="certificate-content">
-              <h5><a href="https://www.hackerrank.com/certificates/db458d8c9338" target="_blank">Problem Solving (Basic)</a></h5>
+              <h5><a href="https://www.hackerrank.com/certificates/db458d8c9338" target="_blank">Problem Solving
+                  (Basic)</a></h5>
               <div class="certificate-meta">
                 <span class="badge badge-success">HackerRank</span>
                 <span class="certificate-date">2020</span>
@@ -3167,7 +3587,7 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="ai-chat">
       <div class="my-auto">
         <h2 class="section-title">AI Career Assistant</h2>
-        
+
         <div class="ai-chat-container">
           <div class="ai-chat-content">
             <div class="ai-chat-icon">
@@ -3176,8 +3596,9 @@
             <div class="ai-chat-text">
               <h3 class="mb-4">Chat with AI Assistant</h3>
               <p class="lead mb-4">
-                Experience an interactive conversation with an AI assistant trained on my professional background. 
-                Ask questions about my experience, skills, projects, or career journey, and get instant, accurate responses.
+                Experience an interactive conversation with an AI assistant trained on my professional background.
+                Ask questions about my experience, skills, projects, or career journey, and get instant, accurate
+                responses.
               </p>
               <div class="ai-features mb-4">
                 <div class="feature-item">
@@ -3193,7 +3614,8 @@
                   <span>24/7 availability</span>
                 </div>
               </div>
-              <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank" class="btn btn-primary btn-lg">
+              <a href="https://huggingface.co/spaces/manju0707/manjunath-career-conversation" target="_blank"
+                class="btn btn-primary btn-lg">
                 <i class="fa fa-comments mr-2"></i>
                 Start Chat Now
               </a>
@@ -3212,7 +3634,7 @@
         justify-content: center;
         gap: 0.5rem;
       }
-      
+
       .filter-buttons .btn {
         transition: all 0.3s ease;
         border-radius: 20px;
@@ -3222,37 +3644,37 @@
         font-size: 0.9rem;
         letter-spacing: 0.5px;
       }
-      
+
       .filter-buttons .btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
-      
+
       .filter-buttons .btn.active {
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
-      
+
       .certificates-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 1.5rem;
         margin-top: 2rem;
       }
-      
+
       .certificate-card {
         background: #fff;
         border-radius: 16px;
         padding: 1.5rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
       }
-      
+
       .certificate-card::before {
         content: '';
         position: absolute;
@@ -3264,16 +3686,16 @@
         transform: scaleY(0);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
+
       .certificate-card:hover {
         transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       }
-      
+
       .certificate-card:hover::before {
         transform: scaleY(1);
       }
-      
+
       .certificate-icon {
         font-size: 2.5rem;
         margin-right: 1.5rem;
@@ -3281,16 +3703,16 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         opacity: 0.8;
       }
-      
+
       .certificate-card:hover .certificate-icon {
         transform: scale(1.1) rotate(5deg);
         opacity: 1;
       }
-      
+
       .certificate-content {
         flex: 1;
       }
-      
+
       .certificate-content h5 {
         margin: 0;
         font-size: 1.1rem;
@@ -3298,14 +3720,14 @@
         font-weight: 600;
         color: var(--text-color);
       }
-      
+
       .certificate-content h5 a {
         color: var(--text-color);
         text-decoration: none;
         transition: color 0.3s ease;
         position: relative;
       }
-      
+
       .certificate-content h5 a::after {
         content: '';
         position: absolute;
@@ -3316,22 +3738,22 @@
         background-color: var(--secondary-color);
         transition: width 0.3s ease;
       }
-      
+
       .certificate-content h5 a:hover {
         color: var(--secondary-color);
       }
-      
+
       .certificate-content h5 a:hover::after {
         width: 100%;
       }
-      
+
       .certificate-meta {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-top: 0.75rem;
       }
-      
+
       .badge {
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
@@ -3339,27 +3761,28 @@
         font-weight: 500;
         letter-spacing: 0.5px;
       }
-      
+
       .certificate-date {
         font-size: 0.9rem;
         color: #666;
         font-weight: 500;
       }
-      
+
       .certificate-card {
         display: none;
         animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
+
       .certificate-card.show {
         display: flex;
       }
-      
+
       @keyframes fadeIn {
         from {
           opacity: 0;
           transform: translateY(20px);
         }
+
         to {
           opacity: 1;
           transform: translateY(0);
@@ -3367,23 +3790,37 @@
       }
 
       /* Platform-specific colors */
-      .badge-primary { background-color: #a435f0; }
-      .badge-info { background-color: #0056d2; }
-      .badge-success { background-color: #1ba94c; }
-      .badge-warning { background-color: #f7b731; }
-      .badge-secondary { background-color: #0077b5; }
+      .badge-primary {
+        background-color: #a435f0;
+      }
+
+      .badge-info {
+        background-color: #0056d2;
+      }
+
+      .badge-success {
+        background-color: #1ba94c;
+      }
+
+      .badge-warning {
+        background-color: #f7b731;
+      }
+
+      .badge-secondary {
+        background-color: #0077b5;
+      }
 
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .certificates-grid {
           grid-template-columns: 1fr;
         }
-        
+
         .filter-buttons {
           flex-direction: column;
           align-items: stretch;
         }
-        
+
         .filter-buttons .btn {
           margin: 0.25rem 0;
         }
@@ -3394,7 +3831,7 @@
         border-radius: 24px;
         padding: 3rem;
         margin-top: 2rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(100, 255, 218, 0.2);
         position: relative;
         overflow: hidden;
@@ -3512,28 +3949,28 @@
     </style>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         const filterButtons = document.querySelectorAll('.filter-buttons .btn');
         const certificateCards = document.querySelectorAll('.certificate-card');
-        
+
         // Show all items initially
         certificateCards.forEach(card => card.classList.add('show'));
-        
+
         filterButtons.forEach(button => {
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function () {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
             this.classList.add('active');
-            
+
             const filter = this.getAttribute('data-filter');
-            
+
             // Add fade out animation
             certificateCards.forEach(card => {
               card.style.opacity = '0';
               card.style.transform = 'translateY(20px)';
             });
-            
+
             // Wait for fade out animation
             setTimeout(() => {
               certificateCards.forEach(card => {
@@ -3554,7 +3991,7 @@
     </script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         // Get all sections and nav links
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -3567,13 +4004,13 @@
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
               // Remove active class from all links
               navLinks.forEach(link => {
                 link.classList.remove('active');
               });
-              
+
               // Add active class to corresponding link
               const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
               if (activeLink) {
@@ -3585,7 +4022,7 @@
 
         // Add click event listeners to nav links
         navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
+          link.addEventListener('click', function (e) {
             // Remove active class from all links
             navLinks.forEach(l => l.classList.remove('active'));
             // Add active class to clicked link
@@ -3616,7 +4053,7 @@
     // Theme Toggle
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
-    
+
     themeToggle.addEventListener('click', () => {
       document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
       themeIcon.className = document.body.dataset.theme === 'light' ? 'fa fa-sun-o' : 'fa fa-moon-o';
@@ -3630,7 +4067,7 @@
 
     // Back to Top Button
     const backToTop = document.querySelector('.back-to-top');
-    
+
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
         backToTop.classList.add('visible');
