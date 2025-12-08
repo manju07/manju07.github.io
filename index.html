@@ -46,6 +46,21 @@
       overflow-x: hidden;
     }
 
+    /* Ensure projects section scrolls properly on mobile */
+    @media (max-width: 768px) {
+      html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      section#projects {
+        scroll-margin-top: 80px;
+        scroll-padding-top: 80px;
+      }
+    }
+
     /* Hero Section */
     #about {
       min-height: 100vh;
@@ -214,6 +229,31 @@
       color: var(--heading-color);
     }
 
+    /* Ensure projects section is always visible on mobile */
+    @media (max-width: 768px) {
+      section#projects.resume-section,
+      section#projects.resume-section.d-flex,
+      section#projects.resume-section.d-flex.flex-column {
+        display: block !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+
+      section#projects.resume-section.d-flex {
+        display: block !important;
+      }
+
+      section#projects.resume-section.flex-column {
+        display: block !important;
+      }
+    }
+
     .section-title {
       font-size: 3rem;
       font-weight: 700;
@@ -283,8 +323,8 @@
     /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
       margin-top: 4rem;
     }
 
@@ -323,11 +363,8 @@
 
     .skill-category h4 {
       color: var(--secondary-color);
-      font-size: 1.4rem;
-      margin-bottom: 1.8rem;
-      text-align: center;
-      font-weight: 600;
-      line-height: 1.4;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
     }
 
     .skill-list {
@@ -723,8 +760,56 @@
     }
 
     /* Projects Section Styles */
+    #projects {
+      position: relative;
+      width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      scroll-margin-top: 100px;
+    }
+
+    #projects .my-auto {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    /* Ensure container-fluid doesn't cause overflow on mobile */
+    @media (max-width: 768px) {
+      .container-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow-x: hidden !important;
+      }
+
+      #projects {
+        padding-top: 120px !important;
+        min-height: 100vh !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+
+      #projects .resume-section {
+        display: block !important;
+        visibility: visible !important;
+      }
+    }
+
     .project-category {
       margin-bottom: 4rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .project-category:last-child {
@@ -775,6 +860,8 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .project-card {
@@ -987,14 +1074,26 @@
 
     /* Tablet Breakpoint */
     @media (max-width: 768px) {
+      #projects {
+        padding: 3rem 1rem !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
       .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: 1fr !important;
         gap: 1.5rem;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
       }
 
       .project-card {
         padding: 1.5rem;
         border-radius: 16px;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .project-image {
@@ -1006,15 +1105,18 @@
         font-size: 1.3rem;
         line-height: 1.3;
         margin-bottom: 0.5rem;
+        word-wrap: break-word;
       }
 
       .project-description {
         font-size: 0.9rem;
         line-height: 1.5;
+        word-wrap: break-word;
       }
 
       .tech-tags {
         gap: 0.4rem;
+        width: 100%;
       }
 
       .tech-tag {
@@ -1024,35 +1126,52 @@
 
       .project-achievements ul {
         margin-left: 1rem;
+        width: 100%;
       }
 
       .project-achievements li {
         font-size: 0.85rem;
         margin-bottom: 0.4rem;
+        word-wrap: break-word;
       }
 
       .project-category-title {
         font-size: 1.5rem;
+        text-align: center;
       }
 
       .project-category-subtitle {
         font-size: 0.9rem;
         line-height: 1.5;
+        padding: 0 0.5rem;
       }
     }
 
     /* Mobile Breakpoint */
     @media (max-width: 576px) {
+      #projects {
+        padding: 2rem 0.75rem !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+
       .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 1.25rem;
         margin-top: 1.5rem;
+        width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
       }
 
       .project-card {
-        padding: 1.25rem;
+        padding: 1.25rem !important;
         border-radius: 12px;
         margin-bottom: 0.5rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .project-image {
@@ -1062,32 +1181,41 @@
 
       .project-header {
         margin-bottom: 0.8rem;
+        width: 100%;
       }
 
       .project-header h3 {
         font-size: 1.2rem;
         line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       .project-meta {
         flex-direction: column;
         gap: 0.3rem;
         align-items: flex-start;
+        width: 100%;
       }
 
       .project-company,
       .project-date {
         font-size: 0.85rem;
+        word-wrap: break-word;
       }
 
       .project-description {
         font-size: 0.85rem;
         line-height: 1.6;
         margin-bottom: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       .project-details {
         gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .project-tech h4,
@@ -1098,26 +1226,31 @@
 
       .tech-tags {
         gap: 0.3rem;
+        width: 100%;
       }
 
       .tech-tag {
         font-size: 0.75rem;
         padding: 0.25rem 0.6rem;
+        word-wrap: break-word;
       }
 
       .project-achievements ul {
         margin-left: 0.8rem;
+        width: calc(100% - 0.8rem);
       }
 
       .project-achievements li {
         font-size: 0.8rem;
         line-height: 1.4;
         margin-bottom: 0.3rem;
+        word-wrap: break-word;
       }
 
       .project-category-title {
         font-size: 1.3rem;
         text-align: center;
+        word-wrap: break-word;
       }
 
       .project-category-subtitle {
@@ -1125,6 +1258,7 @@
         line-height: 1.6;
         text-align: center;
         padding: 0 1rem;
+        word-wrap: break-word;
       }
 
       /* Improve touch targets */
@@ -1277,47 +1411,182 @@
 
     /* Global mobile improvements for projects section */
     @media (max-width: 768px) {
-      #projects {
-        padding: 3rem 1rem !important;
+      section#projects {
+        padding: 120px 1rem 3rem 1rem !important;
+        min-height: auto !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        margin: 0 !important;
+      }
+
+      section#projects.resume-section {
+        display: block !important;
+        flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
 
       #projects .my-auto {
-        width: 100%;
-        max-width: none;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      #projects .container-fluid {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
       }
 
       .section-title {
         font-size: 2.2rem;
         margin-bottom: 2rem;
+        padding: 0 0.5rem;
+        text-align: center;
+        display: block !important;
+        visibility: visible !important;
       }
 
       .project-category {
         margin-bottom: 3rem;
+        width: 100%;
+        padding: 0;
+        display: block !important;
+        visibility: visible !important;
       }
 
       .project-category-header {
         margin-bottom: 2rem;
         padding: 0 0.5rem;
+        width: 100%;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .projects-grid {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        display: grid !important;
+        visibility: visible !important;
+      }
+
+      .project-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 1.5rem !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
     }
 
     @media (max-width: 480px) {
-      #projects {
-        padding: 2rem 0.5rem !important;
+      section#projects {
+        padding: 100px 0.75rem 2rem 0.75rem !important;
+        min-height: auto !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        margin: 0 !important;
+      }
+
+      section#projects.resume-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      #projects .my-auto {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
 
       .section-title {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+        text-align: center;
+        word-wrap: break-word;
+        display: block !important;
+        visibility: visible !important;
       }
 
       .project-category {
         margin-bottom: 2rem;
+        width: 100%;
+        padding: 0;
+        display: block !important;
+        visibility: visible !important;
       }
 
       .project-category-header {
         margin-bottom: 1.5rem;
-        padding: 0 0.25rem;
+        padding: 0 0.5rem;
+        width: 100%;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .projects-grid {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 1.25rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .project-details {
+        padding: 1rem !important;
+      }
+    }
+
+    /* Extra small mobile devices */
+    @media (max-width: 375px) {
+      #projects {
+        padding: 1.5rem 0.5rem !important;
+      }
+
+      .project-card {
+        padding: 1rem !important;
+      }
+
+      .project-details {
+        padding: 0.75rem !important;
       }
     }
 
@@ -1999,7 +2268,7 @@
     </div>
   </nav>
 
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0" style="width: 100%; max-width: 100%; overflow-x: hidden;">
 
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
       <div class="my-auto">
@@ -2603,10 +2872,7 @@
             <!-- Financial Researcher with CrewAI -->
             <div class="project-card">
               <div class="project-image">
-                <div class="project-logo-container">
-                  <i class="fa fa-bar-chart"></i>
-                  <i class="fa fa-search"></i>
-                </div>
+                <i class="fa fa-bar-chart"></i>
               </div>
               <div class="project-content">
                 <div class="project-header">
@@ -2930,110 +3196,74 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h4>💻 Programming Languages</h4>
+            <h4>Languages & Platforms</h4>
             <ul class="skill-list">
               <li>Java</li>
               <li>Python</li>
-              <li>JavaScript/TypeScript</li>
+              <li>Node.js</li>
+              <li>JavaScript</li>
               <li>C/C++</li>
-              <li>SQL</li>
+              <li>Windows, Mac, Linux</li>
             </ul>
           </div>
-          
           <div class="skill-category">
-            <h4>🤖 AI & Machine Learning</h4>
+            <h4>Frameworks & Tools</h4>
             <ul class="skill-list">
-              <li>OpenAI/GPT-4/Claude/Gemini</li>
-              <li>LangChain/LangGraph/LangSmith</li>
-              <li>CrewAI Framework/AutoGen</li>
-              <li>Multi-Agent Systems</li>
-              <li>Agentic AI Architecture</li>
-              <li>MCP (Model Context Protocol)</li>
-              <li>RAG/Vector Embeddings</li>
-              <li>ChromaDB/Pinecone/Weaviate</li>
-              <li>Hugging Face/Transformers</li>
-              <li>TensorFlow/PyTorch/Keras</li>
-              <li>OpenAI Agent SDK</li>
-              <li>Ollama/NVIDIA NIM</li>
-              <li>scikit-learn/Pandas/NumPy</li>
-              <li>MLflow/Weights & Biases</li>
-              <li>Jupyter/Google Colab</li>
-            </ul>
-          </div>
-          
-          <div class="skill-category">
-            <h4>🔧 Frameworks & Libraries</h4>
-            <ul class="skill-list">
-              <li>Spring Boot/Spring Cloud</li>
+              <li>Spring Boot/Cloud</li>
+              <li>React.js/Angular</li>
               <li>FastAPI/Streamlit</li>
-              <li>React.js/Angular/Vue.js</li>
-              <li>Django/Flask</li>
-              <li>Express.js/Node.js</li>
               <li>GraphQL</li>
-              <li>JUnit5/Mockito/TestNG</li>
-              <li>Hibernate/JPA</li>
-              <li>Bootstrap/Tailwind CSS</li>
-              <li>Webpack/Vite</li>
+              <li>JMeter</li>
+              <li>JUnit/Mockito</li>
             </ul>
           </div>
-          
           <div class="skill-category">
-            <h4>☁️ Cloud & Infrastructure</h4>
-            <ul class="skill-list">
-              <li>AWS (Lambda/S3/EC2/RDS)</li>
-              <li>Azure/GCP</li>
-              <li>Docker/Kubernetes</li>
-              <li>Microservices Architecture</li>
-              <li>Serverless Architecture</li>
-              <li>Terraform/CloudFormation</li>
-              <li>Jenkins/GitHub Actions</li>
-              <li>Grafana/Prometheus</li>
-              <li>ELK Stack/Splunk</li>
-              <li>Service Mesh/Istio</li>
-            </ul>
-          </div>
-          
-          <div class="skill-category">
-            <h4>💾 Databases & Storage</h4>
+            <h4>Databases & Cloud</h4>
             <ul class="skill-list">
               <li>MySQL/PostgreSQL</li>
               <li>MongoDB/Cassandra</li>
-              <li>CosmosDB/DynamoDB</li>
-              <li>Redis/Memcached</li>
-              <li>ElasticSearch/OpenSearch</li>
-              <li>InfluxDB/TimescaleDB</li>
-              <li>SQLite/H2</li>
+              <li>Cosmos DB/DynamoDB</li>
+              <li>AWS/Azure/GCP</li>
+              <li>ElasticSearch/Solr</li>
+              <li>Redis/Memcache</li>
             </ul>
           </div>
-          
           <div class="skill-category">
-            <h4>🔄 Integration & Messaging</h4>
+            <h4>AI & ML Tools</h4>
             <ul class="skill-list">
-              <li>Apache Kafka</li>
-              <li>RabbitMQ/ActiveMQ</li>
-              <li>REST/GraphQL APIs</li>
-              <li>OAuth2/JWT</li>
-              <li>WebSockets</li>
-              <li>Apache Camel</li>
+              <li>OpenAI Agent SDK</li>
+              <li>CrewAI</li>
+              <li>Agentic AI/Multi-Agent Systems</li>
+              <li>RAG/ChromaDB</li>
+              <li>Hugging Face/LangChain</li>
+              <li>ChatGPT/OpenAI/Gemini</li>
+              <li>Gradio/Vector Embeddings</li>
             </ul>
           </div>
-          
-          
           <div class="skill-category">
-            <h4>🛠️ Development Tools</h4>
+            <h4>DevOps & Infrastructure</h4>
             <ul class="skill-list">
-              <li>Cursor IDE</li>
-              <li>Windsurf IDE</li>
-              <li>GitHub Copilot</li>
+              <li>Docker/Kubernetes</li>
+              <li>Jenkins/CI-CD</li>
+              <li>Kafka/RabbitMQ</li>
+              <li>Grafana/Prometheus</li>
+              <li>SonarQube/Splunk</li>
+              <li>Terraform/Infrastructure as Code</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>🛠️ Developer Tools</h4>
+            <ul class="skill-list">
               <li>IntelliJ IDEA/VS Code</li>
-              <li>Git/GitHub</li>
+              <li>Cursor IDE/Windsurf IDE</li>
+              <li>Git/GitHub/GitLab</li>
               <li>Maven/Gradle</li>
-              <li>Docker Compose</li>
-              <li>SonarQube</li>
-              <li>JMeter/Postman</li>
+              <li>Postman/Insomnia</li>
               <li>Swagger/OpenAPI</li>
-              <li>Linux/Unix</li>
-              <li>Bash/PowerShell</li>
+              <li>Jupyter Notebooks</li>
+              <li>Docker Compose</li>
+              <li>npm/pip/conda</li>
+              <li>Chrome DevTools</li>
             </ul>
           </div>
         </div>
@@ -3298,20 +3528,6 @@
 
         <div class="certificates-grid">
           <!-- 2025 Certifications -->
-          <div class="certificate-card professional udemy">
-            <div class="certificate-icon">
-              <i class="fa fa-robot"></i>
-            </div>
-            <div class="certificate-content">
-              <h5><a href="https://www.udemy.com/certificate/UC-4506be04-7d3e-43fb-8589-ca94ef281e5a/"
-                  target="_blank">AI Engineer Agentic Track: The Complete Agent & MCP Course</a></h5>
-              <div class="certificate-meta">
-                <span class="badge badge-primary">Udemy</span>
-                <span class="certificate-date">Nov 2025</span>
-              </div>
-            </div>
-          </div>
-
           <div class="certificate-card professional udemy">
             <div class="certificate-icon">
               <i class="fa fa-certificate"></i>
