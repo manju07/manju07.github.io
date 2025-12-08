@@ -2128,10 +2128,427 @@
     /* Light Theme Variables */
     [data-theme="light"] {
       --primary-color: #f8f9fa;
+      --secondary-color: #0d7377;
+      --accent-color: #ff6b6b;
       --text-color: #343a40;
       --heading-color: #212529;
       --light-bg: #ffffff;
       --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --section-bg: #ffffff;
+    }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] body {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+    }
+
+    [data-theme="light"] .resume-section {
+      background: var(--section-bg) !important;
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .section-title {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .subheading {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading a {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:first-of-type {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:nth-of-type(2) {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:nth-of-type(3) {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:last-of-type {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .intro-header h1,
+    [data-theme="light"] .intro-header .text-primary {
+      color: var(--secondary-color) !important;
+      -webkit-text-fill-color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .experience-card,
+    [data-theme="light"] .skill-category,
+    [data-theme="light"] .certificate-card,
+    [data-theme="light"] .project-card,
+    [data-theme="light"] .education-card {
+      background: var(--card-bg) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .experience-card h3,
+    [data-theme="light"] .project-header h3,
+    [data-theme="light"] .skill-category h4,
+    [data-theme="light"] .education-content h3 {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .experience-card .subheading,
+    [data-theme="light"] .project-company,
+    [data-theme="light"] .education-content .subheading {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .project-description,
+    [data-theme="light"] .project-date,
+    [data-theme="light"] .project-achievements li,
+    [data-theme="light"] .skill-list li {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .tech-tag {
+      background: rgba(13, 115, 119, 0.1) !important;
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .project-tech h4,
+    [data-theme="light"] .project-achievements h4 {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .project-achievements li i,
+    [data-theme="light"] .skill-list li::before {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .navbar-nav .nav-link {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .navbar-nav .nav-link:hover,
+    [data-theme="light"] .navbar-nav .nav-link.active {
+      color: var(--light-bg) !important;
+      background: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .contact-info .subheading,
+    [data-theme="light"] .card-header h3 {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .card-header i,
+    [data-theme="light"] .contact-info .subheading i {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .ai-chat-text h3 {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .ai-chat-text .lead {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .feature-item {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .feature-item i {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .certificate-content h5,
+    [data-theme="light"] .certificate-content h5 a {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .certificate-content h5 a:hover {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .education-degree {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .education-major,
+    [data-theme="light"] .education-body {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .education-date {
+      color: var(--secondary-color) !important;
+      background: rgba(13, 115, 119, 0.1) !important;
+    }
+
+    [data-theme="light"] .score-value {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .score-label {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .project-category-title {
+      color: var(--secondary-color) !important;
+      -webkit-text-fill-color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .project-category-subtitle {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .github-link {
+      color: var(--heading-color) !important;
+      border-color: rgba(0, 0, 0, 0.2) !important;
+    }
+
+    [data-theme="light"] .github-link:hover {
+      color: var(--heading-color) !important;
+      border-color: rgba(0, 0, 0, 0.4) !important;
+      background: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    [data-theme="light"] .read-more {
+      color: var(--secondary-color) !important;
+      border-color: rgba(13, 115, 119, 0.3) !important;
+    }
+
+    [data-theme="light"] .read-more:hover {
+      color: var(--light-bg) !important;
+      background: var(--secondary-color) !important;
+      border-color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background: rgba(248, 249, 250, 0.95) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    [data-theme="light"] .navbar-nav {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .intro-content {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .project-details {
+      background: rgba(248, 249, 250, 0.8) !important;
+    }
+
+    [data-theme="light"] .ai-chat-container {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .ai-chat-icon {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .theme-toggle,
+    [data-theme="light"] .back-to-top {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .theme-toggle i,
+    [data-theme="light"] .back-to-top i {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .fa-circle {
+      background: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .education-content {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .education-timeline::before {
+      background: linear-gradient(to bottom,
+          var(--secondary-color) 0%,
+          rgba(13, 115, 119, 0.3) 100%) !important;
+    }
+
+    [data-theme="light"] .education-dot {
+      background: var(--secondary-color) !important;
+      box-shadow: 0 0 0 4px rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .project-image,
+    [data-theme="light"] .education-icon {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .project-category-line {
+      background: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .certificate-icon {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .badge-primary {
+      background-color: #6c5ce7 !important;
+      color: white !important;
+    }
+
+    [data-theme="light"] .badge-info {
+      background-color: #0984e3 !important;
+      color: white !important;
+    }
+
+    [data-theme="light"] .badge-success {
+      background-color: #00b894 !important;
+      color: white !important;
+    }
+
+    [data-theme="light"] .badge-warning {
+      background-color: #fdcb6e !important;
+      color: #2d3436 !important;
+    }
+
+    [data-theme="light"] .badge-secondary {
+      background-color: #0984e3 !important;
+      color: white !important;
+    }
+
+    [data-theme="light"] .certificate-date {
+      color: #666 !important;
+    }
+
+    /* About Section Light Theme Fixes */
+    [data-theme="light"] #about {
+      background: var(--section-bg) !important;
+      background-image: none !important;
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] #about::before {
+      display: none !important;
+    }
+
+    [data-theme="light"] #about .intro-content {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] #about .intro-content .intro-paragraph {
+      color: var(--text-color) !important;
+      text-shadow: none !important;
+    }
+
+    [data-theme="light"] #about .intro-content .intro-paragraph:first-of-type {
+      color: var(--secondary-color) !important;
+      font-weight: 600 !important;
+    }
+
+    [data-theme="light"] #about .intro-content .intro-paragraph:nth-of-type(2) {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] #about .intro-content .intro-paragraph:nth-of-type(3) {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] #about .intro-content .intro-paragraph:last-of-type {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] #about .intro-header h1,
+    [data-theme="light"] #about .intro-header .text-primary {
+      color: var(--secondary-color) !important;
+      -webkit-text-fill-color: var(--secondary-color) !important;
+      background: none !important;
+    }
+
+    [data-theme="light"] .intro-header .text-primary {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading a {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading span {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading span[style*="color"] {
+      color: var(--text-color) !important;
+    }
+
+    /* Override specific inline color styles in subheading */
+    [data-theme="light"] .subheading span[style*="#c5e1a5"] {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .subheading span[style*="#a0c4ff"] {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading a[style*="#a0c4ff"] {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading i[style*="#ffd166"] {
+      color: var(--accent-color) !important;
+    }
+
+    [data-theme="light"] .subheading i[style*="#64ffda"] {
+      color: var(--secondary-color) !important;
+    }
+
+    /* Ensure all subheading content is visible */
+    [data-theme="light"] .subheading,
+    [data-theme="light"] .subheading * {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .subheading a {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .subheading i {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:first-of-type {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:nth-of-type(2) {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:nth-of-type(3) {
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="light"] .intro-paragraph:last-of-type {
+      color: var(--text-color) !important;
     }
 
     /* Focus States */
