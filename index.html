@@ -325,13 +325,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2.5rem;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
 
     .skill-category {
       background: rgba(17, 34, 64, 0.7);
       border-radius: 24px;
-      padding: 3rem;
+      padding: 2.5rem;
       box-shadow: var(--card-shadow);
       transition: var(--transition);
       position: relative;
@@ -361,23 +361,48 @@
       transform: scaleX(1);
     }
 
-    .skill-category h4 {
-      color: var(--secondary-color);
-      font-size: 1.6rem;
+    .skill-category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .skill-category-icon {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      opacity: 0.9;
+      transition: var(--transition);
+    }
+
+    .skill-category:hover .skill-category-icon {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 1;
+    }
+
+    .skill-category h4 {
+      color: var(--heading-color);
+      font-size: 1.5rem;
+      margin: 0;
+      font-weight: 600;
     }
 
     .skill-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     .skill-list li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       padding-left: 2rem;
       position: relative;
       color: var(--text-color);
       font-size: 1.1rem;
+      line-height: 1.6;
+      transition: var(--transition);
     }
 
     .skill-list li::before {
@@ -385,6 +410,74 @@
       position: absolute;
       left: 0;
       color: var(--secondary-color);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .skill-list li:hover {
+      color: var(--heading-color);
+      transform: translateX(5px);
+    }
+
+    .skill-list li:hover::before {
+      color: var(--secondary-color);
+      transform: scale(1.2);
+    }
+
+    .skill-legend {
+      margin-top: 3rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Responsive Design for Skills */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        padding: 2rem;
+      }
+
+      .skill-category-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+
+      .skill-category-icon {
+        font-size: 1.8rem;
+      }
+
+      .skill-category h4 {
+        font-size: 1.3rem;
+      }
+
+      .skill-list li {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .skill-list li::before {
+        font-size: 1rem;
+      }
+
+      .skill-legend {
+        padding: 1.5rem !important;
+      }
+
+      .legend-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+      }
     }
 
     /* Certificates Section */
@@ -2232,6 +2325,37 @@
       color: var(--secondary-color) !important;
     }
 
+    [data-theme="light"] .skill-category {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .skill-category-header {
+      border-bottom-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .skill-category-icon {
+      color: var(--secondary-color) !important;
+    }
+
+    [data-theme="light"] .skill-category h4 {
+      color: var(--heading-color) !important;
+    }
+
+
+    [data-theme="light"] .skill-legend {
+      background: rgba(248, 249, 250, 0.8) !important;
+      border-color: rgba(13, 115, 119, 0.2) !important;
+    }
+
+    [data-theme="light"] .skill-legend h5 {
+      color: var(--heading-color) !important;
+    }
+
+    [data-theme="light"] .skills-intro {
+      color: var(--text-color) !important;
+    }
+
     [data-theme="light"] .navbar-nav .nav-link {
       color: var(--heading-color) !important;
     }
@@ -3611,78 +3735,188 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
       <div class="my-auto">
         <h2 class="section-title">Technical Skills</h2>
+        <p class="skills-intro mb-5" style="text-align: center; color: var(--text-color); font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
+          A comprehensive technical toolkit, combining deep-rooted expertise in enterprise platforms, programming, distributed systems, cloud, DevOps, data, and modern AI/ML tooling.
+        </p>
         <div class="skills-grid">
+
           <div class="skill-category">
-            <h4>Languages & Platforms</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-code skill-category-icon"></i>
+              <h4>Programming Languages</h4>
+            </div>
             <ul class="skill-list">
               <li>Java</li>
               <li>Python</li>
               <li>Node.js</li>
               <li>JavaScript</li>
-              <li>C/C++</li>
-              <li>Windows, Mac, Linux</li>
             </ul>
           </div>
+
           <div class="skill-category">
-            <h4>Frameworks & Tools</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-desktop skill-category-icon"></i>
+              <h4>Platforms & OS</h4>
+            </div>
             <ul class="skill-list">
-              <li>Spring Boot/Cloud</li>
-              <li>React.js/Angular</li>
-              <li>FastAPI/Streamlit</li>
+              <li>Windows</li>
+              <li>macOS</li>
+              <li>Linux</li>
+              <li>UNIX variants</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa fa-cubes skill-category-icon"></i>
+              <h4>Frameworks & Libraries</h4>
+            </div>
+            <ul class="skill-list">
+              <li>Spring (Boot, Cloud, MVC, Security, OAuth)</li>
+              <li>JPA (Hibernate)</li>
+              <li>JUnit (Mockito)</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Seaborn</li>
+              <li>FastAPI</li>
+              <li>Express.js</li>
+              <li>AngularJS</li>
+              <li>React.js</li>
+              <li>Next.js</li>
+              <li>Jest</li>
+              <li>Bootstrap 4</li>
+              <li>jQuery</li>
               <li>GraphQL</li>
-              <li>JMeter</li>
-              <li>JUnit/Mockito</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
             </ul>
           </div>
+
           <div class="skill-category">
-            <h4>Databases & Cloud</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-database skill-category-icon"></i>
+              <h4>Databases</h4>
+            </div>
             <ul class="skill-list">
-              <li>MySQL/PostgreSQL</li>
-              <li>MongoDB/Cassandra</li>
-              <li>Cosmos DB/DynamoDB</li>
-              <li>AWS/Azure/GCP</li>
-              <li>ElasticSearch/Solr</li>
-              <li>Redis/Memcache</li>
+              <li><strong>Relational Databases:</strong> MySQL, PostgreSQL, OracleDB, SQLite</li>
+              <li><strong>NoSQL Databases:</strong> MongoDB, Cassandra, DynamoDB, Cosmos DB</li>
+              <li><strong>Analytical/Big Data:</strong> HiveDB</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>AI & ML Tools</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-cloud skill-category-icon"></i>
+              <h4>Cloud & DevOps</h4>
+            </div>
             <ul class="skill-list">
-              <li>OpenAI Agent SDK</li>
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>Google Cloud Platform</li>
+              <li>Heroku</li>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Jenkins</li>
+              <li>GitHub Actions</li>
+              <li>CI/CD</li>
+              <li>Terraform</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa fa-search skill-category-icon"></i>
+              <h4>Search, Messaging & Caching</h4>
+            </div>
+            <ul class="skill-list">
+              <li>Elasticsearch</li>
+              <li>Apache Solr</li>
+              <li>Redis</li>
+              <li>Memcached</li>
+              <li>Apache Kafka</li>
+              <li>RabbitMQ</li>
+              <li>SQS</li>
+              <li>SNS</li>
+              <li>WebSocket</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa fa-brain skill-category-icon"></i>
+              <h4>AI, ML & GenAI Tooling</h4>
+            </div>
+            <ul class="skill-list">
+              <li>LangChain</li>
+              <li>LangGraph</li>
+              <li>AgenticAI</li>
               <li>CrewAI</li>
-              <li>Agentic AI/Multi-Agent Systems</li>
-              <li>RAG/ChromaDB</li>
-              <li>Hugging Face/LangChain</li>
-              <li>ChatGPT/OpenAI/Gemini</li>
-              <li>Gradio/Vector Embeddings</li>
+              <li>MCP</li>
+              <li>Hugging Face</li>
+              <li>OpenAI Agents SDK</li>
+              <li>Qodo</li>
+              <li>ChatGPT</li>
+              <li>Google Gemini</li>
+              <li>Claude</li>
+              <li>OpenLlama</li>
+              <li>RAG</li>
+              <li>scikit-learn</li>
+              <li>TensorFlow</li>
+              <li>PyTorch</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>DevOps & Infrastructure</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-eye skill-category-icon"></i>
+              <h4>Observability & Monitoring</h4>
+            </div>
             <ul class="skill-list">
-              <li>Docker/Kubernetes</li>
-              <li>Jenkins/CI-CD</li>
-              <li>Kafka/RabbitMQ</li>
-              <li>Grafana/Prometheus</li>
-              <li>SonarQube/Splunk</li>
-              <li>Terraform/Infrastructure as Code</li>
+              <li>Grafana</li>
+              <li>Prometheus</li>
+              <li>SonarQube</li>
+              <li>Splunk</li>
+              <li>DynaTrace</li>
+              <li>Lenses</li>
             </ul>
           </div>
+          
           <div class="skill-category">
-            <h4>🛠️ Developer Tools</h4>
+            <div class="skill-category-header">
+              <i class="fa fa-link skill-category-icon"></i>
+              <h4>APIs & Integrations</h4>
+            </div>
             <ul class="skill-list">
-              <li>IntelliJ IDEA/VS Code</li>
-              <li>Cursor IDE/Windsurf IDE</li>
-              <li>Git/GitHub/GitLab</li>
-              <li>Maven/Gradle</li>
-              <li>Postman/Insomnia</li>
-              <li>Swagger/OpenAPI</li>
-              <li>Jupyter Notebooks</li>
-              <li>Docker Compose</li>
-              <li>npm/pip/conda</li>
-              <li>Chrome DevTools</li>
+              <li>RESTful APIs</li>
+              <li>GraphQL APIs</li>
+              <li>WebSocket APIs</li>
+              <li>gRPC</li>
+              <li>OAuth2</li>
+              <li>SAML</li>
+              <li>SSO</li>
             </ul>
           </div>
+          
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa fa-wrench skill-category-icon"></i>
+              <h4>Developer Tools</h4>
+            </div>
+            <ul class="skill-list">
+              <li>Cursor</li>
+              <li>WindSurf</li>
+              <li>VS Code</li>
+              <li>PyCharm</li>
+              <li>IntelliJ IDEA</li>
+              <li>Postman</li>
+              <li>JMeter</li>
+              <li>JIRA</li>
+              <li>GitHub</li>
+              <li>Concord</li>
+              <li>BPMN Camunda</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
