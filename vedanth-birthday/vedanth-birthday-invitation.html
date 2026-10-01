@@ -481,18 +481,22 @@
     tick();
   })();
 </script>
-<audio id="bgm" src="flute.mp3" preload="none" loop></audio>
+<audio id="bgm" src="flute.mp3" preload="auto" loop autoplay></audio>
 <script>
-/* Original bansuri & tanpura piece in Raag Bhupali. */
+/* Original bansuri & tanpura piece in Raag Bhupali.
+   Tries to start on arrival; if the browser blocks it, starts on the first tap anywhere. */
 (function () {
   var btn = document.getElementById('music');
+  var hint = document.getElementById('music-label');
   var audio = document.getElementById('bgm');
-  var fadeTimer;
+  var fadeTimer, userPaused = false, wasPlaying = false;
+
   function fadeTo(target, done) {
     clearInterval(fadeTimer);
     fadeTimer = setInterval(function () {
-      var v = audio.volume + (target > audio.volume ? 0.05 : -0.08);
-      if ((target > audio.volume && v >= target) || (target <= audio.volume && v <= target)) {
+      var up = target > audio.volume;
+      var v = audio.volume + (up ? 0.04 : -0.08);
+      if ((up && v >= target) || (!up && v <= target)) {
         audio.volume = Math.max(0, Math.min(1, target)); clearInterval(fadeTimer); if (done) done();
       } else { audio.volume = Math.max(0, Math.min(1, v)); }
     }, 60);
@@ -503,19 +507,42 @@
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     btn.setAttribute('aria-label', on ? 'Pause music' : 'Play flute music');
   }
-  btn.addEventListener('click', function () {
-    if (audio.paused) {
-      audio.volume = 0;
-      var p = audio.play();
-      if (p && p.catch) p.catch(function () { setUI(false); });
-      setUI(true); fadeTo(0.85);
-    } else {
-      fadeTo(0, function () { audio.pause(); }); setUI(false);
+  function play() {
+    audio.volume = 0;
+    var p = audio.play();
+    if (p && p.then) {
+      return p.then(function () { setUI(true); fadeTo(0.85); removeGesture(); return true; })
+              .catch(function () { setUI(false); return false; });
     }
+    setUI(true); fadeTo(0.85); removeGesture(); return Promise.resolve(true);
+  }
+  function pause() {
+    fadeTo(0, function () { audio.pause(); });
+    setUI(false);
+  }
+
+  // Start on the first interaction anywhere if autoplay was blocked.
+  var gestures = ['pointerdown', 'touchend', 'keydown', 'click'];
+  function onGesture(e) {
+    if (e.target.closest && e.target.closest('#music')) return; // button handles itself
+    if (!userPaused && audio.paused) play();
+  }
+  function removeGesture() { gestures.forEach(function (g) { document.removeEventListener(g, onGesture, true); }); }
+  gestures.forEach(function (g) { document.addEventListener(g, onGesture, true); });
+
+  btn.addEventListener('click', function () {
+    if (audio.paused) { userPaused = false; play(); }
+    else { userPaused = true; pause(); }
   });
+
   document.addEventListener('visibilitychange', function () {
-    if (document.hidden && !audio.paused) { audio.pause(); setUI(false); }
+    if (document.hidden) { wasPlaying = !audio.paused; if (wasPlaying) { audio.pause(); setUI(false); } }
+    else if (wasPlaying && !userPaused) { play(); }
   });
+
+  // Try right away on arrival.
+  audio.volume = 0;
+  play().then(function (ok) { if (!ok) hint.textContent = 'Tap anywhere for flute music'; });
 })();
 </script>
 </body>
