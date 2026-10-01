@@ -284,6 +284,54 @@
   @media (prefers-reduced-motion: reduce) { .music .bars i { animation: none; height: 10px; } }
   @media print { .music { display: none; } }
 
+
+  /* Opening cover: the guest's tap here starts the music */
+  .cover {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    padding-top: calc(24px + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    background:
+      radial-gradient(80% 50% at 50% 30%, #24418F 0%, rgba(36,65,143,0) 70%),
+      radial-gradient(circle, rgba(246,220,148,.5) 1px, transparent 1.6px) 0 0 / 70px 70px,
+      linear-gradient(180deg, #13246A 0%, #0B1640 100%);
+    transition: opacity .9s ease, visibility .9s;
+  }
+  .cover.open { opacity: 0; visibility: hidden; }
+  .cover .ring {
+    width: 150px; height: 150px; border-radius: 50%; padding: 5px;
+    background: conic-gradient(from 210deg, var(--gold), #FCE7A8, #B9821F, var(--gold));
+    box-shadow: 0 0 0 8px rgba(233,185,73,.15), 0 0 60px rgba(233,185,73,.25);
+    animation: glow 2.4s ease-in-out infinite;
+  }
+  .cover .ring img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; border-radius: 50%; display: block; background: var(--butter); }
+  @keyframes glow { 0%,100% { box-shadow: 0 0 0 8px rgba(233,185,73,.15), 0 0 40px rgba(233,185,73,.2); } 50% { box-shadow: 0 0 0 12px rgba(233,185,73,.22), 0 0 70px rgba(233,185,73,.4); } }
+  .cover .cname {
+    margin: 4px 0 0; font-family: "Rozha One", Georgia, serif; font-weight: 400; font-size: 3.2rem; line-height: 1;
+    background: linear-gradient(180deg, #FFF3C4 10%, var(--gold) 55%, #C98E22 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .cover .csub { margin: 0; font-size: 1.1rem; color: #D7DDF5; }
+  .cover .open-btn {
+    margin-top: 14px; border: 0; cursor: pointer;
+    padding: 16px 34px; border-radius: 999px;
+    background: var(--pitambar); color: var(--night);
+    font: 800 1.1rem "Figtree", system-ui, sans-serif;
+    box-shadow: 0 14px 30px -10px rgba(245,183,0,.6);
+  }
+  .cover .open-btn:focus-visible { outline: 3px solid var(--lotus); outline-offset: 4px; }
+  .cover .cnote { margin: 2px 0 0; font-size: .9rem; color: var(--gold-soft); }
+  @media (prefers-reduced-motion: reduce) { .cover { transition: none; } .cover .ring { animation: none; } }
+  @media print { .cover { display: none; } }
+
   @media (max-width: 360px) {
     .actions { grid-template-columns: 1fr; }
     .matki { width: 54px; left: 0; }
@@ -295,6 +343,15 @@
 </style>
 </head>
 <body>
+  <div class="cover" id="cover" role="dialog" aria-modal="true" aria-labelledby="cover-name">
+    <div class="ring"><img id="cover-photo" alt=""></div>
+    <p class="kn" lang="kn">ಮೊದಲ ಹುಟ್ಟುಹಬ್ಬ</p>
+    <h2 class="cname" id="cover-name">Vedanth</h2>
+    <p class="csub">You're invited to his first birthday</p>
+    <button class="open-btn" id="open-btn" type="button">Open invitation</button>
+    <p class="cnote">🎶 with flute music</p>
+  </div>
+  <noscript><style>.cover{display:none}</style></noscript>
   <main class="invite">
     <svg class="matki" viewBox="0 0 120 300" aria-hidden="true">
   <defs>
@@ -524,7 +581,7 @@
   // Start on the first interaction anywhere if autoplay was blocked.
   var gestures = ['pointerdown', 'touchend', 'keydown', 'click'];
   function onGesture(e) {
-    if (e.target.closest && e.target.closest('#music')) return; // button handles itself
+    if (e.target.closest && (e.target.closest('#music') || e.target.closest('#cover'))) return; // button handles itself
     if (!userPaused && audio.paused) play();
   }
   function removeGesture() { gestures.forEach(function (g) { document.removeEventListener(g, onGesture, true); }); }
@@ -538,6 +595,19 @@
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { wasPlaying = !audio.paused; if (wasPlaying) { audio.pause(); setUI(false); } }
     else if (wasPlaying && !userPaused) { play(); }
+  });
+
+  // Opening cover: this tap is the permission browsers need to play sound.
+  var cover = document.getElementById('cover');
+  var mainImg = document.querySelector('.frame img');
+  document.getElementById('cover-photo').src = mainImg.src;
+  document.documentElement.style.overflow = 'hidden';
+  document.getElementById('open-btn').addEventListener('click', function () {
+    userPaused = false; play();
+    cover.classList.add('open');
+    document.documentElement.style.overflow = '';
+    btn.classList.add('played');
+    setTimeout(function () { cover.style.display = 'none'; }, 950);
   });
 
   // Try right away on arrival.
